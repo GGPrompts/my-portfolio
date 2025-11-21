@@ -78,7 +78,7 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "absolute left-1/2 top-full z-[100] mt-2 -translate-x-1/2 min-w-[260px] sm:min-w-[320px] max-w-[calc(100vw-2rem)] rounded-xl border border-primary/50 bg-slate-950/95 backdrop-blur-xl shadow-2xl border-glow data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52",
+      "absolute left-0 sm:left-1/2 top-full z-[100] mt-2 sm:-translate-x-1/2 w-auto min-w-[240px] max-w-[calc(100vw-2rem)] sm:max-w-[90vw] md:max-w-md max-h-[calc(100vh-8rem)] overflow-y-auto rounded-xl border border-primary/50 bg-slate-950/95 backdrop-blur-xl shadow-2xl border-glow data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52",
       className
     )}
     {...props}

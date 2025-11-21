@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { SpaceBackground } from '@/components/SpaceBackground';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -54,7 +55,7 @@ export default function StyleGuide() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-mono">Foundations</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-2 p-4 w-full min-w-0 sm:w-[320px]">
+                  <ul className="grid gap-2 p-4">
                     <li>
                       <NavigationMenuLink asChild>
                         <a href="#typography" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
@@ -78,7 +79,7 @@ export default function StyleGuide() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-mono">Buttons & Forms</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-2 p-4 w-full min-w-0 sm:w-[320px]">
+                  <ul className="grid gap-2 p-4">
                     <li>
                       <NavigationMenuLink asChild>
                         <a href="#buttons" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
@@ -110,7 +111,7 @@ export default function StyleGuide() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-mono">Layout</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-2 p-4 w-full min-w-0 sm:w-[320px]">
+                  <ul className="grid gap-2 p-4">
                     <li>
                       <NavigationMenuLink asChild>
                         <a href="#cards" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
@@ -134,7 +135,7 @@ export default function StyleGuide() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-mono">Interactive</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-2 p-4 w-full min-w-0 sm:w-[320px]">
+                  <ul className="grid gap-2 p-4">
                     <li>
                       <NavigationMenuLink asChild>
                         <a href="#interactive" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
@@ -166,7 +167,7 @@ export default function StyleGuide() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-mono">Data & Media</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-2 p-4 w-full min-w-0 sm:w-[320px]">
+                  <ul className="grid gap-2 p-4">
                     <li>
                       <NavigationMenuLink asChild>
                         <a href="#data" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
@@ -235,24 +236,24 @@ export default function StyleGuide() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded bg-primary border-glow" />
+                  <div className="w-12 h-12 rounded bg-primary border-2 border-primary/30 shadow-lg shadow-primary/20" />
                   <div>
                     <p className="font-mono text-sm">Primary</p>
-                    <p className="text-xs text-muted-foreground">Terminal Green/Cyan</p>
+                    <p className="text-xs text-muted-foreground">Terminal Green/Cyan - hsl(160 84% 39%)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded bg-secondary border-glow" />
+                  <div className="w-12 h-12 rounded bg-secondary border-2 border-secondary/30 shadow-lg shadow-secondary/20" />
                   <div>
                     <p className="font-mono text-sm">Secondary</p>
-                    <p className="text-xs text-muted-foreground">Teal Accent</p>
+                    <p className="text-xs text-muted-foreground">Vivid Blue - hsl(217 91% 60%)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded bg-background border border-border" />
                   <div>
                     <p className="font-mono text-sm">Background</p>
-                    <p className="text-xs text-muted-foreground">Very Dark Slate</p>
+                    <p className="text-xs text-muted-foreground">Very Dark Slate - hsl(220 13% 5%)</p>
                   </div>
                 </div>
               </CardContent>
@@ -532,7 +533,7 @@ export default function StyleGuide() {
                   <DialogTrigger asChild>
                     <Button variant="outline" className="w-full">Open Dialog</Button>
                   </DialogTrigger>
-                  <DialogContent className="glass border-glow">
+                  <DialogContent className="glass-overlay border-glow">
                     <DialogHeader>
                       <DialogTitle className="font-mono">Project Details</DialogTitle>
                       <DialogDescription>
@@ -554,7 +555,7 @@ export default function StyleGuide() {
                   <DrawerTrigger asChild>
                     <Button variant="outline" className="w-full">Open Drawer</Button>
                   </DrawerTrigger>
-                  <DrawerContent className="glass-dark border-glow">
+                  <DrawerContent className="glass-overlay border-glow">
                     <DrawerHeader>
                       <DrawerTitle className="font-mono">Project Gallery</DrawerTitle>
                       <DrawerDescription>Browse through screenshots</DrawerDescription>
@@ -575,7 +576,7 @@ export default function StyleGuide() {
                     <TooltipTrigger asChild>
                       <Button variant="outline" className="w-full">Hover for Tooltip</Button>
                     </TooltipTrigger>
-                    <TooltipContent className="glass border-glow">
+                    <TooltipContent className="glass-overlay border-glow">
                       <p className="font-mono">Tech Stack: Next.js</p>
                     </TooltipContent>
                   </Tooltip>
@@ -585,7 +586,7 @@ export default function StyleGuide() {
                   <HoverCardTrigger asChild>
                     <Button variant="outline" className="w-full">Hover Card</Button>
                   </HoverCardTrigger>
-                  <HoverCardContent className="glass border-glow w-80">
+                  <HoverCardContent className="glass-overlay border-glow w-80">
                     <div className="space-y-2">
                       <h4 className="font-mono font-semibold">Terminal Chat App</h4>
                       <p className="text-sm text-muted-foreground">
@@ -604,7 +605,7 @@ export default function StyleGuide() {
                   <PopoverTrigger asChild>
                     <Button variant="outline" className="w-full col-span-2">Open Popover</Button>
                   </PopoverTrigger>
-                  <PopoverContent className="glass border-glow">
+                  <PopoverContent className="glass-overlay border-glow">
                     <div className="space-y-2">
                       <h4 className="font-mono font-semibold">Quick Actions</h4>
                       <div className="space-y-2">
@@ -662,7 +663,7 @@ export default function StyleGuide() {
                   <AlertDialogTrigger asChild>
                     <Button variant="destructive">Delete Project</Button>
                   </AlertDialogTrigger>
-                  <AlertDialogContent className="glass-dark border-glow">
+                  <AlertDialogContent className="glass-overlay border-glow">
                     <AlertDialogHeader>
                       <AlertDialogTitle className="font-mono">Are you sure?</AlertDialogTitle>
                       <AlertDialogDescription>
@@ -858,7 +859,7 @@ export default function StyleGuide() {
                   <DropdownMenuTrigger asChild>
                     <Button variant="outline">Project Actions</Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="glass border-glow">
+                  <DropdownMenuContent className="glass-overlay border-glow">
                     <DropdownMenuLabel className="font-mono">Actions</DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem className="font-mono">View Details</DropdownMenuItem>
@@ -877,7 +878,7 @@ export default function StyleGuide() {
                 <CardDescription>Terminal-style command interface</CardDescription>
               </CardHeader>
               <CardContent>
-                <Command className="glass-dark border border-border rounded-lg">
+                <Command className="glass-overlay border border-border rounded-lg">
                   <CommandInput placeholder="Type a command or search..." className="font-mono" />
                   <CommandList>
                     <CommandEmpty className="font-mono">No results found.</CommandEmpty>
@@ -964,6 +965,36 @@ export default function StyleGuide() {
             </Card>
 
             <CursorGlowCard />
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mt-6">
+            <FloatingCard />
+
+            <Card className="border-glow">
+              <CardHeader>
+                <CardTitle className="font-mono">Usage Notes</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <p className="text-sm font-mono text-primary mb-1">Floating Cards</p>
+                  <p className="text-xs text-muted-foreground">
+                    Subtle continuous animation (4-6px range, 4s duration) with enhanced hover effect
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-mono text-primary mb-1">Cursor Glow</p>
+                  <p className="text-xs text-muted-foreground">
+                    Interactive radial gradient that follows mouse position
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-mono text-primary mb-1">Text Morph</p>
+                  <p className="text-xs text-muted-foreground">
+                    Smooth character-by-character transitions for dynamic text
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           <Card className="border-glow mt-6">
@@ -1126,5 +1157,58 @@ function CursorGlowCard() {
         </p>
       </CardContent>
     </Card>
+  );
+}
+
+// Floating card component (Balatro-style)
+function FloatingCard() {
+  return (
+    <motion.div
+      animate={{
+        y: [-5, 5, -5],
+        x: [-2, 2, -2],
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+        times: [0, 0.5, 1]
+      }}
+      whileHover={{
+        y: -12,
+        scale: 1.03,
+        rotateY: 5,
+        transition: { duration: 0.3 }
+      }}
+    >
+      <Card className="glass-dark border-glow relative overflow-hidden" style={{ perspective: 1000 }}>
+        <CardHeader>
+          <CardTitle className="font-mono">Floating Effect</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-3">
+            Balatro-style subtle floating animation with multi-axis movement.
+          </p>
+          <div className="space-y-1 text-xs text-muted-foreground font-mono">
+            <div className="flex justify-between">
+              <span>Y-axis:</span>
+              <span className="text-primary">±5px</span>
+            </div>
+            <div className="flex justify-between">
+              <span>X-axis:</span>
+              <span className="text-primary">±2px</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Duration:</span>
+              <span className="text-primary">4s</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Hover:</span>
+              <span className="text-secondary">Enhanced ↑</span>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }

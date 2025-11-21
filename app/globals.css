@@ -65,13 +65,24 @@
   }
 
   .glass-dark {
-    background: rgba(15, 23, 42, 0.75);
+    background: hsl(220 13% 12% / 0.8);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 1px solid hsl(var(--border) / 0.5);
     box-shadow:
       0 0 15px rgba(6, 182, 212, 0.2),
       inset 0 0 15px rgba(6, 182, 212, 0.08);
+  }
+
+  /* High-opacity glass for readable overlays */
+  .glass-overlay {
+    background: hsl(220 13% 8% / 0.97);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.6);
+    box-shadow:
+      0 0 20px rgba(6, 182, 212, 0.25),
+      inset 0 0 20px rgba(6, 182, 212, 0.1);
   }
 
   /* Terminal glow effect */
