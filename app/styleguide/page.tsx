@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { SpaceBackground } from '@/components/SpaceBackground';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -41,8 +42,9 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 
 export default function StyleGuide() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-zinc-950 py-20 px-4">
-      <ScrollProgress className="top-0" />
+    <main className="min-h-screen bg-black py-20 px-4 relative">
+      <SpaceBackground speed={0.5} opacity={1} />
+      <ScrollProgress className="top-0 z-10" />
 
       {/* Sticky Navigation Header */}
       <div className="sticky top-0 z-50 w-full border-b border-border/40 glass-dark backdrop-blur-xl mb-8">
@@ -197,7 +199,7 @@ export default function StyleGuide() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="mb-16 text-center">
           <h1 className="text-6xl font-mono font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">
@@ -967,11 +969,12 @@ export default function StyleGuide() {
           <Card className="border-glow mt-6">
             <CardHeader>
               <CardTitle className="font-mono">Animated Background</CardTitle>
+              <CardDescription>Smooth background transitions on hover</CardDescription>
             </CardHeader>
-            <CardContent className="relative">
-              <div className="flex gap-2 p-2">
+            <CardContent className="space-y-6">
+              <div className="flex flex-wrap gap-2 p-4 bg-background rounded-lg border border-border/50">
                 <AnimatedBackground
-                  className="rounded-lg bg-primary/20"
+                  className="rounded-lg bg-primary border-2 border-primary/60 shadow-lg shadow-primary/20"
                   transition={{
                     type: 'spring',
                     bounce: 0.2,
@@ -979,22 +982,22 @@ export default function StyleGuide() {
                   }}
                   enableHover
                 >
-                  <button data-id="1" className="px-4 py-2 rounded-lg font-mono text-sm transition-colors hover:text-primary">
+                  <button data-id="1" className="relative z-10 px-6 py-3 rounded-lg font-mono text-sm font-medium transition-colors text-muted-foreground hover:text-background">
                     Next.js
                   </button>
-                  <button data-id="2" className="px-4 py-2 rounded-lg font-mono text-sm transition-colors hover:text-primary">
+                  <button data-id="2" className="relative z-10 px-6 py-3 rounded-lg font-mono text-sm font-medium transition-colors text-muted-foreground hover:text-background">
                     TypeScript
                   </button>
-                  <button data-id="3" className="px-4 py-2 rounded-lg font-mono text-sm transition-colors hover:text-primary">
+                  <button data-id="3" className="relative z-10 px-6 py-3 rounded-lg font-mono text-sm font-medium transition-colors text-muted-foreground hover:text-background">
                     Tailwind
                   </button>
-                  <button data-id="4" className="px-4 py-2 rounded-lg font-mono text-sm transition-colors hover:text-primary">
+                  <button data-id="4" className="relative z-10 px-6 py-3 rounded-lg font-mono text-sm font-medium transition-colors text-muted-foreground hover:text-background">
                     Framer
                   </button>
                 </AnimatedBackground>
               </div>
-              <p className="text-xs text-muted-foreground mt-4">
-                Hover over the buttons to see the animated background effect
+              <p className="text-sm text-muted-foreground">
+                Hover over the technology buttons above to see a smooth animated background that follows your selection.
               </p>
             </CardContent>
           </Card>

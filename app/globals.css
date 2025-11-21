@@ -7,10 +7,10 @@
     --background: 220 13% 5%;           /* Very dark slate/black */
     --foreground: 160 84% 95%;          /* Light cyan-white */
 
-    --card: 220 13% 12%;                /* Increased from 8% to 12% for better visibility */
+    --card: 220 13% 15%;                /* Balanced for glassmorphism over black */
     --card-foreground: 160 84% 95%;
 
-    --popover: 220 13% 12%;             /* Increased from 8% to 12% for better visibility */
+    --popover: 220 13% 15%;             /* Balanced for glassmorphism over black */
     --popover-foreground: 160 84% 95%;
 
     --primary: 160 84% 39%;             /* Terminal green/cyan */
@@ -19,8 +19,8 @@
     --secondary: 217 91% 60%;           /* Vivid blue - more distinct from cyan */
     --secondary-foreground: 0 0% 100%;  /* Pure white for better contrast */
 
-    --muted: 220 13% 20%;               /* Increased from 18% to 20% */
-    --muted-foreground: 160 20% 80%;    /* Increased from 75% to 80% for better readability */
+    --muted: 220 13% 25%;               /* Increased for better readability */
+    --muted-foreground: 160 20% 85%;    /* Increased for better text contrast */
 
     --accent: 160 60% 20%;              /* Darkened from 45% for better contrast as background */
     --accent-foreground: 160 84% 95%;   /* Changed to light for better contrast */
@@ -55,23 +55,23 @@
 @layer utilities {
   /* Terminal-inspired glassmorphism */
   .glass {
-    background: rgba(16, 185, 129, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border) / 0.5);
+    background: rgba(16, 185, 129, 0.12);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.6);
     box-shadow:
-      0 0 20px rgba(16, 185, 129, 0.15),
-      inset 0 0 20px rgba(16, 185, 129, 0.05);
+      0 0 20px rgba(16, 185, 129, 0.2),
+      inset 0 0 20px rgba(16, 185, 129, 0.08);
   }
 
   .glass-dark {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border) / 0.4);
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.5);
     box-shadow:
-      0 0 15px rgba(6, 182, 212, 0.15),
-      inset 0 0 15px rgba(6, 182, 212, 0.05);
+      0 0 15px rgba(6, 182, 212, 0.2),
+      inset 0 0 15px rgba(6, 182, 212, 0.08);
   }
 
   /* Terminal glow effect */
