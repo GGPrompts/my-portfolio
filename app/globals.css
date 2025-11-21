@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 220 13% 5%;           /* Very dark slate/black */
-    --foreground: 160 84% 95%;          /* Light cyan-white */
+    --background: 0 0% 3%;              /* Pure black/carbon */
+    --foreground: 0 0% 95%;             /* Pure white */
 
-    --card: 220 13% 15%;                /* Balanced for glassmorphism over black */
-    --card-foreground: 160 84% 95%;
+    --card: 0 0% 8%;                    /* Very dark gray */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 220 13% 15%;             /* Balanced for glassmorphism over black */
-    --popover-foreground: 160 84% 95%;
+    --popover: 0 0% 8%;                 /* Very dark gray */
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 160 84% 39%;             /* Terminal green/cyan */
-    --primary-foreground: 220 13% 5%;
+    --primary: 0 0% 90%;                /* Light gray accent */
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 217 91% 60%;           /* Vivid blue - more distinct from cyan */
-    --secondary-foreground: 0 0% 100%;  /* Pure white for better contrast */
+    --secondary: 0 0% 20%;              /* Medium dark gray */
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 220 13% 25%;               /* Increased for better readability */
-    --muted-foreground: 160 20% 85%;    /* Increased for better text contrast */
+    --muted: 0 0% 15%;                  /* Dark gray */
+    --muted-foreground: 0 0% 65%;       /* Medium gray */
 
-    --accent: 160 60% 20%;              /* Darkened from 45% for better contrast as background */
-    --accent-foreground: 160 84% 95%;   /* Changed to light for better contrast */
+    --accent: 0 0% 18%;                 /* Dark gray */
+    --accent-foreground: 0 0% 95%;
 
-    --destructive: 0 84% 60%;           /* Vibrant red - more saturated */
-    --destructive-foreground: 0 0% 100%; /* Pure white for better contrast */
+    --destructive: 0 72% 51%;           /* Pure red */
+    --destructive-foreground: 0 0% 95%;
 
-    --border: 160 60% 25%;              /* Cyan border */
-    --input: 160 60% 25%;
-    --ring: 160 84% 39%;
+    --border: 0 0% 20%;                 /* Subtle gray border */
+    --input: 0 0% 20%;
+    --ring: 0 0% 90%;
 
     --radius: 0.5rem;
   }
@@ -44,58 +44,44 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: hsl(var(--background));
+    background: linear-gradient(135deg, #000000 0%, #111111 50%, #1a1a1a 100%);
     color: hsl(var(--foreground));
-    background-image:
-      radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
   }
 }
 
 @layer utilities {
-  /* Terminal-inspired glassmorphism */
+  /* Carbon-inspired glassmorphism */
   .glass {
-    background: rgba(16, 185, 129, 0.12);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid hsl(var(--border) / 0.6);
-    box-shadow:
-      0 0 20px rgba(16, 185, 129, 0.2),
-      inset 0 0 20px rgba(16, 185, 129, 0.08);
+    background: rgba(30, 30, 30, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .glass-dark {
-    background: hsl(220 13% 12% / 0.8);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid hsl(var(--border) / 0.5);
-    box-shadow:
-      0 0 15px rgba(6, 182, 212, 0.2),
-      inset 0 0 15px rgba(6, 182, 212, 0.08);
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   /* High-opacity glass for readable overlays */
   .glass-overlay {
-    background: hsl(220 13% 8% / 0.97);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid hsl(var(--border) / 0.6);
-    box-shadow:
-      0 0 20px rgba(6, 182, 212, 0.25),
-      inset 0 0 20px rgba(6, 182, 212, 0.1);
+    background: rgba(15, 15, 15, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  /* Terminal glow effect */
+  /* Subtle white glow effect */
   .terminal-glow {
     text-shadow:
-      0 0 10px rgba(16, 185, 129, 0.5),
-      0 0 20px rgba(16, 185, 129, 0.3),
-      0 0 30px rgba(16, 185, 129, 0.2);
+      0 0 10px rgba(255, 255, 255, 0.3),
+      0 0 20px rgba(255, 255, 255, 0.15);
   }
 
   .border-glow {
     box-shadow:
-      0 0 10px rgba(16, 185, 129, 0.3),
-      0 0 20px rgba(16, 185, 129, 0.1);
+      0 0 10px rgba(255, 255, 255, 0.15);
   }
 }

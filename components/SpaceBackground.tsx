@@ -87,23 +87,22 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
       }
     });
 
-    // Terminal-themed nebula colors (cyan/green instead of purple/pink)
+    // Subtle gray nebula effects
     const nebulae: Nebula[] = [];
     const nebulaColors = [
-      { r: 16, g: 185, b: 129 },  // Terminal green/cyan
-      { r: 6, g: 182, b: 212 },   // Cyan
-      { r: 20, g: 184, b: 166 },  // Teal
-      { r: 34, g: 211, b: 238 },  // Light cyan
+      { r: 60, g: 60, b: 60 },   // Very subtle gray
+      { r: 50, g: 50, b: 50 },   // Darker gray
+      { r: 70, g: 70, b: 70 },   // Lighter gray
     ];
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
       const color = nebulaColors[Math.floor(Math.random() * nebulaColors.length)];
       nebulae.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         radius: Math.random() * 200 + 100,
         color,
-        opacity: Math.random() * 0.03 + 0.02,
+        opacity: Math.random() * 0.02 + 0.01,
         layer: Math.floor(Math.random() * 2),
       });
     }
@@ -129,7 +128,7 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
       const twinkle = Math.sin(star.twinklePhase) * 0.3 + 0.7;
       const actualBrightness = star.brightness * twinkle;
 
-      // Glow effect - cyan/white tinted
+      // Glow effect - pure white/gray
       const gradient = ctx.createRadialGradient(
         star.x + offsetX,
         star.y + offsetY,
@@ -139,9 +138,9 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
         star.size * 3
       );
       gradient.addColorStop(0, `rgba(255, 255, 255, ${actualBrightness})`);
-      gradient.addColorStop(0.1, `rgba(200, 255, 240, ${actualBrightness * 0.8})`);
-      gradient.addColorStop(0.5, `rgba(150, 255, 230, ${actualBrightness * 0.3})`);
-      gradient.addColorStop(1, 'rgba(100, 200, 180, 0)');
+      gradient.addColorStop(0.1, `rgba(240, 240, 240, ${actualBrightness * 0.8})`);
+      gradient.addColorStop(0.5, `rgba(200, 200, 200, ${actualBrightness * 0.3})`);
+      gradient.addColorStop(1, 'rgba(150, 150, 150, 0)');
 
       ctx.fillStyle = gradient;
       ctx.beginPath();
@@ -186,9 +185,9 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
 
       const fadeOpacity = 1 - star.life / 100;
       tailGradient.addColorStop(0, `rgba(255, 255, 255, ${star.opacity * fadeOpacity})`);
-      tailGradient.addColorStop(0.1, `rgba(200, 255, 240, ${star.opacity * 0.8 * fadeOpacity})`);
-      tailGradient.addColorStop(0.5, `rgba(150, 255, 230, ${star.opacity * 0.3 * fadeOpacity})`);
-      tailGradient.addColorStop(1, 'rgba(100, 200, 180, 0)');
+      tailGradient.addColorStop(0.1, `rgba(240, 240, 240, ${star.opacity * 0.8 * fadeOpacity})`);
+      tailGradient.addColorStop(0.5, `rgba(200, 200, 200, ${star.opacity * 0.3 * fadeOpacity})`);
+      tailGradient.addColorStop(1, 'rgba(150, 150, 150, 0)');
 
       ctx.strokeStyle = tailGradient;
       ctx.lineWidth = 2;

@@ -203,11 +203,11 @@ export default function StyleGuide() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="mb-16 text-center">
-          <h1 className="text-6xl font-mono font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">
+          <h1 className="text-6xl font-mono font-bold mb-4 bg-gradient-to-r from-white via-gray-300 to-gray-500 text-transparent bg-clip-text terminal-glow">
             Style Guide
           </h1>
           <p className="text-xl text-foreground/80">
-            Terminal-themed components for Matt's Portfolio
+            Carbon-themed components for Matt's Portfolio
           </p>
         </div>
 
@@ -239,21 +239,21 @@ export default function StyleGuide() {
                   <div className="w-12 h-12 rounded bg-primary border-2 border-primary/30 shadow-lg shadow-primary/20" />
                   <div>
                     <p className="font-mono text-sm">Primary</p>
-                    <p className="text-xs text-muted-foreground">Terminal Green/Cyan - hsl(160 84% 39%)</p>
+                    <p className="text-xs text-muted-foreground">Light Gray - hsl(0 0% 90%)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded bg-secondary border-2 border-secondary/30 shadow-lg shadow-secondary/20" />
                   <div>
                     <p className="font-mono text-sm">Secondary</p>
-                    <p className="text-xs text-muted-foreground">Vivid Blue - hsl(217 91% 60%)</p>
+                    <p className="text-xs text-muted-foreground">Medium Dark Gray - hsl(0 0% 20%)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded bg-background border border-border" />
                   <div>
                     <p className="font-mono text-sm">Background</p>
-                    <p className="text-xs text-muted-foreground">Very Dark Slate - hsl(220 13% 5%)</p>
+                    <p className="text-xs text-muted-foreground">Pure Black/Carbon - hsl(0 0% 3%)</p>
                   </div>
                 </div>
               </CardContent>
@@ -1039,7 +1039,7 @@ export default function StyleGuide() {
           <Card className="border-glow">
             <CardHeader>
               <CardTitle className="font-mono">Custom Utilities</CardTitle>
-              <CardDescription>Terminal-themed utility classes</CardDescription>
+              <CardDescription>Carbon-themed utility classes</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
@@ -1059,14 +1059,14 @@ export default function StyleGuide() {
               <div>
                 <p className="text-sm text-muted-foreground mb-2 font-mono">.terminal-glow</p>
                 <h3 className="text-3xl font-mono font-bold terminal-glow">
-                  Terminal Phosphor Glow Effect
+                  Subtle White Glow Effect
                 </h3>
               </div>
 
               <div>
                 <p className="text-sm text-muted-foreground mb-2 font-mono">.border-glow</p>
                 <div className="border-glow border border-border p-6 rounded-lg">
-                  <p className="font-mono">Glowing cyan border effect</p>
+                  <p className="font-mono">Subtle white border glow effect</p>
                 </div>
               </div>
             </CardContent>
@@ -1076,10 +1076,10 @@ export default function StyleGuide() {
         {/* Footer */}
         <div className="mt-20 text-center">
           <p className="text-sm text-muted-foreground font-mono mb-2">
-            Style Guide for Matt's Portfolio • Terminal Theme
+            Style Guide for Matt's Portfolio • Carbon Professional Theme
           </p>
           <p className="text-xs text-muted-foreground font-mono mb-4">
-            40+ shadcn/ui components styled with terminal aesthetics
+            40+ shadcn/ui components styled with carbon/monochrome aesthetics
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             <Badge className="font-mono text-xs">Next.js 15</Badge>
@@ -1107,7 +1107,7 @@ function Section({
 }) {
   return (
     <section id={id} className="mb-20">
-      <h2 className="text-4xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+      <h2 className="text-4xl font-mono font-bold mb-8 bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
         {title}
       </h2>
       {children}
@@ -1143,7 +1143,7 @@ function CursorGlowCard() {
             height: '300px',
             left: mousePosition.x - 150,
             top: mousePosition.y - 150,
-            background: 'radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, rgba(6, 182, 212, 0.2) 30%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(200, 200, 200, 0.1) 30%, transparent 70%)',
             opacity: isHovering ? 1 : 0,
           }}
         />
@@ -1153,7 +1153,7 @@ function CursorGlowCard() {
       </CardHeader>
       <CardContent className="relative z-10">
         <p className="text-sm text-muted-foreground">
-          Interactive glow that follows your cursor - very terminal-esque!
+          Interactive glow that follows your cursor - sleek carbon aesthetic!
         </p>
       </CardContent>
     </Card>
