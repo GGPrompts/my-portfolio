@@ -165,26 +165,48 @@ my-portfolio/
 
 ## Design System
 
+### Color Palette (Terminal Theme)
+- **Background**: Very dark slate/black `hsl(220 13% 5%)`
+- **Foreground**: Light cyan-white `hsl(160 84% 95%)`
+- **Primary**: Terminal green/cyan `hsl(160 84% 39%)`
+- **Secondary**: Teal accent `hsl(173 80% 40%)`
+- **Border**: Cyan border `hsl(160 60% 25%)`
+- **Page Background**: `from-black via-slate-950 to-zinc-950`
+- **Subtle Glow**: Radial gradients with emerald/cyan at 5% opacity
+
 ### Glassmorphism Utilities (in globals.css)
 ```css
 .glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(16, 185, 129, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border) / 0.3);
+  box-shadow:
+    0 0 20px rgba(16, 185, 129, 0.1),
+    inset 0 0 20px rgba(16, 185, 129, 0.02);
 }
 
 .glass-dark {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border) / 0.2);
+  box-shadow:
+    0 0 15px rgba(6, 182, 212, 0.1),
+    inset 0 0 15px rgba(6, 182, 212, 0.02);
+}
+
+.terminal-glow {
+  text-shadow:
+    0 0 10px rgba(16, 185, 129, 0.5),
+    0 0 20px rgba(16, 185, 129, 0.3),
+    0 0 30px rgba(16, 185, 129, 0.2);
+}
+
+.border-glow {
+  box-shadow:
+    0 0 10px rgba(16, 185, 129, 0.3),
+    0 0 20px rgba(16, 185, 129, 0.1);
 }
 ```
-
-### Color Palette
-- **Background**: Dark gradients (slate-900 → purple-900 → slate-900)
-- **Glass tint**: White with 10-20% opacity
-- **Accents**: Purple (#a855f7), Pink (#ec4899), Blue (#3b82f6)
-- **Text**: White with varying opacity (100%, 80%, 70%)
 
 ### Framer Motion Patterns
 ```tsx
@@ -286,24 +308,43 @@ npm start            # Start production server
 
 ## Current Status
 
-### ✅ Completed
+### ✅ Completed (Latest: Terminal Theme + Component Library)
 - [x] Next.js 15 setup with TypeScript
-- [x] Tailwind CSS v3 configured
+- [x] Tailwind CSS v3 configured with terminal color scheme
 - [x] Framer Motion installed
-- [x] Glassmorphism utilities created
-- [x] Hero component with 3D glass card
-- [x] Skills integrated (nextjs, canvas-design, gemini-image-gen)
-- [x] Basic layout and structure
+- [x] Terminal-themed glassmorphism (green/cyan phosphor glow)
+- [x] JetBrains Mono + Inter fonts configured
+- [x] Darker metallic background (black/slate-950/zinc-950)
+- [x] Hero component with terminal aesthetic
+- [x] **Complete shadcn/ui component library installed (29 components)**
+- [x] **Motion primitives for advanced animations (5 components)**
+- [x] **Comprehensive /styleguide page with all components**
+- [x] **shadcn MCP integration configured**
+- [x] Skills integrated (nextjs, canvas-design, gemini-image-gen, shadcn-ui)
+- [x] lib/utils.ts with cn() helper
+- [x] Custom design system utilities (.glass, .terminal-glow, .border-glow)
 
 ### 🚧 Next Steps
-- [ ] Build out component library (ProjectCard, TUIShowcase, etc.)
-- [ ] Add project data/content
+- [ ] Build Featured Projects grid component (8-12 best projects)
+- [ ] Build TUI Showcase section with terminal aesthetic
+- [ ] Build All Projects carousel (45 projects with filtering)
+- [ ] Add project data/content structure
 - [ ] Record/capture TUI app demos with OBS
 - [ ] Create hero image with canvas-design skill
-- [ ] Implement remaining sections (About, Skills, Contact)
+- [ ] Implement About section
+- [ ] Implement Contact section with form
 - [ ] SEO optimization
 - [ ] Performance audit
 - [ ] Deploy to Vercel
+
+### 📦 Installed Components
+**Core UI (5):** Card, Badge, Button, Separator, Skeleton
+**Navigation (4):** Tabs, Accordion, Carousel, Scroll Area
+**Interactive (5):** Dialog, Drawer, Tooltip, Hover Card, Popover
+**Forms (7):** Input, Textarea, Select, Checkbox, Radio Group, Switch, Label
+**Motion (5):** Border Trail, Animated Background, Text Morph, Glow Effect, Scroll Progress
+
+All components are pre-styled with the terminal theme and ready to use.
 
 ## Key Resources
 
