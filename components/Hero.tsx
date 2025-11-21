@@ -14,7 +14,7 @@ export default function Hero() {
       >
         <GlassCard variant="dark" hover3d className="text-center">
           <motion.h1
-            className="text-6xl md:text-8xl font-mono font-bold mb-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow"
+            className="text-6xl md:text-8xl font-mono font-bold mb-6 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-transparent bg-clip-text"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
