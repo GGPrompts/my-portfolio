@@ -14,7 +14,7 @@ export default function Hero() {
       >
         <GlassCard variant="dark" hover3d className="text-center">
           <motion.h1
-            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 text-transparent bg-clip-text"
+            className="text-6xl md:text-8xl font-mono font-bold mb-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -23,7 +23,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-white/80 mb-8"
+            className="text-xl md:text-2xl text-foreground/80 mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
@@ -37,10 +37,10 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <button className="px-6 py-3 glass rounded-lg hover:scale-105 transition-transform">
+            <button className="px-6 py-3 glass rounded-lg hover:scale-105 transition-transform border-glow hover:border-glow">
               View Projects
             </button>
-            <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg hover:scale-105 transition-transform">
+            <button className="px-6 py-3 glass-dark rounded-lg hover:scale-105 transition-transform border-glow hover:border-glow text-foreground">
               Get in Touch
             </button>
           </motion.div>
