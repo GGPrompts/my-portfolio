@@ -41,6 +41,10 @@ import { Kbd } from '@/components/ui/kbd';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 
 export default function StyleGuide() {
+  const [singleToggle, setSingleToggle] = React.useState('all');
+  const [multipleToggle, setMultipleToggle] = React.useState<string[]>([]);
+  const [darkMode, setDarkMode] = React.useState(false);
+
   return (
     <main className="min-h-screen py-20 px-4 relative">
       <ScrollProgress className="top-0 z-10" />
@@ -916,31 +920,37 @@ export default function StyleGuide() {
             <CardContent className="space-y-6">
               <div>
                 <p className="text-sm text-muted-foreground mb-3 font-mono">Single Toggle</p>
-                <Toggle className="font-mono">Dark Mode</Toggle>
+                <Toggle className="font-mono" pressed={darkMode} onPressedChange={setDarkMode}>
+                  Dark Mode {darkMode && '✓'}
+                </Toggle>
               </div>
 
               <Separator />
 
               <div>
-                <p className="text-sm text-muted-foreground mb-3 font-mono">Toggle Group</p>
-                <ToggleGroup type="single" defaultValue="all" className="justify-start">
+                <p className="text-sm text-muted-foreground mb-3 font-mono">Toggle Group (Single Selection)</p>
+                <ToggleGroup type="single" value={singleToggle} onValueChange={setSingleToggle} className="justify-start">
                   <ToggleGroupItem value="all" className="font-mono">All</ToggleGroupItem>
                   <ToggleGroupItem value="web" className="font-mono">Web</ToggleGroupItem>
                   <ToggleGroupItem value="tui" className="font-mono">TUI</ToggleGroupItem>
                   <ToggleGroupItem value="api" className="font-mono">API</ToggleGroupItem>
                 </ToggleGroup>
+                <p className="text-xs text-muted-foreground mt-2">Selected: {singleToggle}</p>
               </div>
 
               <Separator />
 
               <div>
                 <p className="text-sm text-muted-foreground mb-3 font-mono">Multiple Selection</p>
-                <ToggleGroup type="multiple" className="justify-start">
+                <ToggleGroup type="multiple" value={multipleToggle} onValueChange={setMultipleToggle} className="justify-start">
                   <ToggleGroupItem value="nextjs" className="font-mono">Next.js</ToggleGroupItem>
                   <ToggleGroupItem value="typescript" className="font-mono">TypeScript</ToggleGroupItem>
                   <ToggleGroupItem value="go" className="font-mono">Go</ToggleGroupItem>
                   <ToggleGroupItem value="rust" className="font-mono">Rust</ToggleGroupItem>
                 </ToggleGroup>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Selected: {multipleToggle.length > 0 ? multipleToggle.join(', ') : 'none'}
+                </p>
               </div>
             </CardContent>
           </Card>
