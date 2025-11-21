@@ -42,6 +42,10 @@ import { Kbd } from '@/components/ui/kbd';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 
 export default function StyleGuide() {
+  const [singleToggle, setSingleToggle] = React.useState('all');
+  const [multipleToggle, setMultipleToggle] = React.useState<string[]>([]);
+  const [darkMode, setDarkMode] = React.useState(false);
+
   return (
     <main className="min-h-screen bg-black py-20 px-4 relative">
       <SpaceBackground speed={0.5} opacity={1} />
@@ -203,11 +207,11 @@ export default function StyleGuide() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="mb-16 text-center">
-          <h1 className="text-6xl font-mono font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">
+          <h1 className="text-6xl font-mono font-bold mb-4 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 text-transparent bg-clip-text terminal-glow">
             Style Guide
           </h1>
           <p className="text-xl text-foreground/80">
-            Terminal-themed components for Matt's Portfolio
+            Amber-themed components for Matt's Portfolio
           </p>
         </div>
 
@@ -239,21 +243,21 @@ export default function StyleGuide() {
                   <div className="w-12 h-12 rounded bg-primary border-2 border-primary/30 shadow-lg shadow-primary/20" />
                   <div>
                     <p className="font-mono text-sm">Primary</p>
-                    <p className="text-xs text-muted-foreground">Terminal Green/Cyan - hsl(160 84% 39%)</p>
+                    <p className="text-xs text-muted-foreground">Golden Amber - hsl(40 100% 67%) #ffc857</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded bg-secondary border-2 border-secondary/30 shadow-lg shadow-secondary/20" />
                   <div>
                     <p className="font-mono text-sm">Secondary</p>
-                    <p className="text-xs text-muted-foreground">Vivid Blue - hsl(217 91% 60%)</p>
+                    <p className="text-xs text-muted-foreground">Bright Blue - hsl(217 91% 60%)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded bg-background border border-border" />
                   <div>
                     <p className="font-mono text-sm">Background</p>
-                    <p className="text-xs text-muted-foreground">Very Dark Slate - hsl(220 13% 5%)</p>
+                    <p className="text-xs text-muted-foreground">Dark Purple-Blue - hsl(250 30% 10%)</p>
                   </div>
                 </div>
               </CardContent>
@@ -291,6 +295,23 @@ export default function StyleGuide() {
                   </button>
                   <button className="px-6 py-3 glass-dark rounded-lg hover:scale-105 transition-transform border-glow">
                     Glass Dark
+                  </button>
+                </div>
+              </div>
+
+              <Separator />
+
+              <div>
+                <p className="text-sm text-muted-foreground mb-3 font-mono">Premium Gradient Buttons</p>
+                <div className="flex flex-wrap gap-2">
+                  <button className="px-6 py-3 btn-gradient-primary rounded-lg">
+                    Primary Gradient
+                  </button>
+                  <button className="px-6 py-3 btn-gradient-secondary rounded-lg">
+                    Secondary Gradient
+                  </button>
+                  <button className="px-6 py-3 btn-gradient-success rounded-lg">
+                    Success Gradient
                   </button>
                 </div>
               </div>
@@ -637,15 +658,15 @@ export default function StyleGuide() {
                   </AlertDescription>
                 </Alert>
 
-                <Alert className="border-destructive/50 bg-destructive/5">
+                <Alert className="border-red-500/70 bg-destructive/5">
                   <AlertTitle className="font-mono text-destructive">Error</AlertTitle>
                   <AlertDescription>
                     Something went wrong. Please try again.
                   </AlertDescription>
                 </Alert>
 
-                <Alert className="border-secondary/50 bg-secondary/5">
-                  <AlertTitle className="font-mono text-secondary">Success</AlertTitle>
+                <Alert className="border-green-500/70 bg-green-500/5">
+                  <AlertTitle className="font-mono text-green-500">Success</AlertTitle>
                   <AlertDescription>
                     Your changes have been saved successfully.
                   </AlertDescription>
@@ -918,31 +939,37 @@ export default function StyleGuide() {
             <CardContent className="space-y-6">
               <div>
                 <p className="text-sm text-muted-foreground mb-3 font-mono">Single Toggle</p>
-                <Toggle className="font-mono">Dark Mode</Toggle>
+                <Toggle className="font-mono" pressed={darkMode} onPressedChange={setDarkMode}>
+                  Dark Mode {darkMode && '✓'}
+                </Toggle>
               </div>
 
               <Separator />
 
               <div>
-                <p className="text-sm text-muted-foreground mb-3 font-mono">Toggle Group</p>
-                <ToggleGroup type="single" defaultValue="all" className="justify-start">
+                <p className="text-sm text-muted-foreground mb-3 font-mono">Toggle Group (Single Selection)</p>
+                <ToggleGroup type="single" value={singleToggle} onValueChange={setSingleToggle} className="justify-start">
                   <ToggleGroupItem value="all" className="font-mono">All</ToggleGroupItem>
                   <ToggleGroupItem value="web" className="font-mono">Web</ToggleGroupItem>
                   <ToggleGroupItem value="tui" className="font-mono">TUI</ToggleGroupItem>
                   <ToggleGroupItem value="api" className="font-mono">API</ToggleGroupItem>
                 </ToggleGroup>
+                <p className="text-xs text-muted-foreground mt-2">Selected: {singleToggle}</p>
               </div>
 
               <Separator />
 
               <div>
                 <p className="text-sm text-muted-foreground mb-3 font-mono">Multiple Selection</p>
-                <ToggleGroup type="multiple" className="justify-start">
+                <ToggleGroup type="multiple" value={multipleToggle} onValueChange={setMultipleToggle} className="justify-start">
                   <ToggleGroupItem value="nextjs" className="font-mono">Next.js</ToggleGroupItem>
                   <ToggleGroupItem value="typescript" className="font-mono">TypeScript</ToggleGroupItem>
                   <ToggleGroupItem value="go" className="font-mono">Go</ToggleGroupItem>
                   <ToggleGroupItem value="rust" className="font-mono">Rust</ToggleGroupItem>
                 </ToggleGroup>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Selected: {multipleToggle.length > 0 ? multipleToggle.join(', ') : 'none'}
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -1039,34 +1066,34 @@ export default function StyleGuide() {
           <Card className="border-glow">
             <CardHeader>
               <CardTitle className="font-mono">Custom Utilities</CardTitle>
-              <CardDescription>Terminal-themed utility classes</CardDescription>
+              <CardDescription>Amber-themed utility classes</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
                 <p className="text-sm text-muted-foreground mb-2 font-mono">.glass</p>
                 <div className="glass p-6 rounded-lg">
-                  <p className="font-mono">Light glassmorphic background with blur</p>
+                  <p className="font-mono">Light glassmorphic background with amber border</p>
                 </div>
               </div>
 
               <div>
                 <p className="text-sm text-muted-foreground mb-2 font-mono">.glass-dark</p>
                 <div className="glass-dark p-6 rounded-lg">
-                  <p className="font-mono">Dark glassmorphic background with blur</p>
+                  <p className="font-mono">Dark glassmorphic background with amber border</p>
                 </div>
               </div>
 
               <div>
                 <p className="text-sm text-muted-foreground mb-2 font-mono">.terminal-glow</p>
                 <h3 className="text-3xl font-mono font-bold terminal-glow">
-                  Terminal Phosphor Glow Effect
+                  Amber Golden Glow Effect
                 </h3>
               </div>
 
               <div>
                 <p className="text-sm text-muted-foreground mb-2 font-mono">.border-glow</p>
                 <div className="border-glow border border-border p-6 rounded-lg">
-                  <p className="font-mono">Glowing cyan border effect</p>
+                  <p className="font-mono">Glowing amber border effect</p>
                 </div>
               </div>
             </CardContent>
@@ -1107,7 +1134,7 @@ function Section({
 }) {
   return (
     <section id={id} className="mb-20">
-      <h2 className="text-4xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+      <h2 className="text-4xl font-mono font-bold mb-8 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 text-transparent bg-clip-text terminal-glow">
         {title}
       </h2>
       {children}

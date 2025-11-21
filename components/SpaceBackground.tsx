@@ -87,13 +87,13 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
       }
     });
 
-    // Terminal-themed nebula colors (cyan/green instead of purple/pink)
+    // Amber-themed nebula colors (golden amber/orange/purple)
     const nebulae: Nebula[] = [];
     const nebulaColors = [
-      { r: 16, g: 185, b: 129 },  // Terminal green/cyan
-      { r: 6, g: 182, b: 212 },   // Cyan
-      { r: 20, g: 184, b: 166 },  // Teal
-      { r: 34, g: 211, b: 238 },  // Light cyan
+      { r: 255, g: 200, b: 87 },   // Golden amber
+      { r: 255, g: 152, b: 0 },    // Orange
+      { r: 255, g: 193, b: 7 },    // Golden yellow
+      { r: 180, g: 120, b: 200 },  // Purple accent
     ];
 
     for (let i = 0; i < 5; i++) {
@@ -129,7 +129,7 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
       const twinkle = Math.sin(star.twinklePhase) * 0.3 + 0.7;
       const actualBrightness = star.brightness * twinkle;
 
-      // Glow effect - cyan/white tinted
+      // Glow effect - amber/golden tinted
       const gradient = ctx.createRadialGradient(
         star.x + offsetX,
         star.y + offsetY,
@@ -139,9 +139,9 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
         star.size * 3
       );
       gradient.addColorStop(0, `rgba(255, 255, 255, ${actualBrightness})`);
-      gradient.addColorStop(0.1, `rgba(200, 255, 240, ${actualBrightness * 0.8})`);
-      gradient.addColorStop(0.5, `rgba(150, 255, 230, ${actualBrightness * 0.3})`);
-      gradient.addColorStop(1, 'rgba(100, 200, 180, 0)');
+      gradient.addColorStop(0.1, `rgba(255, 220, 150, ${actualBrightness * 0.8})`);
+      gradient.addColorStop(0.5, `rgba(255, 200, 87, ${actualBrightness * 0.3})`);
+      gradient.addColorStop(1, 'rgba(255, 180, 50, 0)');
 
       ctx.fillStyle = gradient;
       ctx.beginPath();
@@ -186,9 +186,9 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
 
       const fadeOpacity = 1 - star.life / 100;
       tailGradient.addColorStop(0, `rgba(255, 255, 255, ${star.opacity * fadeOpacity})`);
-      tailGradient.addColorStop(0.1, `rgba(200, 255, 240, ${star.opacity * 0.8 * fadeOpacity})`);
-      tailGradient.addColorStop(0.5, `rgba(150, 255, 230, ${star.opacity * 0.3 * fadeOpacity})`);
-      tailGradient.addColorStop(1, 'rgba(100, 200, 180, 0)');
+      tailGradient.addColorStop(0.1, `rgba(255, 220, 150, ${star.opacity * 0.8 * fadeOpacity})`);
+      tailGradient.addColorStop(0.5, `rgba(255, 200, 87, ${star.opacity * 0.3 * fadeOpacity})`);
+      tailGradient.addColorStop(1, 'rgba(255, 180, 50, 0)');
 
       ctx.strokeStyle = tailGradient;
       ctx.lineWidth = 2;
@@ -213,8 +213,12 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
       mouseX += (targetMouseX - mouseX) * 0.05;
       mouseY += (targetMouseY - mouseY) * 0.05;
 
-      // Pure black background instead of blue gradient
-      ctx.fillStyle = '#000000';
+      // Darker purple-blue gradient background matching body
+      const bgGradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      bgGradient.addColorStop(0, 'rgba(12, 12, 20, 1)');
+      bgGradient.addColorStop(0.5, 'rgba(18, 12, 25, 1)');
+      bgGradient.addColorStop(1, 'rgba(15, 12, 22, 1)');
+      ctx.fillStyle = bgGradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw nebulae (background layer)
