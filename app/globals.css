@@ -7,26 +7,26 @@
     --background: 220 13% 5%;           /* Very dark slate/black */
     --foreground: 160 84% 95%;          /* Light cyan-white */
 
-    --card: 220 13% 8%;
+    --card: 220 13% 12%;                /* Increased from 8% to 12% for better visibility */
     --card-foreground: 160 84% 95%;
 
-    --popover: 220 13% 8%;
+    --popover: 220 13% 12%;             /* Increased from 8% to 12% for better visibility */
     --popover-foreground: 160 84% 95%;
 
     --primary: 160 84% 39%;             /* Terminal green/cyan */
     --primary-foreground: 220 13% 5%;
 
-    --secondary: 173 80% 40%;           /* Teal accent */
-    --secondary-foreground: 220 13% 5%;
+    --secondary: 217 91% 60%;           /* Vivid blue - more distinct from cyan */
+    --secondary-foreground: 0 0% 100%;  /* Pure white for better contrast */
 
-    --muted: 220 13% 15%;
-    --muted-foreground: 160 20% 70%;
+    --muted: 220 13% 20%;               /* Increased from 18% to 20% */
+    --muted-foreground: 160 20% 80%;    /* Increased from 75% to 80% for better readability */
 
-    --accent: 160 84% 39%;
-    --accent-foreground: 220 13% 5%;
+    --accent: 160 60% 20%;              /* Darkened from 45% for better contrast as background */
+    --accent-foreground: 160 84% 95%;   /* Changed to light for better contrast */
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 160 84% 95%;
+    --destructive: 0 84% 60%;           /* Vibrant red - more saturated */
+    --destructive-foreground: 0 0% 100%; /* Pure white for better contrast */
 
     --border: 160 60% 25%;              /* Cyan border */
     --input: 160 60% 25%;
@@ -40,6 +40,9 @@
   * {
     border-color: hsl(var(--border));
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
@@ -52,23 +55,23 @@
 @layer utilities {
   /* Terminal-inspired glassmorphism */
   .glass {
-    background: rgba(16, 185, 129, 0.03);
+    background: rgba(16, 185, 129, 0.08);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border) / 0.3);
+    border: 1px solid hsl(var(--border) / 0.5);
     box-shadow:
-      0 0 20px rgba(16, 185, 129, 0.1),
-      inset 0 0 20px rgba(16, 185, 129, 0.02);
+      0 0 20px rgba(16, 185, 129, 0.15),
+      inset 0 0 20px rgba(16, 185, 129, 0.05);
   }
 
   .glass-dark {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border) / 0.2);
+    border: 1px solid hsl(var(--border) / 0.4);
     box-shadow:
-      0 0 15px rgba(6, 182, 212, 0.1),
-      inset 0 0 15px rgba(6, 182, 212, 0.02);
+      0 0 15px rgba(6, 182, 212, 0.15),
+      inset 0 0 15px rgba(6, 182, 212, 0.05);
   }
 
   /* Terminal glow effect */
