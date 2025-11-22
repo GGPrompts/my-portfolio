@@ -24,6 +24,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (savedTheme && themes.includes(savedTheme)) {
       setThemeState(savedTheme)
       document.documentElement.setAttribute('data-theme', savedTheme)
+    } else {
+      // Set default theme if no saved theme
+      document.documentElement.setAttribute('data-theme', 'amber')
     }
   }, [])
 
