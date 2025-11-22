@@ -29,6 +29,8 @@ CRITICAL RULES:
 - DO NOT edit anything in /app/templates/ (use as reference only)
 - Use data from /lib/projects-data.ts
 - Each page needs: hero, features, tech stack, screenshots, GitHub link
+- 🎨 USE CSS VARIABLES ONLY: text-primary, bg-background, border-border, etc.
+  NO hardcoded colors like #10b981 or bg-emerald-500 (breaks theme switching!)
 
 Build these 12 projects using parallel Opus agents (6 at a time):
 
@@ -91,6 +93,8 @@ Build a comprehensive projects gallery page at /app/projects/page.tsx
 CRITICAL RULES:
 - DO NOT edit /app/templates/
 - Reference /app/templates/search-results/ for inspiration only
+- 🎨 USE CSS VARIABLES ONLY for colors (text-primary, bg-card, border-border, etc.)
+  NO hardcoded colors - theme system has 4 themes that must work!
 
 Features to implement:
 1. Masonry grid layout displaying all 45+ projects
@@ -236,6 +240,19 @@ git push origin master
 - Screenshots: `/public/screenshots/[project-name]/`
 - New components: `/components/`
 - New data: `/lib/`
+
+**🎨 Theme System Rules:**
+- **ALWAYS use CSS variables**: `text-primary`, `bg-background`, `border-border`
+- **NEVER hardcode colors**: No `#10b981`, `bg-emerald-500`, etc.
+- **Why**: Portfolio has 4 themes (terminal, amber, carbon, light) that switch via CSS variables
+- **Example**:
+  ```tsx
+  // ✅ CORRECT
+  <div className="bg-card text-foreground border border-primary">
+
+  // ❌ WRONG
+  <div className="bg-slate-900 text-white border border-emerald-500">
+  ```
 
 **Available Templates for Reference**:
 - Case Study: `/app/templates/case-study/`

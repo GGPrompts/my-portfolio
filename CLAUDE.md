@@ -7,7 +7,9 @@
 - Session tracking instructions
 - What to build and where to build it
 
-**KEY RULE:** Templates are in `/app/templates/` - **DO NOT EDIT THEM**. Build new pages in `/app/projects/`, `/app/about/`, etc.
+**KEY RULES:**
+1. **Templates are in `/app/templates/`** - **DO NOT EDIT THEM**. Build new pages in `/app/projects/`, `/app/about/`, etc.
+2. **USE CSS VARIABLES ONLY** - Theme system requires `hsl(var(--primary))` style colors. **NO HARDCODED COLORS** like `#10b981` or `bg-emerald-500`.
 
 **See Also:**
 - `CLAUDE_AI_SESSIONS.md` - Track your session branch for merging later
@@ -35,6 +37,7 @@ A modern, professional portfolio website showcasing web applications and Termina
 - **3D Depth**: Perspective transforms, hover lifts, rotation effects
 - **Professional**: Sophisticated and modern without being cartoony
 - **Performance**: Optimized images, minimal JavaScript, fast loading
+- **Theme System**: 4 themes (terminal, amber, carbon, light) that work via CSS variables - **always use CSS variables, never hardcode colors**
 
 ## Tech Stack (Verified with Context7)
 
@@ -190,6 +193,9 @@ my-portfolio/
 - **Subtle Glow**: Radial gradients with emerald/cyan at 5% opacity
 
 ### Glassmorphism Utilities (in globals.css)
+
+**IMPORTANT:** These utilities use CSS variables and adapt to all 4 themes automatically!
+
 ```css
 .glass {
   background: rgba(16, 185, 129, 0.03);
@@ -222,6 +228,31 @@ my-portfolio/
     0 0 20px rgba(16, 185, 129, 0.1);
 }
 ```
+
+### 🎨 Using CSS Variables for Theming
+
+**ALWAYS use these Tailwind classes** (they use CSS variables):
+```tsx
+// ✅ CORRECT - Uses CSS variables, works with all themes
+<div className="bg-background text-foreground">
+  <h1 className="text-primary">Title</h1>
+  <p className="text-muted-foreground">Description</p>
+  <button className="bg-primary text-primary-foreground">Click me</button>
+</div>
+
+// ❌ WRONG - Hardcoded colors, breaks theme switching
+<div className="bg-black text-white">
+  <h1 className="text-emerald-400">Title</h1>
+  <p className="text-gray-400">Description</p>
+  <button className="bg-emerald-500 text-black">Click me</button>
+</div>
+```
+
+**Available CSS variable classes:**
+- `bg-background`, `bg-foreground`, `bg-card`, `bg-popover`
+- `text-foreground`, `text-primary`, `text-secondary`, `text-muted-foreground`, `text-accent-foreground`
+- `border-border`, `border-primary`, `border-secondary`
+- Or use `hsl(var(--primary))` in custom styles
 
 ### Framer Motion Patterns
 ```tsx
@@ -378,12 +409,13 @@ All components are pre-styled with the terminal theme and ready to use.
 2. **Track your session** - Update `CLAUDE_AI_SESSIONS.md` with your branch name
 3. **Don't edit templates** - Templates are in `/app/templates/` (reference only, don't modify)
 4. **Build new pages** - Create files in `/app/projects/`, `/app/about/`, etc.
-5. **Check skills first** - Use `.claude/skills/` for guidance on Next.js, design, or images
-6. **Maintain glassmorphism aesthetic** - Always use the `.glass` utilities or Tailwind's `backdrop-blur-*`
-7. **Keep it professional** - Sophisticated, not cartoony
-8. **Performance matters** - This is a portfolio to showcase technical ability
-9. **Use Server Components** - Default to server, only go client when needed
-10. **Follow established patterns** - Check `COMPONENT_EXAMPLES.md` for code snippets
+5. **🎨 USE CSS VARIABLES FOR COLORS** - Theme system requires `hsl(var(--primary))`, `text-primary`, `bg-background`, etc. **NO hardcoded colors** like `#10b981` or `bg-emerald-500`
+6. **Check skills first** - Use `.claude/skills/` for guidance on Next.js, design, or images
+7. **Maintain glassmorphism aesthetic** - Always use the `.glass` utilities or Tailwind's `backdrop-blur-*`
+8. **Keep it professional** - Sophisticated, not cartoony
+9. **Performance matters** - This is a portfolio to showcase technical ability
+10. **Use Server Components** - Default to server, only go client when needed
+11. **Follow established patterns** - Check `COMPONENT_EXAMPLES.md` for code snippets
 
 ### Common Tasks
 - **"Create a project card component"** → Use GlassCard + Framer Motion patterns
