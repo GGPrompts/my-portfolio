@@ -222,8 +222,8 @@ function ProjectDemo({ project }: { project: Project }) {
               <div className="absolute top-0 left-0 right-0 h-8 bg-card/80 backdrop-blur-sm border-b border-border/50 flex items-center gap-2 px-4">
                 <div className="flex gap-2">
                   <div className="w-3 h-3 rounded-full bg-destructive/50" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                  <div className="w-3 h-3 rounded-full bg-primary/30" />
+                  <div className="w-3 h-3 rounded-full bg-primary/50" />
                 </div>
                 <span className="text-xs text-muted-foreground font-mono ml-4">
                   {project.name}

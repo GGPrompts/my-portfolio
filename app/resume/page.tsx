@@ -1034,9 +1034,9 @@ Fuel for building ${allProjects.length} projects...
         >
           <div className="flex items-center gap-2 mb-2 pb-2 border-b border-border">
             <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              <div className="w-3 h-3 rounded-full bg-destructive"></div>
+              <div className="w-3 h-3 rounded-full bg-primary/40"></div>
+              <div className="w-3 h-3 rounded-full bg-primary"></div>
             </div>
             <span className="text-muted-foreground text-sm">
               matt@portfolio — {allProjects.length} projects — 140+ ⭐
