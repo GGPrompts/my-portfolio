@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import GlassCard from './ui/GlassCard';
 
 export default function Hero() {
@@ -37,9 +38,11 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <button className="px-6 py-3 glass rounded-lg hover:scale-105 transition-transform border-glow hover:border-glow">
-              View Projects
-            </button>
+            <Link href="/templates">
+              <button className="px-6 py-3 glass rounded-lg hover:scale-105 transition-transform border-glow hover:border-glow">
+                View Projects
+              </button>
+            </Link>
             <button className="px-6 py-3 glass-dark rounded-lg hover:scale-105 transition-transform border-glow hover:border-glow text-foreground">
               Get in Touch
             </button>
