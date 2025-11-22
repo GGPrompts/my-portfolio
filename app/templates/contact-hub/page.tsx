@@ -46,6 +46,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Switch } from '@/components/ui/switch';
+import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
@@ -62,8 +63,8 @@ const contactMethods = [
     description: 'Get a response within 24 hours',
     primary: 'hello@example.com',
     secondary: 'support@example.com',
-    color: 'from-emerald-500/20 to-cyan-500/20',
-    glow: 'group-hover:shadow-emerald-500/20'
+    color: 'from-primary/20 to-secondary/20',
+    glow: 'group-hover:shadow-primary/20'
   },
   {
     id: 'phone',
@@ -72,8 +73,8 @@ const contactMethods = [
     description: 'Mon-Fri 9AM-6PM EST',
     primary: '+1 (555) 123-4567',
     secondary: 'WhatsApp Available',
-    color: 'from-cyan-500/20 to-blue-500/20',
-    glow: 'group-hover:shadow-cyan-500/20'
+    color: 'from-secondary/20 to-secondary/20',
+    glow: 'group-hover:shadow-secondary/20'
   },
   {
     id: 'github',
@@ -82,8 +83,8 @@ const contactMethods = [
     description: 'Check out my projects',
     primary: '@username',
     secondary: '500+ contributions',
-    color: 'from-purple-500/20 to-pink-500/20',
-    glow: 'group-hover:shadow-purple-500/20'
+    color: 'from-primary/20 to-primary/20',
+    glow: 'group-hover:shadow-primary/20'
   },
   {
     id: 'linkedin',
@@ -92,8 +93,8 @@ const contactMethods = [
     description: 'Professional network',
     primary: 'in/username',
     secondary: 'Connect with me',
-    color: 'from-blue-500/20 to-indigo-500/20',
-    glow: 'group-hover:shadow-blue-500/20'
+    color: 'from-secondary/20 to-secondary/20',
+    glow: 'group-hover:shadow-secondary/20'
   },
   {
     id: 'twitter',
@@ -102,8 +103,8 @@ const contactMethods = [
     description: 'Latest updates',
     primary: '@username',
     secondary: 'Daily insights',
-    color: 'from-sky-500/20 to-cyan-500/20',
-    glow: 'group-hover:shadow-sky-500/20'
+    color: 'from-secondary/20 to-secondary/20',
+    glow: 'group-hover:shadow-secondary/20'
   },
   {
     id: 'location',
@@ -112,8 +113,8 @@ const contactMethods = [
     description: 'Visit us in person',
     primary: 'San Francisco, CA',
     secondary: 'Available for meetings',
-    color: 'from-amber-500/20 to-orange-500/20',
-    glow: 'group-hover:shadow-amber-500/20'
+    color: 'from-primary/20 to-primary/20',
+    glow: 'group-hover:shadow-primary/20'
   }
 ];
 
@@ -214,11 +215,11 @@ export default function ContactHubTemplate() {
 
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-zinc-950 text-foreground relative overflow-hidden">
+      <div className="min-h-screen text-foreground relative overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-300" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-300" />
         </div>
 
         {/* Terminal Grid Background */}
@@ -239,28 +240,28 @@ export default function ContactHubTemplate() {
                 transition={{ duration: 0.5 }}
                 className="inline-block"
               >
-                <div className="glass rounded-2xl p-8 border border-emerald-500/20 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-cyan-500/5" />
+                <div className="glass rounded-2xl p-8 border border-primary/20 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
                   <div className="relative space-y-4">
-                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 mb-4">
-                      <MessageSquare className="w-10 h-10 text-emerald-400" />
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 mb-4">
+                      <MessageSquare className="w-10 h-10 text-primary" />
                     </div>
-                    <h1 className="text-5xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                    <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                       Contact Hub
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                       Multiple ways to connect. Choose your preferred channel and let's start a conversation.
                     </p>
                     <div className="flex items-center justify-center gap-4 pt-4">
-                      <Badge variant="outline" className="border-emerald-500/30">
+                      <Badge variant="outline" className="border-primary/30">
                         <Wifi className="w-3 h-3 mr-1" />
                         Available Now
                       </Badge>
-                      <Badge variant="outline" className="border-cyan-500/30">
+                      <Badge variant="outline" className="border-secondary/30">
                         <Clock className="w-3 h-3 mr-1" />
                         Avg. Response: 2 hours
                       </Badge>
-                      <Badge variant="outline" className="border-purple-500/30">
+                      <Badge variant="outline" className="border-primary/30">
                         <Star className="w-3 h-3 mr-1" />
                         4.9/5 Rating
                       </Badge>
@@ -288,7 +289,7 @@ export default function ContactHubTemplate() {
                     >
                       <Card className={cn(
                         "glass border-white/10 h-full group cursor-pointer transition-all duration-300",
-                        "hover:border-emerald-500/30 hover:shadow-2xl",
+                        "hover:border-primary/30 hover:shadow-2xl",
                         method.glow
                       )}>
                         <CardContent className="p-6">
@@ -301,7 +302,7 @@ export default function ContactHubTemplate() {
                           <h3 className="text-xl font-semibold mb-2">{method.title}</h3>
                           <p className="text-sm text-muted-foreground mb-4">{method.description}</p>
                           <div className="space-y-1">
-                            <p className="text-sm font-mono text-emerald-400">{method.primary}</p>
+                            <p className="text-sm font-mono text-primary">{method.primary}</p>
                             <p className="text-xs text-muted-foreground">{method.secondary}</p>
                           </div>
                         </CardContent>
@@ -316,11 +317,11 @@ export default function ContactHubTemplate() {
             <motion.section variants={itemVariants}>
               <Tabs defaultValue="form" className="space-y-6">
                 <TabsList className="grid w-full md:w-[400px] mx-auto grid-cols-2 glass">
-                  <TabsTrigger value="form" className="data-[state=active]:bg-emerald-500/20">
+                  <TabsTrigger value="form" className="data-[state=active]:bg-primary/20">
                     <Mail className="w-4 h-4 mr-2" />
                     Send Message
                   </TabsTrigger>
-                  <TabsTrigger value="calendar" className="data-[state=active]:bg-cyan-500/20">
+                  <TabsTrigger value="calendar" className="data-[state=active]:bg-secondary/20">
                     <Calendar className="w-4 h-4 mr-2" />
                     Book Meeting
                   </TabsTrigger>
@@ -331,7 +332,7 @@ export default function ContactHubTemplate() {
                   <Card className="glass border-white/10 max-w-3xl mx-auto">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2">
-                        <Send className="w-5 h-5 text-emerald-400" />
+                        <Send className="w-5 h-5 text-primary" />
                         Send Us a Message
                       </CardTitle>
                       <CardDescription>
@@ -349,7 +350,7 @@ export default function ContactHubTemplate() {
                             placeholder="John Doe"
                             value={formData.name}
                             onChange={(e) => setFormData({...formData, name: e.target.value})}
-                            className="glass-dark border-white/10 focus:border-emerald-500/50"
+                            className="glass-dark border-white/10 focus:border-primary/50"
                           />
                         </div>
                         <div className="space-y-2">
@@ -362,7 +363,7 @@ export default function ContactHubTemplate() {
                             placeholder="john@example.com"
                             value={formData.email}
                             onChange={(e) => setFormData({...formData, email: e.target.value})}
-                            className="glass-dark border-white/10 focus:border-emerald-500/50"
+                            className="glass-dark border-white/10 focus:border-primary/50"
                           />
                         </div>
                       </div>
@@ -375,7 +376,7 @@ export default function ContactHubTemplate() {
                             placeholder="Acme Corp"
                             value={formData.company}
                             onChange={(e) => setFormData({...formData, company: e.target.value})}
-                            className="glass-dark border-white/10 focus:border-emerald-500/50"
+                            className="glass-dark border-white/10 focus:border-primary/50"
                           />
                         </div>
                         <div className="space-y-2">
@@ -416,10 +417,10 @@ export default function ContactHubTemplate() {
                             setFormData({...formData, message: e.target.value});
                             setMessageLength(e.target.value.length);
                           }}
-                          className="glass-dark border-white/10 focus:border-emerald-500/50 resize-none"
+                          className="glass-dark border-white/10 focus:border-primary/50 resize-none"
                         />
                         {isTyping && (
-                          <div className="flex items-center gap-2 text-xs text-emerald-400">
+                          <div className="flex items-center gap-2 text-xs text-primary">
                             <motion.div
                               animate={{ opacity: [0.5, 1, 0.5] }}
                               transition={{ duration: 1, repeat: Infinity }}
@@ -433,7 +434,7 @@ export default function ContactHubTemplate() {
 
                       <div className="space-y-2">
                         <Label>Attachments</Label>
-                        <div className="glass-dark border-2 border-dashed border-white/10 rounded-lg p-8 text-center hover:border-emerald-500/30 transition-colors cursor-pointer">
+                        <div className="glass-dark border-2 border-dashed border-white/10 rounded-lg p-8 text-center hover:border-primary/30 transition-colors cursor-pointer">
                           <Upload className="w-12 h-12 mx-auto mb-3 text-muted-foreground" />
                           <p className="text-sm text-muted-foreground">
                             Drop files here or click to browse
@@ -446,12 +447,12 @@ export default function ContactHubTemplate() {
 
                       <div className="flex items-center justify-between pt-4">
                         <div className="flex items-center gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                          <CheckCircle2 className="w-4 h-4 text-primary" />
                           <span className="text-xs text-muted-foreground">
                             We'll respond within 24 hours
                           </span>
                         </div>
-                        <Button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600">
+                        <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary hover:to-secondary">
                           Send Message
                           <Send className="w-4 h-4 ml-2" />
                         </Button>
@@ -465,7 +466,7 @@ export default function ContactHubTemplate() {
                   <Card className="glass border-white/10 max-w-4xl mx-auto">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2">
-                        <Calendar className="w-5 h-5 text-cyan-400" />
+                        <Calendar className="w-5 h-5 text-secondary" />
                         Schedule a Meeting
                       </CardTitle>
                       <CardDescription>
@@ -483,10 +484,10 @@ export default function ContactHubTemplate() {
                               <div className={cn(
                                 "glass-dark border rounded-lg p-4 text-center transition-all",
                                 selectedDuration === "15"
-                                  ? "border-emerald-500/50 bg-emerald-500/10"
+                                  ? "border-primary/50 bg-primary/10"
                                   : "border-white/10 hover:border-white/20"
                               )}>
-                                <Clock className="w-5 h-5 mx-auto mb-2 text-emerald-400" />
+                                <Clock className="w-5 h-5 mx-auto mb-2 text-primary" />
                                 <p className="font-semibold">15 min</p>
                                 <p className="text-xs text-muted-foreground">Quick chat</p>
                               </div>
@@ -496,10 +497,10 @@ export default function ContactHubTemplate() {
                               <div className={cn(
                                 "glass-dark border rounded-lg p-4 text-center transition-all",
                                 selectedDuration === "30"
-                                  ? "border-emerald-500/50 bg-emerald-500/10"
+                                  ? "border-primary/50 bg-primary/10"
                                   : "border-white/10 hover:border-white/20"
                               )}>
-                                <Video className="w-5 h-5 mx-auto mb-2 text-cyan-400" />
+                                <Video className="w-5 h-5 mx-auto mb-2 text-secondary" />
                                 <p className="font-semibold">30 min</p>
                                 <p className="text-xs text-muted-foreground">Standard meeting</p>
                               </div>
@@ -509,10 +510,10 @@ export default function ContactHubTemplate() {
                               <div className={cn(
                                 "glass-dark border rounded-lg p-4 text-center transition-all",
                                 selectedDuration === "60"
-                                  ? "border-emerald-500/50 bg-emerald-500/10"
+                                  ? "border-primary/50 bg-primary/10"
                                   : "border-white/10 hover:border-white/20"
                               )}>
-                                <Users className="w-5 h-5 mx-auto mb-2 text-purple-400" />
+                                <Users className="w-5 h-5 mx-auto mb-2 text-primary" />
                                 <p className="font-semibold">60 min</p>
                                 <p className="text-xs text-muted-foreground">Deep dive</p>
                               </div>
@@ -539,9 +540,9 @@ export default function ContactHubTemplate() {
                                 onClick={() => setSelectedDate(`2025-01-${i + 1}`)}
                                 className={cn(
                                   "aspect-square rounded-lg flex items-center justify-center text-sm transition-all",
-                                  "hover:bg-white/10 hover:border-emerald-500/30",
+                                  "hover:bg-white/10 hover:border-primary/30",
                                   selectedDate === `2025-01-${i + 1}`
-                                    ? "bg-emerald-500/20 border border-emerald-500/50 text-emerald-400"
+                                    ? "bg-primary/20 border border-primary/50 text-primary"
                                     : "glass-dark border border-white/5"
                                 )}
                                 disabled={i % 7 === 0 || i % 7 === 6} // Disable weekends
@@ -576,9 +577,9 @@ export default function ContactHubTemplate() {
                               onClick={() => setSelectedTime(time)}
                               className={cn(
                                 "px-4 py-2 rounded-lg text-sm transition-all",
-                                "hover:bg-white/10 hover:border-emerald-500/30",
+                                "hover:bg-white/10 hover:border-primary/30",
                                 selectedTime === time
-                                  ? "bg-emerald-500/20 border border-emerald-500/50 text-emerald-400"
+                                  ? "bg-primary/20 border border-primary/50 text-primary"
                                   : "glass-dark border border-white/10"
                               )}
                             >
@@ -593,9 +594,9 @@ export default function ContactHubTemplate() {
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          className="glass rounded-lg p-4 border border-emerald-500/30 bg-emerald-500/5"
+                          className="glass rounded-lg p-4 border border-primary/30 bg-primary/5"
                         >
-                          <h4 className="font-semibold mb-2 text-emerald-400">Booking Summary</h4>
+                          <h4 className="font-semibold mb-2 text-primary">Booking Summary</h4>
                           <div className="space-y-1 text-sm">
                             <p>Date: {selectedDate}</p>
                             <p>Time: {selectedTime} EST</p>
@@ -607,13 +608,13 @@ export default function ContactHubTemplate() {
 
                       <div className="flex items-center justify-between pt-4">
                         <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4 text-cyan-400" />
+                          <Calendar className="w-4 h-4 text-secondary" />
                           <span className="text-xs text-muted-foreground">
                             Calendar invite will be sent
                           </span>
                         </div>
                         <Button
-                          className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
+                          className="bg-gradient-to-r from-secondary to-secondary hover:from-secondary hover:to-secondary"
                           disabled={!selectedDate || !selectedTime}
                         >
                           Book Meeting
@@ -632,7 +633,7 @@ export default function ContactHubTemplate() {
               <Card className="glass border-white/10">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-emerald-400" />
+                    <Clock className="w-5 h-5 text-primary" />
                     Response Time Expectations
                   </CardTitle>
                   <CardDescription>
@@ -653,14 +654,14 @@ export default function ContactHubTemplate() {
                             className={cn(
                               "border",
                               item.priority === 'Critical' && "border-red-500/30 text-red-400",
-                              item.priority === 'High' && "border-amber-500/30 text-amber-400",
-                              item.priority === 'Medium' && "border-cyan-500/30 text-cyan-400",
+                              item.priority === 'High' && "border-primary/30 text-primary",
+                              item.priority === 'Medium' && "border-secondary/30 text-secondary",
                               item.priority === 'Low' && "border-gray-500/30 text-gray-400"
                             )}
                           >
                             {item.priority}
                           </Badge>
-                          <span className="text-sm font-mono text-emerald-400">{item.time}</span>
+                          <span className="text-sm font-mono text-primary">{item.time}</span>
                         </div>
                       </div>
                     ))}
@@ -672,7 +673,7 @@ export default function ContactHubTemplate() {
               <Card className="glass border-white/10">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Building className="w-5 h-5 text-cyan-400" />
+                    <Building className="w-5 h-5 text-secondary" />
                     Office Hours & Availability
                   </CardTitle>
                   <CardDescription>
@@ -683,7 +684,7 @@ export default function ContactHubTemplate() {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="font-medium">Monday - Friday</span>
-                      <span className="text-sm font-mono text-emerald-400">9:00 AM - 6:00 PM EST</span>
+                      <span className="text-sm font-mono text-primary">9:00 AM - 6:00 PM EST</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="font-medium">Saturday</span>
@@ -715,10 +716,10 @@ export default function ContactHubTemplate() {
                     </div>
                   </div>
 
-                  <div className="glass-dark rounded-lg p-3 border border-emerald-500/30">
+                  <div className="glass-dark rounded-lg p-3 border border-primary/30">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                      <span className="text-sm text-emerald-400">Currently Open</span>
+                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                      <span className="text-sm text-primary">Currently Open</span>
                     </div>
                   </div>
                 </CardContent>
@@ -737,9 +738,9 @@ export default function ContactHubTemplate() {
                   <Accordion type="single" collapsible className="space-y-4">
                     {faqItems.map((item) => (
                       <AccordionItem key={item.id} value={item.id} className="border-white/10">
-                        <AccordionTrigger className="hover:no-underline hover:text-emerald-400 transition-colors">
+                        <AccordionTrigger className="hover:no-underline hover:text-primary transition-colors">
                           <div className="flex items-center gap-3 text-left">
-                            <HelpCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                            <HelpCircle className="w-5 h-5 text-secondary flex-shrink-0" />
                             {item.question}
                           </div>
                         </AccordionTrigger>
@@ -759,7 +760,7 @@ export default function ContactHubTemplate() {
               <Card className="glass border-white/10">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Bell className="w-5 h-5 text-purple-400" />
+                    <Bell className="w-5 h-5 text-primary" />
                     Newsletter Subscription
                   </CardTitle>
                   <CardDescription>
@@ -775,7 +776,7 @@ export default function ContactHubTemplate() {
                       placeholder="your@email.com"
                       value={newsletter.email}
                       onChange={(e) => setNewsletter({...newsletter, email: e.target.value})}
-                      className="glass-dark border-white/10 focus:border-purple-500/50"
+                      className="glass-dark border-white/10 focus:border-primary/50"
                     />
                   </div>
 
@@ -804,7 +805,7 @@ export default function ContactHubTemplate() {
                     </Label>
                   </div>
 
-                  <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
+                  <Button className="w-full bg-gradient-to-r from-primary to-primary hover:from-primary hover:to-primary">
                     Subscribe
                     <Sparkles className="w-4 h-4 ml-2" />
                   </Button>
@@ -869,11 +870,11 @@ export default function ContactHubTemplate() {
               exit={{ scale: 0, opacity: 0 }}
               className="fixed bottom-4 right-4 z-50 w-80"
             >
-              <Card className="glass border-emerald-500/30 shadow-2xl">
+              <Card className="glass border-primary/30 shadow-2xl">
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                       <CardTitle className="text-base">Live Chat</CardTitle>
                     </div>
                     <Button
@@ -888,7 +889,7 @@ export default function ContactHubTemplate() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="glass-dark rounded-lg p-3 text-sm">
-                    <p className="text-emerald-400">Support Agent</p>
+                    <p className="text-primary">Support Agent</p>
                     <p className="text-muted-foreground">Hi! How can I help you today?</p>
                   </div>
                   <div className="flex gap-2">
@@ -896,7 +897,7 @@ export default function ContactHubTemplate() {
                       placeholder="Type your message..."
                       className="glass-dark border-white/10 text-sm"
                     />
-                    <Button size="sm" className="bg-emerald-500 hover:bg-emerald-600">
+                    <Button size="sm" className="bg-primary hover:bg-primary">
                       <Send className="w-3 h-3" />
                     </Button>
                   </div>
@@ -910,7 +911,7 @@ export default function ContactHubTemplate() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setShowChat(true)}
-              className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 shadow-2xl flex items-center justify-center border border-white/20 hover:shadow-emerald-500/30 transition-shadow"
+              className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary shadow-2xl flex items-center justify-center border border-white/20 hover:shadow-primary/30 transition-shadow"
             >
               <MessageCircle className="w-6 h-6 text-white" />
             </motion.button>

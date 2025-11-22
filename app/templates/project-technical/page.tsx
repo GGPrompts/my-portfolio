@@ -254,7 +254,7 @@ export default function ProjectTechnicalPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black relative">
+    <main className="min-h-screen relative">
       <SpaceBackground speed={0.3} opacity={0.8} />
       <ScrollProgress className="top-0 z-50" />
 
@@ -318,7 +318,7 @@ export default function ProjectTechnicalPage() {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-mono font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">
+          <h1 className="text-5xl md:text-6xl font-mono font-bold mb-4 bg-gradient-to-r from-primary via-primary to-secondary text-transparent bg-clip-text terminal-glow">
             {projectData.title}
           </h1>
 
@@ -360,7 +360,7 @@ export default function ProjectTechnicalPage() {
               <Tooltip>
                 <TooltipTrigger>
                   <div className="flex items-center gap-2 px-4 py-2 glass rounded-lg">
-                    <Gauge className="h-4 w-4 text-emerald-500" />
+                    <Gauge className="h-4 w-4 text-primary" />
                     <span className="font-mono text-sm">{projectData.performance.fps} FPS</span>
                   </div>
                 </TooltipTrigger>
@@ -372,7 +372,7 @@ export default function ProjectTechnicalPage() {
               <Tooltip>
                 <TooltipTrigger>
                   <div className="flex items-center gap-2 px-4 py-2 glass rounded-lg">
-                    <Zap className="h-4 w-4 text-cyan-500" />
+                    <Zap className="h-4 w-4 text-secondary" />
                     <span className="font-mono text-sm">{projectData.performance.renderTime}ms</span>
                   </div>
                 </TooltipTrigger>
@@ -391,7 +391,7 @@ export default function ProjectTechnicalPage() {
           className="mb-16"
         >
           <Card className="glass-dark border-glow overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-transparent to-cyan-500/5" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -416,7 +416,7 @@ export default function ProjectTechnicalPage() {
             <CardContent>
               <div className="relative">
                 <pre className="p-4 bg-black/50 rounded-lg border border-border/50 overflow-x-auto">
-                  <code className="text-sm font-mono text-emerald-400">
+                  <code className="text-sm font-mono text-primary">
                     {projectData.codeExamples.quickStart}
                   </code>
                 </pre>
@@ -425,7 +425,7 @@ export default function ProjectTechnicalPage() {
                   className="absolute top-2 right-2 p-2 glass rounded-lg hover:scale-110 transition-transform"
                 >
                   {copiedCode === 'quickstart' ? (
-                    <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                   ) : (
                     <Copy className="h-4 w-4 text-muted-foreground" />
                   )}
@@ -453,7 +453,7 @@ export default function ProjectTechnicalPage() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             System Architecture
           </h2>
 
@@ -560,7 +560,7 @@ export default function ProjectTechnicalPage() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             Performance Metrics
           </h2>
 
@@ -571,12 +571,12 @@ export default function ProjectTechnicalPage() {
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
                   <CardTitle className="font-mono text-lg">Render Speed</CardTitle>
-                  <Activity className="h-5 w-5 text-emerald-500" />
+                  <Activity className="h-5 w-5 text-primary" />
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <div className="text-3xl font-mono font-bold text-emerald-400">
+                  <div className="text-3xl font-mono font-bold text-primary">
                     {projectData.performance.fps} FPS
                   </div>
                   <Progress value={100} className="h-2" />
@@ -590,12 +590,12 @@ export default function ProjectTechnicalPage() {
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
                   <CardTitle className="font-mono text-lg">Memory Usage</CardTitle>
-                  <Database className="h-5 w-5 text-cyan-500" />
+                  <Database className="h-5 w-5 text-secondary" />
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <div className="text-3xl font-mono font-bold text-cyan-400">
+                  <div className="text-3xl font-mono font-bold text-secondary">
                     {projectData.performance.memoryUsage} MB
                   </div>
                   <Progress value={projectData.performance.memoryUsage} className="h-2" />
@@ -609,12 +609,12 @@ export default function ProjectTechnicalPage() {
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
                   <CardTitle className="font-mono text-lg">Bundle Size</CardTitle>
-                  <Package className="h-5 w-5 text-teal-500" />
+                  <Package className="h-5 w-5 text-primary" />
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <div className="text-3xl font-mono font-bold text-teal-400">
+                  <div className="text-3xl font-mono font-bold text-primary">
                     {projectData.performance.bundleSize} KB
                   </div>
                   <Progress value={30} className="h-2" />
@@ -661,7 +661,7 @@ export default function ProjectTechnicalPage() {
                       return (
                         <TableRow key={benchmark.name}>
                           <TableCell className="font-mono">{benchmark.name}</TableCell>
-                          <TableCell className="text-right font-mono font-bold text-emerald-400">
+                          <TableCell className="text-right font-mono font-bold text-primary">
                             {benchmark.value} {benchmark.unit}
                           </TableCell>
                           <TableCell className="text-right font-mono text-muted-foreground">
@@ -669,7 +669,7 @@ export default function ProjectTechnicalPage() {
                           </TableCell>
                           <TableCell className="text-right font-mono">
                             {benchmark.better ? (
-                              <span className="text-emerald-500">
+                              <span className="text-primary">
                                 {improvement > 0 ? `+${improvement}%` : `${Math.abs(improvement)}%`}
                               </span>
                             ) : (
@@ -678,7 +678,7 @@ export default function ProjectTechnicalPage() {
                           </TableCell>
                           <TableCell>
                             {benchmark.better ? (
-                              <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                              <CheckCircle2 className="h-4 w-4 text-primary" />
                             ) : (
                               <XCircle className="h-4 w-4 text-red-500" />
                             )}
@@ -700,7 +700,7 @@ export default function ProjectTechnicalPage() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             API Documentation
           </h2>
 
@@ -752,7 +752,7 @@ export default function ProjectTechnicalPage() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             Code Examples
           </h2>
 
@@ -773,7 +773,7 @@ export default function ProjectTechnicalPage() {
                   <div className="relative">
                     <ScrollArea className="h-96 w-full rounded-lg">
                       <pre className="p-4 bg-black/50 rounded-lg border border-border/50">
-                        <code className="text-sm font-mono text-emerald-400">
+                        <code className="text-sm font-mono text-primary">
                           {projectData.codeExamples.basicUsage}
                         </code>
                       </pre>
@@ -783,7 +783,7 @@ export default function ProjectTechnicalPage() {
                       className="absolute top-2 right-2 p-2 glass rounded-lg hover:scale-110 transition-transform"
                     >
                       {copiedCode === 'basic' ? (
-                        <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                        <CheckCircle2 className="h-4 w-4 text-primary" />
                       ) : (
                         <Copy className="h-4 w-4 text-muted-foreground" />
                       )}
@@ -803,7 +803,7 @@ export default function ProjectTechnicalPage() {
                   <div className="relative">
                     <ScrollArea className="h-96 w-full rounded-lg">
                       <pre className="p-4 bg-black/50 rounded-lg border border-border/50">
-                        <code className="text-sm font-mono text-emerald-400">
+                        <code className="text-sm font-mono text-primary">
                           {projectData.codeExamples.advancedFeature}
                         </code>
                       </pre>
@@ -813,7 +813,7 @@ export default function ProjectTechnicalPage() {
                       className="absolute top-2 right-2 p-2 glass rounded-lg hover:scale-110 transition-transform"
                     >
                       {copiedCode === 'advanced' ? (
-                        <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                        <CheckCircle2 className="h-4 w-4 text-primary" />
                       ) : (
                         <Copy className="h-4 w-4 text-muted-foreground" />
                       )}
@@ -833,7 +833,7 @@ export default function ProjectTechnicalPage() {
                   <div className="relative">
                     <ScrollArea className="h-96 w-full rounded-lg">
                       <pre className="p-4 bg-black/50 rounded-lg border border-border/50">
-                        <code className="text-sm font-mono text-emerald-400">
+                        <code className="text-sm font-mono text-primary">
                           {projectData.codeExamples.testingExample}
                         </code>
                       </pre>
@@ -843,7 +843,7 @@ export default function ProjectTechnicalPage() {
                       className="absolute top-2 right-2 p-2 glass rounded-lg hover:scale-110 transition-transform"
                     >
                       {copiedCode === 'testing' ? (
-                        <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                        <CheckCircle2 className="h-4 w-4 text-primary" />
                       ) : (
                         <Copy className="h-4 w-4 text-muted-foreground" />
                       )}
@@ -862,7 +862,7 @@ export default function ProjectTechnicalPage() {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             Technical Decisions & Trade-offs
           </h2>
 
@@ -939,7 +939,7 @@ export default function ProjectTechnicalPage() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             Dependencies & Requirements
           </h2>
 
@@ -1001,7 +1001,7 @@ export default function ProjectTechnicalPage() {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             Performance Optimizations
           </h2>
 
@@ -1017,7 +1017,7 @@ export default function ProjectTechnicalPage() {
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <CardTitle className="font-mono text-lg">{technique.name}</CardTitle>
-                      <TrendingUp className="h-5 w-5 text-emerald-500" />
+                      <TrendingUp className="h-5 w-5 text-primary" />
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -1025,8 +1025,8 @@ export default function ProjectTechnicalPage() {
                       {technique.description}
                     </p>
                     <div className="flex items-center gap-2">
-                      <Shield className="h-4 w-4 text-emerald-500" />
-                      <span className="text-sm font-mono text-emerald-400">
+                      <Shield className="h-4 w-4 text-primary" />
+                      <span className="text-sm font-mono text-primary">
                         {technique.impact}
                       </span>
                     </div>
@@ -1045,7 +1045,7 @@ export default function ProjectTechnicalPage() {
           transition={{ duration: 0.8, delay: 1.0 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             Build & Deployment
           </h2>
 
@@ -1067,7 +1067,7 @@ export default function ProjectTechnicalPage() {
                 <TabsContent value="docker">
                   <div className="space-y-4">
                     <div className="p-4 bg-black/50 rounded-lg border border-border/50">
-                      <code className="text-sm font-mono text-emerald-400">
+                      <code className="text-sm font-mono text-primary">
                         {`# Build Docker image
 docker build -t neural-terminal:latest .
 
@@ -1078,7 +1078,7 @@ docker run --gpus all -p 8080:8080 neural-terminal:latest
 docker-compose up -d`}
                       </code>
                     </div>
-                    <Alert className="border-cyan-500/50 bg-cyan-500/5">
+                    <Alert className="border-secondary/50 bg-secondary/5">
                       <AlertTitle className="font-mono">GPU Support</AlertTitle>
                       <AlertDescription>
                         Requires NVIDIA Container Toolkit for GPU acceleration
@@ -1090,7 +1090,7 @@ docker-compose up -d`}
                 <TabsContent value="binary">
                   <div className="space-y-4">
                     <div className="p-4 bg-black/50 rounded-lg border border-border/50">
-                      <code className="text-sm font-mono text-emerald-400">
+                      <code className="text-sm font-mono text-primary">
                         {`# Download latest release
 curl -L https://github.com/user/neural-terminal/releases/latest/download/neural-terminal-linux-x64.tar.gz | tar xz
 
@@ -1104,7 +1104,7 @@ curl -L https://github.com/user/neural-terminal/releases/latest/download/neural-
                 <TabsContent value="source">
                   <div className="space-y-4">
                     <div className="p-4 bg-black/50 rounded-lg border border-border/50">
-                      <code className="text-sm font-mono text-emerald-400">
+                      <code className="text-sm font-mono text-primary">
                         {`# Build from source with optimizations
 cargo build --release --features gpu,simd
 

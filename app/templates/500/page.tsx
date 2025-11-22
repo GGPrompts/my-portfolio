@@ -169,19 +169,34 @@ export default function ServerError() {
   const startReboot = () => {
     setRebootProgress(0);
     setCommandHistory(prev => [...prev, '> Initiating emergency reboot sequence...']);
+  };
+
+  // Reboot progress effect
+  useEffect(() => {
+    if (rebootProgress === null || rebootProgress >= 100) return;
 
     const interval = setInterval(() => {
       setRebootProgress(prev => {
         if (prev === null || prev >= 100) {
-          clearInterval(interval);
-          setCommandHistory(prev => [...prev, '> Reboot complete. Redirecting to home...']);
-          setTimeout(() => router.push('/'), 1000);
           return 100;
         }
         return prev + 10;
       });
     }, 300);
-  };
+
+    return () => clearInterval(interval);
+  }, [rebootProgress]);
+
+  // Handle navigation when reboot completes
+  useEffect(() => {
+    if (rebootProgress === 100) {
+      setCommandHistory(prev => [...prev, '> Reboot complete. Redirecting to home...']);
+      const timeout = setTimeout(() => {
+        router.push('/');
+      }, 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [rebootProgress, router]);
 
   const showKernelLogs = () => {
     kernelLogs.forEach(log => {
@@ -227,7 +242,7 @@ export default function ServerError() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-red-500 relative overflow-hidden">
+    <div className="min-h-screen text-red-500 relative overflow-hidden">
       {/* Scanlines Effect */}
       <div
         className="absolute inset-0 pointer-events-none opacity-10"

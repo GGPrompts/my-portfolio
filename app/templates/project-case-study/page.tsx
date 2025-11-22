@@ -168,7 +168,7 @@ export default function ProjectCaseStudy() {
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-black relative">
+    <main className="min-h-screen relative">
       <SpaceBackground speed={0.3} opacity={0.5} />
       <ScrollProgress className="top-0 z-50" />
 
@@ -195,12 +195,12 @@ export default function ProjectCaseStudy() {
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div className="space-y-4">
                 <div className="flex items-center gap-3 flex-wrap">
-                  <h1 className="text-5xl md:text-6xl font-mono font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">
+                  <h1 className="text-5xl md:text-6xl font-mono font-bold bg-gradient-to-r from-primary via-primary to-secondary text-transparent bg-clip-text terminal-glow">
                     {projectData.title}
                   </h1>
                   <Badge className="font-mono" variant="outline">{projectData.status}</Badge>
                   {projectData.featured && (
-                    <Badge className="font-mono bg-gradient-to-r from-emerald-500 to-cyan-500 text-white border-0">
+                    <Badge className="font-mono bg-gradient-to-r from-primary to-secondary text-white border-0">
                       <Star className="h-3 w-3 mr-1" />
                       Featured
                     </Badge>
@@ -273,15 +273,15 @@ export default function ProjectCaseStudy() {
                       <h3 className="font-mono text-lg text-primary">Key Achievements</h3>
                       <ul className="space-y-2">
                         <li className="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-emerald-500 mt-0.5" />
+                          <CheckCircle2 className="h-5 w-5 text-primary mt-0.5" />
                           <span>Built a fully functional real-time chat system in the terminal</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-emerald-500 mt-0.5" />
+                          <CheckCircle2 className="h-5 w-5 text-primary mt-0.5" />
                           <span>Achieved sub-100ms message delivery latency</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-emerald-500 mt-0.5" />
+                          <CheckCircle2 className="h-5 w-5 text-primary mt-0.5" />
                           <span>Implemented custom UI components from scratch</span>
                         </li>
                       </ul>
@@ -432,7 +432,7 @@ export default function ProjectCaseStudy() {
                             </div>
                             <div>
                               <p className="text-sm text-muted-foreground mb-1">Impact</p>
-                              <p className="font-mono text-emerald-500">{item.impact}</p>
+                              <p className="font-mono text-primary">{item.impact}</p>
                             </div>
                           </div>
                         </CardContent>
@@ -461,7 +461,7 @@ export default function ProjectCaseStudy() {
                             <div className="flex items-center justify-between">
                               <CardTitle className="font-mono text-lg">{feature.title}</CardTitle>
                               {feature.status === 'completed' && (
-                                <CheckCircle2 className="h-5 w-5 text-emerald-500" />
+                                <CheckCircle2 className="h-5 w-5 text-primary" />
                               )}
                               {feature.status === 'in-progress' && (
                                 <div className="flex items-center gap-1">
@@ -548,7 +548,7 @@ export default function ProjectCaseStudy() {
                               <div className="relative">
                                 <div className={`h-10 w-10 rounded-full flex items-center justify-center ${
                                   item.type === 'milestone' ? 'bg-primary' :
-                                  item.type === 'release' ? 'bg-emerald-500' :
+                                  item.type === 'release' ? 'bg-primary' :
                                   'bg-secondary'
                                 }`}>
                                   {item.type === 'milestone' && <Zap className="h-5 w-5 text-primary-foreground" />}
@@ -580,7 +580,7 @@ export default function ProjectCaseStudy() {
 
           {/* Testimonials */}
           <section className="mt-16 space-y-8">
-            <h2 className="text-3xl font-mono font-bold text-center bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+            <h2 className="text-3xl font-mono font-bold text-center bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
               What People Are Saying
             </h2>
             <div className="grid md:grid-cols-2 gap-6">

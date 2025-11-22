@@ -171,7 +171,7 @@ export default function SearchResultsTemplate() {
     const parts = text.split(new RegExp(`(${query})`, 'gi'))
     return parts.map((part, index) =>
       part.toLowerCase() === query.toLowerCase() ? (
-        <mark key={index} className="bg-emerald-400/30 text-emerald-300 rounded-sm px-0.5">
+        <mark key={index} className="bg-primary/30 text-primary rounded-sm px-0.5">
           {part}
         </mark>
       ) : (
@@ -188,24 +188,24 @@ export default function SearchResultsTemplate() {
       whileHover={{ scale: 1.02 }}
       className="group"
     >
-      <Card className="glass border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300">
+      <Card className="glass border-primary/20 hover:border-primary/40 transition-all duration-300">
         <CardContent className="p-4">
           <div className="flex gap-4">
             {result.thumbnail && viewMode === 'list' && (
               <img
                 src={result.thumbnail}
                 alt=""
-                className="w-24 h-16 rounded object-cover border border-emerald-500/20"
+                className="w-24 h-16 rounded object-cover border border-primary/20"
               />
             )}
             <div className="flex-1 min-w-0">
               {/* Title and URL */}
               <div className="flex items-start justify-between gap-2 mb-1">
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-semibold text-cyan-400 group-hover:text-cyan-300 transition-colors line-clamp-1">
+                  <h3 className="text-lg font-semibold text-secondary group-hover:text-secondary transition-colors line-clamp-1">
                     {highlightMatch(result.title, query)}
                   </h3>
-                  <div className="flex items-center gap-2 text-xs text-emerald-400/60 mt-0.5">
+                  <div className="flex items-center gap-2 text-xs text-primary/60 mt-0.5">
                     <Link2 className="w-3 h-3" />
                     <span className="truncate">{result.url}</span>
                   </div>
@@ -216,21 +216,21 @@ export default function SearchResultsTemplate() {
                       <MoreVertical className="w-4 h-4" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="glass-dark border-emerald-500/20">
-                    <DropdownMenuItem className="text-cyan-400">
+                  <DropdownMenuContent align="end" className="glass-dark border-primary/20">
+                    <DropdownMenuItem className="text-secondary">
                       <Eye className="w-4 h-4 mr-2" /> Preview
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="text-cyan-400">
+                    <DropdownMenuItem className="text-secondary">
                       <ExternalLink className="w-4 h-4 mr-2" /> Open in new tab
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="text-cyan-400">
+                    <DropdownMenuItem className="text-secondary">
                       <Copy className="w-4 h-4 mr-2" /> Copy link
                     </DropdownMenuItem>
-                    <DropdownMenuSeparator className="bg-emerald-500/20" />
-                    <DropdownMenuItem className="text-cyan-400">
+                    <DropdownMenuSeparator className="bg-primary/20" />
+                    <DropdownMenuItem className="text-secondary">
                       <Bookmark className="w-4 h-4 mr-2" /> Save
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="text-cyan-400">
+                    <DropdownMenuItem className="text-secondary">
                       <Share2 className="w-4 h-4 mr-2" /> Share
                     </DropdownMenuItem>
                   </DropdownMenuContent>
@@ -240,7 +240,7 @@ export default function SearchResultsTemplate() {
               {/* Description */}
               <p className="text-sm text-gray-400 line-clamp-2 mb-2">
                 {result.type === 'code' ? (
-                  <code className="text-xs bg-zinc-900/50 p-1 rounded border border-emerald-500/20 block">
+                  <code className="text-xs bg-zinc-900/50 p-1 rounded border border-primary/20 block">
                     {result.description}
                   </code>
                 ) : (
@@ -250,7 +250,7 @@ export default function SearchResultsTemplate() {
 
               {/* Metadata */}
               <div className="flex flex-wrap items-center gap-3 text-xs">
-                <Badge variant="outline" className="border-emerald-500/30 text-emerald-400">
+                <Badge variant="outline" className="border-primary/30 text-primary">
                   {result.type}
                 </Badge>
                 <span className="text-gray-500 flex items-center gap-1">
@@ -287,7 +287,7 @@ export default function SearchResultsTemplate() {
               {result.tags && (
                 <div className="flex gap-1 mt-2">
                   {result.tags.map((tag: string) => (
-                    <Badge key={tag} variant="secondary" className="text-xs bg-emerald-500/10 border-emerald-500/20">
+                    <Badge key={tag} variant="secondary" className="text-xs bg-primary/10 border-primary/20">
                       {tag}
                     </Badge>
                   ))}
@@ -301,18 +301,18 @@ export default function SearchResultsTemplate() {
   )
 
   const LoadingSkeleton = () => (
-    <Card className="glass border-emerald-500/20">
+    <Card className="glass border-primary/20">
       <CardContent className="p-4">
         <div className="flex gap-4">
-          <Skeleton className="w-24 h-16 rounded bg-emerald-500/10" />
+          <Skeleton className="w-24 h-16 rounded bg-primary/10" />
           <div className="flex-1 space-y-2">
-            <Skeleton className="h-6 w-3/4 bg-emerald-500/10" />
-            <Skeleton className="h-4 w-full bg-emerald-500/10" />
-            <Skeleton className="h-4 w-2/3 bg-emerald-500/10" />
+            <Skeleton className="h-6 w-3/4 bg-primary/10" />
+            <Skeleton className="h-4 w-full bg-primary/10" />
+            <Skeleton className="h-4 w-2/3 bg-primary/10" />
             <div className="flex gap-2 mt-2">
-              <Skeleton className="h-5 w-16 bg-emerald-500/10" />
-              <Skeleton className="h-5 w-20 bg-emerald-500/10" />
-              <Skeleton className="h-5 w-24 bg-emerald-500/10" />
+              <Skeleton className="h-5 w-16 bg-primary/10" />
+              <Skeleton className="h-5 w-20 bg-primary/10" />
+              <Skeleton className="h-5 w-24 bg-primary/10" />
             </div>
           </div>
         </div>
@@ -321,7 +321,7 @@ export default function SearchResultsTemplate() {
   )
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-zinc-950">
+    <div className="min-h-screen ">
       <TooltipProvider>
         <div className="container mx-auto p-8">
           {/* Search Header */}
@@ -330,29 +330,29 @@ export default function SearchResultsTemplate() {
             animate={{ opacity: 1, y: 0 }}
             className="mb-8"
           >
-            <Card className="glass-dark border-emerald-500/20">
+            <Card className="glass-dark border-primary/20">
               <CardContent className="p-6">
                 <div className="relative">
                   <div className="flex gap-2">
                     <div className="relative flex-1">
-                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-emerald-400" />
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" />
                       <Input
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         onFocus={() => setShowSuggestions(true)}
                         onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                         placeholder="Search for anything..."
-                        className="pl-10 pr-10 h-12 bg-zinc-900/50 border-emerald-500/30 text-cyan-400 placeholder:text-gray-500 focus:border-emerald-400 text-lg"
+                        className="pl-10 pr-10 h-12 bg-zinc-900/50 border-primary/30 text-secondary placeholder:text-gray-500 focus:border-primary text-lg"
                       />
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="absolute right-1 top-1/2 -translate-y-1/2 text-emerald-400 hover:text-emerald-300"
+                        className="absolute right-1 top-1/2 -translate-y-1/2 text-primary hover:text-primary"
                       >
                         <Mic className="w-4 h-4" />
                       </Button>
                     </div>
-                    <Button className="h-12 px-6 bg-emerald-500/20 border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30">
+                    <Button className="h-12 px-6 bg-primary/20 border-primary/30 text-primary hover:bg-primary/30">
                       Search
                     </Button>
                   </div>
@@ -366,14 +366,14 @@ export default function SearchResultsTemplate() {
                         exit={{ opacity: 0, y: -10 }}
                         className="absolute top-full left-0 right-0 mt-2 z-50"
                       >
-                        <Card className="glass-dark border-emerald-500/20">
+                        <Card className="glass-dark border-primary/20">
                           <CardContent className="p-2">
                             {searchSuggestions.map((suggestion, index) => (
                               <div
                                 key={index}
-                                className="px-3 py-2 text-sm text-gray-400 hover:bg-emerald-500/10 hover:text-cyan-400 rounded cursor-pointer transition-colors flex items-center gap-2"
+                                className="px-3 py-2 text-sm text-gray-400 hover:bg-primary/10 hover:text-secondary rounded cursor-pointer transition-colors flex items-center gap-2"
                               >
-                                <Search className="w-3 h-3 text-emerald-400" />
+                                <Search className="w-3 h-3 text-primary" />
                                 {suggestion}
                               </div>
                             ))}
@@ -391,7 +391,7 @@ export default function SearchResultsTemplate() {
                       variant="outline"
                       size="sm"
                       onClick={() => setShowAdvanced(!showAdvanced)}
-                      className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+                      className="border-primary/30 text-primary hover:bg-primary/10"
                     >
                       <Settings className="w-4 h-4 mr-2" />
                       Advanced Search
@@ -400,14 +400,14 @@ export default function SearchResultsTemplate() {
                       variant="outline"
                       size="sm"
                       onClick={() => setShowHistory(!showHistory)}
-                      className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+                      className="border-primary/30 text-primary hover:bg-primary/10"
                     >
                       <History className="w-4 h-4 mr-2" />
                       Search History
                     </Button>
                   </div>
                   <div className="text-sm text-gray-500">
-                    Press <kbd className="px-2 py-0.5 bg-zinc-900 border border-emerald-500/20 rounded text-emerald-400">⌘K</kbd> to focus search
+                    Press <kbd className="px-2 py-0.5 bg-zinc-900 border border-primary/20 rounded text-primary">⌘K</kbd> to focus search
                   </div>
                 </div>
 
@@ -418,40 +418,40 @@ export default function SearchResultsTemplate() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="mt-4 pt-4 border-t border-emerald-500/20"
+                      className="mt-4 pt-4 border-t border-primary/20"
                     >
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div>
                           <Label className="text-xs text-gray-500 mb-1">Exact phrase</Label>
                           <Input
                             placeholder='"exact words"'
-                            className="h-9 bg-zinc-900/50 border-emerald-500/20 text-cyan-400 text-sm"
+                            className="h-9 bg-zinc-900/50 border-primary/20 text-secondary text-sm"
                           />
                         </div>
                         <div>
                           <Label className="text-xs text-gray-500 mb-1">Any of these</Label>
                           <Input
                             placeholder="OR searches"
-                            className="h-9 bg-zinc-900/50 border-emerald-500/20 text-cyan-400 text-sm"
+                            className="h-9 bg-zinc-900/50 border-primary/20 text-secondary text-sm"
                           />
                         </div>
                         <div>
                           <Label className="text-xs text-gray-500 mb-1">None of these</Label>
                           <Input
                             placeholder="-exclude"
-                            className="h-9 bg-zinc-900/50 border-emerald-500/20 text-cyan-400 text-sm"
+                            className="h-9 bg-zinc-900/50 border-primary/20 text-secondary text-sm"
                           />
                         </div>
                         <div>
                           <Label className="text-xs text-gray-500 mb-1">Site/Domain</Label>
                           <Input
                             placeholder="example.com"
-                            className="h-9 bg-zinc-900/50 border-emerald-500/20 text-cyan-400 text-sm"
+                            className="h-9 bg-zinc-900/50 border-primary/20 text-secondary text-sm"
                           />
                         </div>
                       </div>
                       <div className="mt-3 text-xs text-gray-500">
-                        <span className="text-emerald-400">Tips:</span> Use quotes for exact phrases, OR for alternatives, - to exclude, site: to search specific domains
+                        <span className="text-primary">Tips:</span> Use quotes for exact phrases, OR for alternatives, - to exclude, site: to search specific domains
                       </div>
                     </motion.div>
                   )}
@@ -465,14 +465,14 @@ export default function SearchResultsTemplate() {
             {/* Filters Sidebar */}
             <div className="lg:col-span-1 space-y-4">
               {/* Filter Controls */}
-              <Card className="glass border-emerald-500/20">
+              <Card className="glass border-primary/20">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-sm font-medium text-cyan-400 flex items-center justify-between">
+                  <CardTitle className="text-sm font-medium text-secondary flex items-center justify-between">
                     <span className="flex items-center gap-2">
                       <Filter className="w-4 h-4" />
                       Filters
                     </span>
-                    <Button variant="ghost" size="sm" className="h-7 text-xs text-gray-500 hover:text-cyan-400">
+                    <Button variant="ghost" size="sm" className="h-7 text-xs text-gray-500 hover:text-secondary">
                       Clear all
                     </Button>
                   </CardTitle>
@@ -484,8 +484,8 @@ export default function SearchResultsTemplate() {
                     <div className="space-y-2">
                       {['Articles (24)', 'Documentation (18)', 'Code (35)', 'Media (12)', 'Forums (8)'].map((cat) => (
                         <div key={cat} className="flex items-center space-x-2">
-                          <Checkbox className="border-emerald-500/30 data-[state=checked]:bg-emerald-500/20" />
-                          <Label className="text-sm text-gray-400 cursor-pointer hover:text-cyan-400">
+                          <Checkbox className="border-primary/30 data-[state=checked]:bg-primary/20" />
+                          <Label className="text-sm text-gray-400 cursor-pointer hover:text-secondary">
                             {cat}
                           </Label>
                         </div>
@@ -493,7 +493,7 @@ export default function SearchResultsTemplate() {
                     </div>
                   </div>
 
-                  <Separator className="bg-emerald-500/20" />
+                  <Separator className="bg-primary/20" />
 
                   {/* Date Range */}
                   <div>
@@ -501,8 +501,8 @@ export default function SearchResultsTemplate() {
                     <RadioGroup defaultValue="all">
                       {['All time', 'Past 24 hours', 'Past week', 'Past month', 'Past year'].map((range) => (
                         <div key={range} className="flex items-center space-x-2 mb-2">
-                          <RadioGroupItem value={range.toLowerCase().replace(' ', '-')} className="border-emerald-500/30" />
-                          <Label className="text-sm text-gray-400 cursor-pointer hover:text-cyan-400">
+                          <RadioGroupItem value={range.toLowerCase().replace(' ', '-')} className="border-primary/30" />
+                          <Label className="text-sm text-gray-400 cursor-pointer hover:text-secondary">
                             {range}
                           </Label>
                         </div>
@@ -510,7 +510,7 @@ export default function SearchResultsTemplate() {
                     </RadioGroup>
                   </div>
 
-                  <Separator className="bg-emerald-500/20" />
+                  <Separator className="bg-primary/20" />
 
                   {/* File Type */}
                   <Collapsible>
@@ -521,8 +521,8 @@ export default function SearchResultsTemplate() {
                     <CollapsibleContent className="mt-2 space-y-2">
                       {['PDF', 'DOC', 'TXT', 'MD', 'JSON', 'XML'].map((type) => (
                         <div key={type} className="flex items-center space-x-2">
-                          <Checkbox className="border-emerald-500/30 data-[state=checked]:bg-emerald-500/20" />
-                          <Label className="text-sm text-gray-400 cursor-pointer hover:text-cyan-400">
+                          <Checkbox className="border-primary/30 data-[state=checked]:bg-primary/20" />
+                          <Label className="text-sm text-gray-400 cursor-pointer hover:text-secondary">
                             {type}
                           </Label>
                         </div>
@@ -530,7 +530,7 @@ export default function SearchResultsTemplate() {
                     </CollapsibleContent>
                   </Collapsible>
 
-                  <Separator className="bg-emerald-500/20" />
+                  <Separator className="bg-primary/20" />
 
                   {/* Rating Filter */}
                   <div>
@@ -542,7 +542,7 @@ export default function SearchResultsTemplate() {
                         step={0.5}
                         className="flex-1"
                       />
-                      <span className="text-sm text-emerald-400 w-8">0</span>
+                      <span className="text-sm text-primary w-8">0</span>
                     </div>
                     <div className="flex gap-1 mt-2">
                       {[1,2,3,4,5].map((star) => (
@@ -561,9 +561,9 @@ export default function SearchResultsTemplate() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                   >
-                    <Card className="glass border-emerald-500/20">
+                    <Card className="glass border-primary/20">
                       <CardHeader className="pb-3">
-                        <CardTitle className="text-sm font-medium text-cyan-400 flex items-center justify-between">
+                        <CardTitle className="text-sm font-medium text-secondary flex items-center justify-between">
                           <span className="flex items-center gap-2">
                             <Clock className="w-4 h-4" />
                             Search History
@@ -581,9 +581,9 @@ export default function SearchResultsTemplate() {
                           </TabsList>
                           <TabsContent value="recent" className="mt-3 space-y-2">
                             {recentSearches.map((search, index) => (
-                              <div key={index} className="group flex items-center justify-between p-2 rounded hover:bg-emerald-500/10 cursor-pointer">
+                              <div key={index} className="group flex items-center justify-between p-2 rounded hover:bg-primary/10 cursor-pointer">
                                 <div className="flex-1 min-w-0">
-                                  <p className="text-sm text-gray-400 group-hover:text-cyan-400 truncate">
+                                  <p className="text-sm text-gray-400 group-hover:text-secondary truncate">
                                     {search.query}
                                   </p>
                                   <p className="text-xs text-gray-600">{search.timestamp}</p>
@@ -593,16 +593,16 @@ export default function SearchResultsTemplate() {
                                 </Button>
                               </div>
                             ))}
-                            <Button variant="ghost" size="sm" className="w-full text-gray-500 hover:text-cyan-400">
+                            <Button variant="ghost" size="sm" className="w-full text-gray-500 hover:text-secondary">
                               <Trash2 className="w-3 h-3 mr-2" />
                               Clear history
                             </Button>
                           </TabsContent>
                           <TabsContent value="saved" className="mt-3 space-y-2">
                             {savedSearches.map((search, index) => (
-                              <div key={index} className="group flex items-center justify-between p-2 rounded hover:bg-emerald-500/10 cursor-pointer">
+                              <div key={index} className="group flex items-center justify-between p-2 rounded hover:bg-primary/10 cursor-pointer">
                                 <div className="flex-1 min-w-0">
-                                  <p className="text-sm font-medium text-emerald-400 truncate">
+                                  <p className="text-sm font-medium text-primary truncate">
                                     {search.name}
                                   </p>
                                   <p className="text-xs text-gray-500 truncate">{search.query}</p>
@@ -624,12 +624,12 @@ export default function SearchResultsTemplate() {
             {/* Search Results */}
             <div className="lg:col-span-3 space-y-4">
               {/* Results Header */}
-              <Card className="glass border-emerald-500/20">
+              <Card className="glass border-primary/20">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="flex items-center gap-3">
-                        <h2 className="text-lg font-semibold text-cyan-400">
+                        <h2 className="text-lg font-semibold text-secondary">
                           Search Results
                         </h2>
                         {!isSearching && (
@@ -641,7 +641,7 @@ export default function SearchResultsTemplate() {
                       {appliedFilters.length > 0 && (
                         <div className="flex gap-2 mt-2">
                           {appliedFilters.map((filter) => (
-                            <Badge key={filter} variant="secondary" className="bg-emerald-500/10 border-emerald-500/20">
+                            <Badge key={filter} variant="secondary" className="bg-primary/10 border-primary/20">
                               {filter}
                               <X className="w-3 h-3 ml-1 cursor-pointer" />
                             </Badge>
@@ -651,21 +651,21 @@ export default function SearchResultsTemplate() {
                     </div>
                     <div className="flex items-center gap-3">
                       <Select value={sortBy} onValueChange={setSortBy}>
-                        <SelectTrigger className="w-32 h-9 bg-zinc-900/50 border-emerald-500/20 text-cyan-400">
+                        <SelectTrigger className="w-32 h-9 bg-zinc-900/50 border-primary/20 text-secondary">
                           <SelectValue />
                         </SelectTrigger>
-                        <SelectContent className="glass-dark border-emerald-500/20">
+                        <SelectContent className="glass-dark border-primary/20">
                           <SelectItem value="relevance">Relevance</SelectItem>
                           <SelectItem value="date">Date</SelectItem>
                           <SelectItem value="popularity">Popularity</SelectItem>
                           <SelectItem value="rating">Rating</SelectItem>
                         </SelectContent>
                       </Select>
-                      <div className="flex border border-emerald-500/20 rounded">
+                      <div className="flex border border-primary/20 rounded">
                         <Button
                           variant="ghost"
                           size="icon"
-                          className={`h-9 w-9 ${viewMode === 'list' ? 'bg-emerald-500/20 text-emerald-400' : 'text-gray-500'}`}
+                          className={`h-9 w-9 ${viewMode === 'list' ? 'bg-primary/20 text-primary' : 'text-gray-500'}`}
                           onClick={() => setViewMode('list')}
                         >
                           <List className="w-4 h-4" />
@@ -673,7 +673,7 @@ export default function SearchResultsTemplate() {
                         <Button
                           variant="ghost"
                           size="icon"
-                          className={`h-9 w-9 ${viewMode === 'grid' ? 'bg-emerald-500/20 text-emerald-400' : 'text-gray-500'}`}
+                          className={`h-9 w-9 ${viewMode === 'grid' ? 'bg-primary/20 text-primary' : 'text-gray-500'}`}
                           onClick={() => setViewMode('grid')}
                         >
                           <Grid className="w-4 h-4" />
@@ -686,23 +686,23 @@ export default function SearchResultsTemplate() {
 
               {/* Search Tabs */}
               <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-                <TabsList className="bg-zinc-900/50 border border-emerald-500/20 p-1">
-                  <TabsTrigger value="all" className="data-[state=active]:bg-emerald-500/20">
+                <TabsList className="bg-zinc-900/50 border border-primary/20 p-1">
+                  <TabsTrigger value="all" className="data-[state=active]:bg-primary/20">
                     All
                   </TabsTrigger>
-                  <TabsTrigger value="articles" className="data-[state=active]:bg-emerald-500/20">
+                  <TabsTrigger value="articles" className="data-[state=active]:bg-primary/20">
                     <FileText className="w-4 h-4 mr-2" />
                     Articles
                   </TabsTrigger>
-                  <TabsTrigger value="docs" className="data-[state=active]:bg-emerald-500/20">
+                  <TabsTrigger value="docs" className="data-[state=active]:bg-primary/20">
                     <Folder className="w-4 h-4 mr-2" />
                     Documentation
                   </TabsTrigger>
-                  <TabsTrigger value="code" className="data-[state=active]:bg-emerald-500/20">
+                  <TabsTrigger value="code" className="data-[state=active]:bg-primary/20">
                     <Code className="w-4 h-4 mr-2" />
                     Code
                   </TabsTrigger>
-                  <TabsTrigger value="media" className="data-[state=active]:bg-emerald-500/20">
+                  <TabsTrigger value="media" className="data-[state=active]:bg-primary/20">
                     <Film className="w-4 h-4 mr-2" />
                     Media
                   </TabsTrigger>
@@ -724,10 +724,10 @@ export default function SearchResultsTemplate() {
                     </div>
                   ) : (
                     // No Results State
-                    <Card className="glass border-emerald-500/20">
+                    <Card className="glass border-primary/20">
                       <CardContent className="p-12 text-center">
                         <AlertCircle className="w-12 h-12 text-gray-600 mx-auto mb-4" />
-                        <h3 className="text-lg font-semibold text-cyan-400 mb-2">
+                        <h3 className="text-lg font-semibold text-secondary mb-2">
                           No results found
                         </h3>
                         <p className="text-gray-500 mb-6">
@@ -749,7 +749,7 @@ export default function SearchResultsTemplate() {
                               <Badge
                                 key={term}
                                 variant="outline"
-                                className="border-emerald-500/30 text-emerald-400 cursor-pointer hover:bg-emerald-500/10"
+                                className="border-primary/30 text-primary cursor-pointer hover:bg-primary/10"
                               >
                                 {term}
                               </Badge>
@@ -804,7 +804,7 @@ export default function SearchResultsTemplate() {
 
               {/* Pagination */}
               {!isSearching && mockResults.all.length > 0 && (
-                <Card className="glass border-emerald-500/20">
+                <Card className="glass border-primary/20">
                   <CardContent className="p-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
@@ -812,10 +812,10 @@ export default function SearchResultsTemplate() {
                           Showing {((currentPage - 1) * parseInt(itemsPerPage)) + 1}-{Math.min(currentPage * parseInt(itemsPerPage), 1250)} of 1,250 results
                         </span>
                         <Select value={itemsPerPage} onValueChange={setItemsPerPage}>
-                          <SelectTrigger className="w-20 h-8 bg-zinc-900/50 border-emerald-500/20 text-cyan-400">
+                          <SelectTrigger className="w-20 h-8 bg-zinc-900/50 border-primary/20 text-secondary">
                             <SelectValue />
                           </SelectTrigger>
-                          <SelectContent className="glass-dark border-emerald-500/20">
+                          <SelectContent className="glass-dark border-primary/20">
                             <SelectItem value="10">10</SelectItem>
                             <SelectItem value="20">20</SelectItem>
                             <SelectItem value="50">50</SelectItem>
@@ -830,7 +830,7 @@ export default function SearchResultsTemplate() {
                           size="icon"
                           disabled={currentPage === 1}
                           onClick={() => setCurrentPage(currentPage - 1)}
-                          className="h-8 w-8 border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/10 disabled:opacity-30"
+                          className="h-8 w-8 border-primary/20 text-primary hover:bg-primary/10 disabled:opacity-30"
                         >
                           <ChevronLeft className="w-4 h-4" />
                         </Button>
@@ -842,8 +842,8 @@ export default function SearchResultsTemplate() {
                             onClick={() => setCurrentPage(page)}
                             className={`h-8 w-8 ${
                               currentPage === page
-                                ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400'
-                                : 'border-emerald-500/20 text-gray-500 hover:text-emerald-400 hover:bg-emerald-500/10'
+                                ? 'bg-primary/20 border-primary/40 text-primary'
+                                : 'border-primary/20 text-gray-500 hover:text-primary hover:bg-primary/10'
                             }`}
                           >
                             {page}
@@ -853,7 +853,7 @@ export default function SearchResultsTemplate() {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="h-8 w-8 border-emerald-500/20 text-gray-500 hover:text-emerald-400 hover:bg-emerald-500/10"
+                          className="h-8 w-8 border-primary/20 text-gray-500 hover:text-primary hover:bg-primary/10"
                         >
                           125
                         </Button>
@@ -861,7 +861,7 @@ export default function SearchResultsTemplate() {
                           variant="outline"
                           size="icon"
                           onClick={() => setCurrentPage(currentPage + 1)}
-                          className="h-8 w-8 border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/10"
+                          className="h-8 w-8 border-primary/20 text-primary hover:bg-primary/10"
                         >
                           <ChevronRight className="w-4 h-4" />
                         </Button>

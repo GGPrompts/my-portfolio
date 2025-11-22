@@ -41,7 +41,7 @@ const templates = {
       icon: <FileText className="h-5 w-5" />,
       features: ['Timeline Process', 'Before/After Slider', 'Animated Counters', 'Image Gallery', 'Video Section'],
       bestFor: 'Client projects, portfolios, success stories',
-      color: 'from-emerald-500 to-teal-500',
+      color: 'from-primary to-primary',
       preview: {
         sections: 11,
         animations: 'Very High',
@@ -91,7 +91,7 @@ const templates = {
       icon: <Monitor className="h-5 w-5" />,
       features: ['Multiple Charts', 'KPI Cards', 'Data Tables', 'Date Range Picker', 'Export Data'],
       bestFor: 'SaaS analytics, business intelligence, metrics tracking',
-      color: 'from-emerald-500 to-cyan-500',
+      color: 'from-primary to-secondary',
       preview: {
         sections: 10,
         animations: 'High',
@@ -141,7 +141,7 @@ const templates = {
       icon: <Zap className="h-5 w-5" />,
       features: ['Animated Hero', 'Pricing Cards', 'Testimonial Carousel', 'FAQ Accordion', 'Newsletter Form'],
       bestFor: 'SaaS products, startups, subscription services',
-      color: 'from-emerald-500 to-cyan-500',
+      color: 'from-primary to-secondary',
       preview: {
         sections: 14,
         animations: 'Very High',
@@ -191,7 +191,7 @@ const templates = {
       icon: <Clock className="h-5 w-5" />,
       features: ['Interactive Timeline', 'Skills Progress', 'Testimonials', 'PDF Export', 'Certifications'],
       bestFor: 'Professional applications, tech roles, career showcase',
-      color: 'from-emerald-500 to-cyan-500',
+      color: 'from-primary to-secondary',
       preview: {
         sections: 12,
         animations: 'Very High',
@@ -273,7 +273,7 @@ const templates = {
       icon: <FileText className="h-5 w-5" />,
       features: ['Category Grid', 'Doc Tree', 'Version Selector', 'Interactive Examples', 'Multi-language'],
       bestFor: 'Documentation sites, help centers, knowledge bases',
-      color: 'from-emerald-500 to-cyan-500',
+      color: 'from-primary to-secondary',
       preview: {
         sections: 12,
         animations: 'High',
@@ -384,16 +384,21 @@ function TemplateCard({ template, type }: { template: any; type: string }) {
               Preview
             </Button>
           </Link>
-          <HoverCard>
+          <HoverCard openDelay={200}>
             <HoverCardTrigger asChild>
               <Button variant="outline" size="icon">
                 <Zap className="h-4 w-4" />
               </Button>
             </HoverCardTrigger>
-            <HoverCardContent className="glass-overlay border-glow">
+            <HoverCardContent
+              className="glass-overlay border-glow w-56"
+              side="top"
+              align="end"
+              sideOffset={8}
+            >
               <div className="space-y-2">
-                <p className="font-mono font-semibold">Quick Actions</p>
-                <div className="space-y-1 text-sm">
+                <p className="font-mono font-semibold text-sm">Quick Actions</p>
+                <div className="space-y-1 text-xs">
                   <p>• View in new tab</p>
                   <p>• Copy template code</p>
                   <p>• Download as component</p>
@@ -411,12 +416,12 @@ export default function TemplateShowcase() {
   const [activeTab, setActiveTab] = useState('all');
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-black relative">
+    <main className="min-h-screen relative">
       <SpaceBackground speed={0.3} opacity={0.5} />
       <ScrollProgress className="top-0 z-50" />
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 px-4">
+      <section className="relative pt-20 pb-16 px-4 z-10">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -429,7 +434,7 @@ export default function TemplateShowcase() {
                 <Sparkles className="h-3 w-3 mr-1" />
                 16 Templates
               </Badge>
-              <Badge className="font-mono bg-gradient-to-r from-emerald-500 to-cyan-500 text-white border-0">
+              <Badge className="font-mono bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0">
                 50 Claude Projects
               </Badge>
             </div>
@@ -589,14 +594,14 @@ export default function TemplateShowcase() {
 
           {/* Features Section */}
           <section className="mt-20 space-y-8">
-            <h2 className="text-3xl font-mono font-bold text-center bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+            <h2 className="text-3xl font-mono font-bold text-center bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
               Why These Templates?
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="glass-dark border-glow">
                 <CardHeader>
-                  <CheckCircle2 className="h-8 w-8 text-emerald-500 mb-2" />
+                  <CheckCircle2 className="h-8 w-8 text-primary mb-2" />
                   <CardTitle className="font-mono">50 Projects Ready</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -608,7 +613,7 @@ export default function TemplateShowcase() {
 
               <Card className="glass-dark border-glow">
                 <CardHeader>
-                  <Palette className="h-8 w-8 text-cyan-500 mb-2" />
+                  <Palette className="h-8 w-8 text-secondary mb-2" />
                   <CardTitle className="font-mono">Terminal Aesthetic</CardTitle>
                 </CardHeader>
                 <CardContent>

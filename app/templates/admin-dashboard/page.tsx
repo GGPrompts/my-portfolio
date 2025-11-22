@@ -239,7 +239,7 @@ export default function AdminDashboard() {
           checked={table.getIsAllPageRowsSelected()}
           onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
           aria-label="Select all"
-          className="border-cyan-600/30"
+          className="border/30"
         />
       ),
       cell: ({ row }) => (
@@ -247,7 +247,7 @@ export default function AdminDashboard() {
           checked={row.getIsSelected()}
           onCheckedChange={(value) => row.toggleSelected(!!value)}
           aria-label="Select row"
-          className="border-cyan-600/30"
+          className="border/30"
         />
       ),
     },
@@ -258,13 +258,13 @@ export default function AdminDashboard() {
         <div className="flex items-center gap-3">
           <Avatar className="h-8 w-8">
             <AvatarImage src={row.original.avatar} />
-            <AvatarFallback className="bg-cyan-900/20 text-cyan-400">
+            <AvatarFallback className="bg-secondary/20 text-secondary">
               {row.original.name.split(' ').map(n => n[0]).join('')}
             </AvatarFallback>
           </Avatar>
           <div>
-            <p className="font-medium text-cyan-50">{row.original.name}</p>
-            <p className="text-xs text-cyan-400/70">{row.original.email}</p>
+            <p className="font-medium text-foreground">{row.original.name}</p>
+            <p className="text-xs text-secondary/70">{row.original.email}</p>
           </div>
         </div>
       ),
@@ -280,7 +280,7 @@ export default function AdminDashboard() {
             className={`
               ${role === 'Admin' ? 'border-red-500/30 text-red-400' : ''}
               ${role === 'Editor' ? 'border-yellow-500/30 text-yellow-400' : ''}
-              ${role === 'Viewer' ? 'border-cyan-500/30 text-cyan-400' : ''}
+              ${role === 'Viewer' ? 'border-secondary/30 text-secondary' : ''}
             `}
           >
             <Shield className="mr-1 h-3 w-3" />
@@ -298,7 +298,7 @@ export default function AdminDashboard() {
           <Badge
             variant="outline"
             className={`
-              ${status === 'Active' ? 'border-emerald-500/30 text-emerald-400' : ''}
+              ${status === 'Active' ? 'border-primary/30 text-primary' : ''}
               ${status === 'Suspended' ? 'border-red-500/30 text-red-400' : ''}
               ${status === 'Pending' ? 'border-yellow-500/30 text-yellow-400' : ''}
             `}
@@ -315,7 +315,7 @@ export default function AdminDashboard() {
       accessorKey: "lastActive",
       header: "Last Active",
       cell: ({ row }) => (
-        <span className="text-cyan-400/70 text-sm">{row.original.lastActive}</span>
+        <span className="text-secondary/70 text-sm">{row.original.lastActive}</span>
       ),
     },
     {
@@ -327,15 +327,15 @@ export default function AdminDashboard() {
               <MoreHorizontal className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="glass-dark border-cyan-600/20">
+          <DropdownMenuContent align="end" className="glass-dark border/20">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem className="hover:bg-cyan-900/20">
+            <DropdownMenuItem className="hover:bg-secondary/20">
               <Edit className="mr-2 h-4 w-4" /> Edit User
             </DropdownMenuItem>
-            <DropdownMenuItem className="hover:bg-cyan-900/20">
+            <DropdownMenuItem className="hover:bg-secondary/20">
               <Eye className="mr-2 h-4 w-4" /> View Details
             </DropdownMenuItem>
-            <DropdownMenuSeparator className="bg-cyan-600/20" />
+            <DropdownMenuSeparator className="bg-border/20" />
             <DropdownMenuItem className="hover:bg-red-900/20 text-red-400">
               <Trash className="mr-2 h-4 w-4" /> Delete
             </DropdownMenuItem>
@@ -375,19 +375,19 @@ export default function AdminDashboard() {
 
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-zinc-950">
+      <div className="min-h-screen ">
         {/* Mobile Menu Button */}
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
               size="icon"
-              className="fixed top-4 left-4 z-50 lg:hidden glass border-cyan-600/20"
+              className="fixed top-4 left-4 z-50 lg:hidden glass border/20"
             >
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-72 glass-dark border-r-cyan-600/20 p-0">
+          <SheetContent side="left" className="w-72 glass-dark border-r-border/20 p-0">
             <SidebarContent
               navigationItems={navigationItems}
               activeSection={activeSection}
@@ -402,7 +402,7 @@ export default function AdminDashboard() {
           <motion.aside
             initial={false}
             animate={{ width: sidebarOpen ? 280 : 80 }}
-            className="hidden lg:block relative glass-dark border-r border-cyan-600/20"
+            className="hidden lg:block relative glass-dark border-r border/20"
           >
             <SidebarContent
               navigationItems={navigationItems}
@@ -414,7 +414,7 @@ export default function AdminDashboard() {
               variant="ghost"
               size="icon"
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="absolute -right-4 top-20 glass border-cyan-600/20 rounded-full h-8 w-8"
+              className="absolute -right-4 top-20 glass border/20 rounded-full h-8 w-8"
             >
               {sidebarOpen ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
             </Button>
@@ -432,7 +432,7 @@ export default function AdminDashboard() {
               >
                 {activeSection === "overview" && (
                   <div className="space-y-6">
-                    <h1 className="text-3xl font-bold text-cyan-50 terminal-glow">Dashboard Overview</h1>
+                    <h1 className="text-3xl font-bold text-foreground terminal-glow">Dashboard Overview</h1>
 
                     {/* Stats Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -468,8 +468,8 @@ export default function AdminDashboard() {
 
                     {/* Charts */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                      <Card className="glass border-cyan-600/20 p-6">
-                        <h3 className="text-lg font-semibold mb-4 text-cyan-50">Traffic Overview</h3>
+                      <Card className="glass border/20 p-6">
+                        <h3 className="text-lg font-semibold mb-4 text-foreground">Traffic Overview</h3>
                         <ResponsiveContainer width="100%" height={250}>
                           <AreaChart data={chartData.traffic}>
                             <CartesianGrid strokeDasharray="3 3" stroke="#0f4a4a" />
@@ -488,8 +488,8 @@ export default function AdminDashboard() {
                         </ResponsiveContainer>
                       </Card>
 
-                      <Card className="glass border-cyan-600/20 p-6">
-                        <h3 className="text-lg font-semibold mb-4 text-cyan-50">Content Distribution</h3>
+                      <Card className="glass border/20 p-6">
+                        <h3 className="text-lg font-semibold mb-4 text-foreground">Content Distribution</h3>
                         <ResponsiveContainer width="100%" height={250}>
                           <PieChart>
                             <Pie
@@ -519,18 +519,18 @@ export default function AdminDashboard() {
                     </div>
 
                     {/* System Health */}
-                    <Card className="glass border-cyan-600/20 p-6">
-                      <h3 className="text-lg font-semibold mb-4 text-cyan-50">System Health</h3>
+                    <Card className="glass border/20 p-6">
+                      <h3 className="text-lg font-semibold mb-4 text-foreground">System Health</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {systemMetrics.map((metric) => (
                           <div key={metric.name} className="space-y-2">
                             <div className="flex items-center justify-between">
-                              <span className="text-sm text-cyan-400/70 flex items-center gap-2">
+                              <span className="text-sm text-secondary/70 flex items-center gap-2">
                                 {metric.icon}
                                 {metric.name}
                               </span>
                               <span className={`text-sm font-semibold ${
-                                metric.status === 'healthy' ? 'text-emerald-400' :
+                                metric.status === 'healthy' ? 'text-primary' :
                                 metric.status === 'warning' ? 'text-yellow-400' :
                                 'text-red-400'
                               }`}>
@@ -539,7 +539,7 @@ export default function AdminDashboard() {
                             </div>
                             <Progress
                               value={metric.unit === '%' ? metric.value : (metric.value / 200) * 100}
-                              className="h-2 bg-cyan-900/20"
+                              className="h-2 bg-secondary/20"
                             />
                           </div>
                         ))}
@@ -547,8 +547,8 @@ export default function AdminDashboard() {
                     </Card>
 
                     {/* Activity Feed */}
-                    <Card className="glass border-cyan-600/20 p-6">
-                      <h3 className="text-lg font-semibold mb-4 text-cyan-50">Recent Activity</h3>
+                    <Card className="glass border/20 p-6">
+                      <h3 className="text-lg font-semibold mb-4 text-foreground">Recent Activity</h3>
                       <div className="space-y-3">
                         {activities.map((activity) => (
                           <ActivityItem key={activity.id} activity={activity} />
@@ -561,31 +561,31 @@ export default function AdminDashboard() {
                 {activeSection === "users" && (
                   <div className="space-y-6">
                     <div className="flex justify-between items-center">
-                      <h1 className="text-3xl font-bold text-cyan-50 terminal-glow">User Management</h1>
-                      <Button className="glass border-cyan-600/20 hover:bg-cyan-900/20">
+                      <h1 className="text-3xl font-bold text-foreground terminal-glow">User Management</h1>
+                      <Button className="glass border/20 hover:bg-secondary/20">
                         <Plus className="mr-2 h-4 w-4" /> Add User
                       </Button>
                     </div>
 
                     {/* User Table */}
-                    <Card className="glass border-cyan-600/20 p-6">
+                    <Card className="glass border/20 p-6">
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-4">
                             <div className="relative">
-                              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-cyan-400/50" />
+                              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-secondary/50" />
                               <Input
                                 placeholder="Search users..."
-                                className="pl-10 glass-dark border-cyan-600/20 w-[300px]"
+                                className="pl-10 glass-dark border/20 w-[300px]"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                               />
                             </div>
                             <Select defaultValue="all">
-                              <SelectTrigger className="w-[150px] glass-dark border-cyan-600/20">
+                              <SelectTrigger className="w-[150px] glass-dark border/20">
                                 <SelectValue placeholder="Filter by role" />
                               </SelectTrigger>
-                              <SelectContent className="glass-dark border-cyan-600/20">
+                              <SelectContent className="glass-dark border/20">
                                 <SelectItem value="all">All Roles</SelectItem>
                                 <SelectItem value="admin">Admin</SelectItem>
                                 <SelectItem value="editor">Editor</SelectItem>
@@ -594,16 +594,16 @@ export default function AdminDashboard() {
                             </Select>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Button variant="outline" size="sm" className="border-cyan-600/20">
+                            <Button variant="outline" size="sm" className="border/20">
                               <Download className="mr-2 h-4 w-4" /> Export
                             </Button>
                             <DropdownMenu>
                               <DropdownMenuTrigger asChild>
-                                <Button variant="outline" size="sm" className="border-cyan-600/20">
+                                <Button variant="outline" size="sm" className="border/20">
                                   <Filter className="mr-2 h-4 w-4" /> Columns
                                 </Button>
                               </DropdownMenuTrigger>
-                              <DropdownMenuContent className="glass-dark border-cyan-600/20">
+                              <DropdownMenuContent className="glass-dark border/20">
                                 {userTable.getAllColumns()
                                   .filter((column) => column.getCanHide())
                                   .map((column) => (
@@ -622,11 +622,11 @@ export default function AdminDashboard() {
 
                         {/* Selected Actions */}
                         {userTable.getFilteredSelectedRowModel().rows.length > 0 && (
-                          <div className="flex items-center gap-2 p-2 glass border-cyan-600/20 rounded">
-                            <span className="text-sm text-cyan-400">
+                          <div className="flex items-center gap-2 p-2 glass border/20 rounded">
+                            <span className="text-sm text-secondary">
                               {userTable.getFilteredSelectedRowModel().rows.length} selected
                             </span>
-                            <Button size="sm" variant="ghost" className="hover:bg-cyan-900/20">
+                            <Button size="sm" variant="ghost" className="hover:bg-secondary/20">
                               <Edit className="mr-2 h-4 w-4" /> Edit
                             </Button>
                             <Button size="sm" variant="ghost" className="hover:bg-red-900/20 text-red-400">
@@ -635,13 +635,13 @@ export default function AdminDashboard() {
                           </div>
                         )}
 
-                        <div className="overflow-hidden rounded-lg border border-cyan-600/20">
+                        <div className="overflow-hidden rounded-lg border border/20">
                           <Table>
                             <TableHeader>
                               {userTable.getHeaderGroups().map((headerGroup) => (
-                                <TableRow key={headerGroup.id} className="border-cyan-600/20">
+                                <TableRow key={headerGroup.id} className="border/20">
                                   {headerGroup.headers.map((header) => (
-                                    <TableHead key={header.id} className="text-cyan-400">
+                                    <TableHead key={header.id} className="text-secondary">
                                       {header.isPlaceholder
                                         ? null
                                         : flexRender(
@@ -659,7 +659,7 @@ export default function AdminDashboard() {
                                   <TableRow
                                     key={row.id}
                                     data-state={row.getIsSelected() && "selected"}
-                                    className="border-cyan-600/20 hover:bg-cyan-900/10"
+                                    className="border/20 hover:bg-secondary/10"
                                   >
                                     {row.getVisibleCells().map((cell) => (
                                       <TableCell key={cell.id}>
@@ -683,7 +683,7 @@ export default function AdminDashboard() {
                         </div>
 
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-cyan-400/70">
+                          <span className="text-sm text-secondary/70">
                             {userTable.getFilteredSelectedRowModel().rows.length} of{" "}
                             {userTable.getFilteredRowModel().rows.length} row(s) selected.
                           </span>
@@ -693,7 +693,7 @@ export default function AdminDashboard() {
                               size="sm"
                               onClick={() => userTable.previousPage()}
                               disabled={!userTable.getCanPreviousPage()}
-                              className="border-cyan-600/20"
+                              className="border/20"
                             >
                               Previous
                             </Button>
@@ -702,7 +702,7 @@ export default function AdminDashboard() {
                               size="sm"
                               onClick={() => userTable.nextPage()}
                               disabled={!userTable.getCanNextPage()}
-                              className="border-cyan-600/20"
+                              className="border/20"
                             >
                               Next
                             </Button>
@@ -716,14 +716,14 @@ export default function AdminDashboard() {
                 {activeSection === "content" && (
                   <div className="space-y-6">
                     <div className="flex justify-between items-center">
-                      <h1 className="text-3xl font-bold text-cyan-50 terminal-glow">Content Management</h1>
-                      <Button className="glass border-cyan-600/20 hover:bg-cyan-900/20">
+                      <h1 className="text-3xl font-bold text-foreground terminal-glow">Content Management</h1>
+                      <Button className="glass border/20 hover:bg-secondary/20">
                         <Plus className="mr-2 h-4 w-4" /> New Post
                       </Button>
                     </div>
 
                     <Tabs defaultValue="all" className="space-y-4">
-                      <TabsList className="glass-dark border-cyan-600/20">
+                      <TabsList className="glass-dark border/20">
                         <TabsTrigger value="all">All Content</TabsTrigger>
                         <TabsTrigger value="posts">Posts</TabsTrigger>
                         <TabsTrigger value="pages">Pages</TabsTrigger>
@@ -732,11 +732,11 @@ export default function AdminDashboard() {
 
                       <TabsContent value="all" className="space-y-4">
                         {content.map((item) => (
-                          <Card key={item.id} className="glass border-cyan-600/20 p-4">
+                          <Card key={item.id} className="glass border/20 p-4">
                             <div className="flex items-center justify-between">
                               <div className="space-y-1">
-                                <h3 className="font-semibold text-cyan-50">{item.title}</h3>
-                                <div className="flex items-center gap-4 text-sm text-cyan-400/70">
+                                <h3 className="font-semibold text-foreground">{item.title}</h3>
+                                <div className="flex items-center gap-4 text-sm text-secondary/70">
                                   <span className="flex items-center gap-1">
                                     <User className="h-3 w-3" /> {item.author}
                                   </span>
@@ -752,14 +752,14 @@ export default function AdminDashboard() {
                                 <Badge
                                   variant="outline"
                                   className={`
-                                    ${item.status === 'Published' ? 'border-emerald-500/30 text-emerald-400' : ''}
+                                    ${item.status === 'Published' ? 'border-primary/30 text-primary' : ''}
                                     ${item.status === 'Draft' ? 'border-yellow-500/30 text-yellow-400' : ''}
-                                    ${item.status === 'Scheduled' ? 'border-cyan-500/30 text-cyan-400' : ''}
+                                    ${item.status === 'Scheduled' ? 'border-secondary/30 text-secondary' : ''}
                                   `}
                                 >
                                   {item.status}
                                 </Badge>
-                                <Button size="sm" variant="ghost" className="hover:bg-cyan-900/20">
+                                <Button size="sm" variant="ghost" className="hover:bg-secondary/20">
                                   <Edit className="h-4 w-4" />
                                 </Button>
                                 <Button size="sm" variant="ghost" className="hover:bg-red-900/20">
@@ -776,11 +776,11 @@ export default function AdminDashboard() {
 
                 {activeSection === "analytics" && (
                   <div className="space-y-6">
-                    <h1 className="text-3xl font-bold text-cyan-50 terminal-glow">Analytics</h1>
+                    <h1 className="text-3xl font-bold text-foreground terminal-glow">Analytics</h1>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                      <Card className="glass border-cyan-600/20 p-6">
-                        <h3 className="text-lg font-semibold mb-4 text-cyan-50">Performance Metrics</h3>
+                      <Card className="glass border/20 p-6">
+                        <h3 className="text-lg font-semibold mb-4 text-foreground">Performance Metrics</h3>
                         <ResponsiveContainer width="100%" height={300}>
                           <LineChart data={chartData.performance}>
                             <CartesianGrid strokeDasharray="3 3" stroke="#0f4a4a" />
@@ -801,8 +801,8 @@ export default function AdminDashboard() {
                         </ResponsiveContainer>
                       </Card>
 
-                      <Card className="glass border-cyan-600/20 p-6">
-                        <h3 className="text-lg font-semibold mb-4 text-cyan-50">User Growth</h3>
+                      <Card className="glass border/20 p-6">
+                        <h3 className="text-lg font-semibold mb-4 text-foreground">User Growth</h3>
                         <ResponsiveContainer width="100%" height={300}>
                           <BarChart data={chartData.traffic}>
                             <CartesianGrid strokeDasharray="3 3" stroke="#0f4a4a" />
@@ -826,11 +826,11 @@ export default function AdminDashboard() {
 
                 {activeSection === "settings" && (
                   <div className="space-y-6">
-                    <h1 className="text-3xl font-bold text-cyan-50 terminal-glow">System Settings</h1>
+                    <h1 className="text-3xl font-bold text-foreground terminal-glow">System Settings</h1>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                      <Card className="glass border-cyan-600/20 p-6">
-                        <h3 className="text-lg font-semibold mb-4 text-cyan-50">General Settings</h3>
+                      <Card className="glass border/20 p-6">
+                        <h3 className="text-lg font-semibold mb-4 text-foreground">General Settings</h3>
                         <div className="space-y-4">
                           <SettingItem
                             label="Enable Notifications"
@@ -855,8 +855,8 @@ export default function AdminDashboard() {
                         </div>
                       </Card>
 
-                      <Card className="glass border-cyan-600/20 p-6">
-                        <h3 className="text-lg font-semibold mb-4 text-cyan-50">Security Settings</h3>
+                      <Card className="glass border/20 p-6">
+                        <h3 className="text-lg font-semibold mb-4 text-foreground">Security Settings</h3>
                         <div className="space-y-4">
                           <SettingItem
                             label="Two-Factor Authentication"
@@ -881,22 +881,22 @@ export default function AdminDashboard() {
                         </div>
                       </Card>
 
-                      <Card className="glass border-cyan-600/20 p-6 lg:col-span-2">
-                        <h3 className="text-lg font-semibold mb-4 text-cyan-50">Quick Actions</h3>
+                      <Card className="glass border/20 p-6 lg:col-span-2">
+                        <h3 className="text-lg font-semibold mb-4 text-foreground">Quick Actions</h3>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                          <Button className="glass border-cyan-600/20 hover:bg-cyan-900/20 flex flex-col items-center gap-2 h-auto py-4">
+                          <Button className="glass border/20 hover:bg-secondary/20 flex flex-col items-center gap-2 h-auto py-4">
                             <Archive className="h-5 w-5" />
                             <span className="text-xs">Backup Now</span>
                           </Button>
-                          <Button className="glass border-cyan-600/20 hover:bg-cyan-900/20 flex flex-col items-center gap-2 h-auto py-4">
+                          <Button className="glass border/20 hover:bg-secondary/20 flex flex-col items-center gap-2 h-auto py-4">
                             <RefreshCw className="h-5 w-5" />
                             <span className="text-xs">Clear Cache</span>
                           </Button>
-                          <Button className="glass border-cyan-600/20 hover:bg-cyan-900/20 flex flex-col items-center gap-2 h-auto py-4">
+                          <Button className="glass border/20 hover:bg-secondary/20 flex flex-col items-center gap-2 h-auto py-4">
                             <Upload className="h-5 w-5" />
                             <span className="text-xs">Import Data</span>
                           </Button>
-                          <Button className="glass border-cyan-600/20 hover:bg-cyan-900/20 flex flex-col items-center gap-2 h-auto py-4">
+                          <Button className="glass border/20 hover:bg-secondary/20 flex flex-col items-center gap-2 h-auto py-4">
                             <Download className="h-5 w-5" />
                             <span className="text-xs">Export Data</span>
                           </Button>
@@ -931,16 +931,16 @@ function SidebarContent({
   return (
     <div className="flex flex-col h-full">
       {/* User Profile */}
-      <div className={`p-4 border-b border-cyan-600/20 ${collapsed && !mobile ? 'px-3' : ''}`}>
+      <div className={`p-4 border-b border/20 ${collapsed && !mobile ? 'px-3' : ''}`}>
         <div className={`flex items-center gap-3 ${collapsed && !mobile ? 'justify-center' : ''}`}>
           <Avatar>
             <AvatarImage src="/api/placeholder/40/40" />
-            <AvatarFallback className="bg-cyan-900/20 text-cyan-400">AD</AvatarFallback>
+            <AvatarFallback className="bg-secondary/20 text-secondary">AD</AvatarFallback>
           </Avatar>
           {(!collapsed || mobile) && (
             <div>
-              <p className="font-semibold text-cyan-50">Admin User</p>
-              <p className="text-xs text-cyan-400/70">admin@example.com</p>
+              <p className="font-semibold text-foreground">Admin User</p>
+              <p className="text-xs text-secondary/70">admin@example.com</p>
             </div>
           )}
         </div>
@@ -948,15 +948,15 @@ function SidebarContent({
 
       {/* Quick Stats */}
       {(!collapsed || mobile) && (
-        <div className="p-4 border-b border-cyan-600/20">
+        <div className="p-4 border-b border/20">
           <div className="grid grid-cols-2 gap-2 text-center">
-            <div className="glass border-cyan-600/20 rounded p-2">
-              <p className="text-xl font-bold text-cyan-400">234</p>
-              <p className="text-xs text-cyan-400/70">Active</p>
+            <div className="glass border/20 rounded p-2">
+              <p className="text-xl font-bold text-secondary">234</p>
+              <p className="text-xs text-secondary/70">Active</p>
             </div>
-            <div className="glass border-cyan-600/20 rounded p-2">
-              <p className="text-xl font-bold text-emerald-400">98.5%</p>
-              <p className="text-xs text-cyan-400/70">Uptime</p>
+            <div className="glass border/20 rounded p-2">
+              <p className="text-xl font-bold text-primary">98.5%</p>
+              <p className="text-xs text-secondary/70">Uptime</p>
             </div>
           </div>
         </div>
@@ -977,8 +977,8 @@ function SidebarContent({
                         w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-all
                         ${collapsed && !mobile ? 'justify-center' : ''}
                         ${activeSection === item.id
-                          ? 'glass border-cyan-600/20 text-cyan-400'
-                          : 'hover:bg-cyan-900/20 text-cyan-400/70 hover:text-cyan-400'
+                          ? 'glass border/20 text-secondary'
+                          : 'hover:bg-secondary/20 text-secondary/70 hover:text-secondary'
                         }
                       `}
                     >
@@ -999,7 +999,7 @@ function SidebarContent({
       </nav>
 
       {/* Logout */}
-      <div className={`p-4 border-t border-cyan-600/20 ${collapsed && !mobile ? 'px-3' : ''}`}>
+      <div className={`p-4 border-t border/20 ${collapsed && !mobile ? 'px-3' : ''}`}>
         <Button
           variant="ghost"
           className={`w-full hover:bg-red-900/20 hover:text-red-400 ${collapsed && !mobile ? 'justify-center' : 'justify-start'}`}
@@ -1026,14 +1026,14 @@ function StatCard({
   icon: React.ReactNode
 }) {
   return (
-    <Card className="glass border-cyan-600/20 p-4">
+    <Card className="glass border/20 p-4">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-cyan-400/70 text-sm">{title}</span>
-        <span className="text-cyan-400/50">{icon}</span>
+        <span className="text-secondary/70 text-sm">{title}</span>
+        <span className="text-secondary/50">{icon}</span>
       </div>
       <div className="flex items-baseline justify-between">
-        <span className="text-2xl font-bold text-cyan-50">{value}</span>
-        <span className={`text-sm flex items-center gap-1 ${trend === 'up' ? 'text-emerald-400' : 'text-red-400'}`}>
+        <span className="text-2xl font-bold text-foreground">{value}</span>
+        <span className={`text-sm flex items-center gap-1 ${trend === 'up' ? 'text-primary' : 'text-red-400'}`}>
           {trend === 'up' ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
           {change}
         </span>
@@ -1045,22 +1045,22 @@ function StatCard({
 function ActivityItem({ activity }: { activity: Activity }) {
   const getActivityIcon = () => {
     switch (activity.type) {
-      case 'user': return <User className="h-4 w-4 text-cyan-400" />
+      case 'user': return <User className="h-4 w-4 text-secondary" />
       case 'system': return <Monitor className="h-4 w-4 text-yellow-400" />
-      case 'content': return <FileText className="h-4 w-4 text-emerald-400" />
+      case 'content': return <FileText className="h-4 w-4 text-primary" />
       default: return null
     }
   }
 
   return (
-    <div className="flex items-start gap-3 p-2 rounded hover:bg-cyan-900/10 transition-colors">
+    <div className="flex items-start gap-3 p-2 rounded hover:bg-secondary/10 transition-colors">
       <div className="mt-1">{getActivityIcon()}</div>
       <div className="flex-1 space-y-1">
-        <p className="text-sm text-cyan-50">
+        <p className="text-sm text-foreground">
           <span className="font-medium">{activity.user}</span>
-          <span className="text-cyan-400/70"> {activity.action}</span>
+          <span className="text-secondary/70"> {activity.action}</span>
         </p>
-        <p className="text-xs text-cyan-400/50">{activity.timestamp}</p>
+        <p className="text-xs text-secondary/50">{activity.timestamp}</p>
       </div>
     </div>
   )
@@ -1076,17 +1076,17 @@ function SettingItem({
   defaultChecked: boolean
 }) {
   return (
-    <div className="flex items-center justify-between p-3 glass border-cyan-600/20 rounded-lg">
+    <div className="flex items-center justify-between p-3 glass border/20 rounded-lg">
       <div className="space-y-1">
-        <Label htmlFor={label} className="text-cyan-50 cursor-pointer">
+        <Label htmlFor={label} className="text-foreground cursor-pointer">
           {label}
         </Label>
-        <p className="text-xs text-cyan-400/70">{description}</p>
+        <p className="text-xs text-secondary/70">{description}</p>
       </div>
       <Switch
         id={label}
         defaultChecked={defaultChecked}
-        className="data-[state=checked]:bg-cyan-600"
+        className="data-[state=checked]:bg-primary"
       />
     </div>
   )

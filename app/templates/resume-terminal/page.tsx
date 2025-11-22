@@ -167,15 +167,15 @@ export default function TerminalResume() {
 
     switch (command) {
       case 'help':
-        output = <pre className="text-emerald-400 whitespace-pre-wrap font-mono text-sm">{HELP_TEXT}</pre>
+        output = <pre className="text-primary whitespace-pre-wrap font-mono text-sm">{HELP_TEXT}</pre>
         break
 
       case 'about':
         output = (
-          <div className="text-cyan-300 space-y-2">
-            <p className="text-emerald-400">╔══════════════════════════════════════╗</p>
-            <p className="text-emerald-400">║         About Matt                   ║</p>
-            <p className="text-emerald-400">╚══════════════════════════════════════╝</p>
+          <div className="text-secondary space-y-2">
+            <p className="text-primary">╔══════════════════════════════════════╗</p>
+            <p className="text-primary">║         About Matt                   ║</p>
+            <p className="text-primary">╚══════════════════════════════════════╝</p>
             <p>Full-Stack Developer | TUI Enthusiast | Open Source Contributor</p>
             <p className="text-gray-400">📍 Location: San Francisco, CA</p>
             <p className="text-gray-400">🚀 Focus: Building elegant terminal and web applications</p>
@@ -187,8 +187,8 @@ export default function TerminalResume() {
 
       case 'skills':
         output = (
-          <div className="text-cyan-300 space-y-3">
-            <div className="text-emerald-400 font-bold">Technical Skills Matrix:</div>
+          <div className="text-secondary space-y-3">
+            <div className="text-primary font-bold">Technical Skills Matrix:</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {Object.entries(SKILLS_DATA).map(([category, skills]) => (
                 <div key={category}>
@@ -208,8 +208,8 @@ export default function TerminalResume() {
       case 'projects':
         if (args === '-web') {
           output = (
-            <div className="text-cyan-300 space-y-2">
-              <div className="text-emerald-400 font-bold">Web Projects (10 of 25):</div>
+            <div className="text-secondary space-y-2">
+              <div className="text-primary font-bold">Web Projects (10 of 25):</div>
               {PROJECTS_WEB.map((project, i) => (
                 <div key={i} className="flex justify-between">
                   <span>{i + 1}. {project.name}</span>
@@ -221,8 +221,8 @@ export default function TerminalResume() {
           )
         } else if (args === '-tui') {
           output = (
-            <div className="text-cyan-300 space-y-2">
-              <div className="text-emerald-400 font-bold">TUI/CLI Projects (10 of 25):</div>
+            <div className="text-secondary space-y-2">
+              <div className="text-primary font-bold">TUI/CLI Projects (10 of 25):</div>
               {PROJECTS_TUI.map((project, i) => (
                 <div key={i} className="flex justify-between">
                   <span>{i + 1}. {project.name}</span>
@@ -234,8 +234,8 @@ export default function TerminalResume() {
           )
         } else {
           output = (
-            <div className="text-cyan-300 space-y-2">
-              <div className="text-emerald-400 font-bold">Project Portfolio (50 total):</div>
+            <div className="text-secondary space-y-2">
+              <div className="text-primary font-bold">Project Portfolio (50 total):</div>
               <p>📊 25 Web Applications | 25 TUI/CLI Tools</p>
               <p className="text-gray-400">Use `projects -web` or `projects -tui` to filter</p>
               <div className="mt-4">
@@ -253,8 +253,8 @@ export default function TerminalResume() {
 
       case 'experience':
         output = (
-          <div className="text-cyan-300 space-y-3">
-            <div className="text-emerald-400 font-bold">Work Experience:</div>
+          <div className="text-secondary space-y-3">
+            <div className="text-primary font-bold">Work Experience:</div>
             <div className="space-y-3">
               <div>
                 <p className="text-yellow-400">Senior Full-Stack Developer</p>
@@ -275,8 +275,8 @@ export default function TerminalResume() {
 
       case 'education':
         output = (
-          <div className="text-cyan-300 space-y-2">
-            <div className="text-emerald-400 font-bold">Education:</div>
+          <div className="text-secondary space-y-2">
+            <div className="text-primary font-bold">Education:</div>
             <p className="text-yellow-400">B.S. Computer Science</p>
             <p className="text-gray-400">University of California • 2015-2019</p>
             <p>• GPA: 3.8/4.0</p>
@@ -288,8 +288,8 @@ export default function TerminalResume() {
 
       case 'contact':
         output = (
-          <div className="text-cyan-300 space-y-2">
-            <div className="text-emerald-400 font-bold">Contact Information:</div>
+          <div className="text-secondary space-y-2">
+            <div className="text-primary font-bold">Contact Information:</div>
             <p>📧 Email: <span className="text-blue-400 underline">matt@example.com</span></p>
             <p>🐙 GitHub: <span className="text-blue-400 underline">github.com/matt</span></p>
             <p>💼 LinkedIn: <span className="text-blue-400 underline">linkedin.com/in/matt</span></p>
@@ -301,9 +301,9 @@ export default function TerminalResume() {
 
       case 'resume':
         output = (
-          <div className="text-cyan-300">
-            <p className="text-emerald-400">📄 Downloading resume.pdf...</p>
-            <div className="mt-2 bg-emerald-900/20 border border-emerald-500/30 p-2 rounded">
+          <div className="text-secondary">
+            <p className="text-primary">📄 Downloading resume.pdf...</p>
+            <div className="mt-2 bg-primary/20 border border-primary/30 p-2 rounded">
               <p>[████████████████████] 100%</p>
               <p className="text-gray-400 text-sm mt-1">Resume downloaded successfully!</p>
             </div>
@@ -317,7 +317,7 @@ export default function TerminalResume() {
 
       case 'ls':
         output = (
-          <div className="text-cyan-300 grid grid-cols-3 gap-4">
+          <div className="text-secondary grid grid-cols-3 gap-4">
             <span className="text-blue-400">projects/</span>
             <span className="text-blue-400">skills/</span>
             <span>README.md</span>
@@ -350,7 +350,7 @@ export default function TerminalResume() {
 
       case 'tree':
         output = (
-          <pre className="text-cyan-300 font-mono text-sm">{`
+          <pre className="text-secondary font-mono text-sm">{`
 ~/
 ├── projects/
 │   ├── web/
@@ -370,7 +370,7 @@ export default function TerminalResume() {
 
       case 'whoami':
         output = (
-          <div className="text-cyan-300">
+          <div className="text-secondary">
             <p>matt@portfolio-terminal</p>
             <p className="text-gray-400">UID=1000(matt) GID=1000(developers)</p>
           </div>
@@ -378,16 +378,16 @@ export default function TerminalResume() {
         break
 
       case 'date':
-        output = <span className="text-cyan-300">{new Date().toString()}</span>
+        output = <span className="text-secondary">{new Date().toString()}</span>
         break
 
       case 'echo':
-        output = <span className="text-cyan-300">{args || ''}</span>
+        output = <span className="text-secondary">{args || ''}</span>
         break
 
       case 'history':
         output = (
-          <div className="text-cyan-300 space-y-1">
+          <div className="text-secondary space-y-1">
             {history.map((item, i) => (
               <div key={i}>
                 <span className="text-gray-500">{i + 1}</span> {item.command}
@@ -513,7 +513,7 @@ export default function TerminalResume() {
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="min-h-screen bg-black text-emerald-400 p-4 font-mono">
+    <div className="min-h-screen text-primary p-4 font-mono">
       <AnimatePresence>
         {showMatrix && (
           <motion.div
@@ -543,7 +543,7 @@ export default function TerminalResume() {
         <motion.pre
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-emerald-400 text-xs sm:text-sm md:text-base mb-4 terminal-glow"
+          className="text-primary text-xs sm:text-sm md:text-base mb-4 terminal-glow"
         >
           {ASCII_HEADER}
         </motion.pre>
@@ -554,7 +554,7 @@ export default function TerminalResume() {
           transition={{ delay: 0.5 }}
           className="glass-dark rounded-lg p-4 h-[600px] overflow-hidden"
         >
-          <div className="flex items-center gap-2 mb-2 pb-2 border-b border-emerald-500/30">
+          <div className="flex items-center gap-2 mb-2 pb-2 border-b border-primary/30">
             <div className="flex gap-1.5">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -576,8 +576,8 @@ export default function TerminalResume() {
                   className="mb-3"
                 >
                   <div className="flex items-start gap-2">
-                    <span className="text-emerald-400">{currentDirectory}</span>
-                    <span className="text-cyan-400">$</span>
+                    <span className="text-primary">{currentDirectory}</span>
+                    <span className="text-secondary">$</span>
                     <span className="text-white">{item.command}</span>
                   </div>
                   {item.output && (
@@ -590,8 +590,8 @@ export default function TerminalResume() {
             </AnimatePresence>
 
             <form onSubmit={handleSubmit} className="flex items-start gap-2">
-              <span className="text-emerald-400">{currentDirectory}</span>
-              <span className="text-cyan-400">$</span>
+              <span className="text-primary">{currentDirectory}</span>
+              <span className="text-secondary">$</span>
               <input
                 ref={inputRef}
                 type="text"

@@ -197,11 +197,11 @@ const MetricCard = ({
           <div className="text-2xl font-bold terminal-glow">{value}</div>
           <div className="flex items-center text-xs text-muted-foreground mt-2">
             {isPositive ? (
-              <ArrowUpIcon className="mr-1 h-3 w-3 text-emerald-500" />
+              <ArrowUpIcon className="mr-1 h-3 w-3 text-foreground0" />
             ) : (
               <ArrowDownIcon className="mr-1 h-3 w-3 text-red-500" />
             )}
-            <span className={isPositive ? "text-emerald-500" : "text-red-500"}>
+            <span className={isPositive ? "text-foreground0" : "text-red-500"}>
               {change}
             </span>
             <span className="ml-1">from last month</span>
@@ -216,7 +216,7 @@ export default function AnalyticsDashboard() {
   const [dateRange, setDateRange] = React.useState("30d")
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-zinc-950 p-4 md:p-8">
+    <div className="min-h-screen p-4 md:p-8">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -626,7 +626,7 @@ export default function AnalyticsDashboard() {
             <div className="flex items-center justify-between">
               <CardTitle>Real-time Activity</CardTitle>
               <Badge className="glass-dark animate-pulse">
-                <span className="mr-2 h-2 w-2 bg-emerald-500 rounded-full inline-block animate-pulse" />
+                <span className="mr-2 h-2 w-2 bg-primary rounded-full inline-block animate-pulse" />
                 Live
               </Badge>
             </div>

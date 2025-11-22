@@ -180,7 +180,7 @@ export default function BlogPostTemplate() {
 
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-zinc-950">
+      <div className="min-h-screen ">
         {/* Header/Hero Section */}
         <motion.header
           className="relative overflow-hidden border-b border-border/30"
@@ -188,7 +188,7 @@ export default function BlogPostTemplate() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/5 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
           <div className="container mx-auto px-4 py-16 relative">
             {/* Breadcrumbs */}
             <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">

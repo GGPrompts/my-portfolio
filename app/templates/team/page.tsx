@@ -308,14 +308,14 @@ export default function TeamPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-zinc-950">
+    <div className="min-h-screen ">
       {/* Mission Statement Hero */}
       <section className="relative min-h-[60vh] flex items-center justify-center px-4 py-20 overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-radial from-emerald-500/5 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
           <motion.div
-            className="absolute top-20 left-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"
+            className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
             animate={{
               x: [0, 30, 0],
               y: [0, -20, 0],
@@ -323,7 +323,7 @@ export default function TeamPage() {
             transition={{ duration: 10, repeat: Infinity }}
           />
           <motion.div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"
             animate={{
               x: [0, -30, 0],
               y: [0, 20, 0],
@@ -340,7 +340,7 @@ export default function TeamPage() {
         >
           <div className="glass rounded-3xl p-12 border-glow">
             <Terminal className="w-16 h-16 mx-auto mb-6 text-primary terminal-glow" />
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">
               Building Tomorrow&apos;s Technology
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
@@ -375,7 +375,7 @@ export default function TeamPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4 terminal-glow">Meet Our Team</h2>
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">Meet Our Team</h2>
             <p className="text-muted-foreground">The brilliant minds behind our success</p>
           </motion.div>
 
@@ -432,7 +432,7 @@ export default function TeamPage() {
                           <div className="flex flex-col md:flex-row gap-6">
                             <div className="relative">
                               <div className="w-32 h-32 rounded-xl overflow-hidden border-2 border-primary/50 group-hover:border-primary transition-colors">
-                                <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20" />
+                                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20" />
                                 {/* Replace with actual image */}
                                 {/* <Image
                                   src={member.avatar}
@@ -530,7 +530,7 @@ export default function TeamPage() {
                     >
                       <div className="flex items-start gap-4 mb-4">
                         <div className="w-20 h-20 rounded-lg overflow-hidden border-2 border-primary/30 group-hover:border-primary transition-colors">
-                          <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20" />
+                          <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20" />
                         </div>
                         <div className="flex-1">
                           <h4 className="font-semibold text-lg">{member.name}</h4>
@@ -702,7 +702,7 @@ export default function TeamPage() {
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
-                        className="aspect-video bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 relative"
+                        className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 relative"
                       >
                         <div className="absolute inset-0 flex items-center justify-center">
                           <Camera className="w-12 h-12 text-primary/30" />
@@ -758,7 +758,7 @@ export default function TeamPage() {
       </section>
 
       {/* Open Positions */}
-      <section className="py-20 px-4 bg-gradient-to-t from-emerald-500/5 to-transparent">
+      <section className="py-20 px-4 bg-gradient-to-t from-primary/5 to-transparent">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

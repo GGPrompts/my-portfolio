@@ -142,29 +142,42 @@ export default function NotFound() {
     }
   };
 
+  // Handle navigation when countdown reaches 0
+  useEffect(() => {
+    if (countdown === 0) {
+      router.push('/');
+    }
+  }, [countdown, router]);
+
   // Optional countdown redirect
   const startCountdown = () => {
     setCountdown(10);
+  };
+
+  // Countdown timer effect
+  useEffect(() => {
+    if (countdown === null || countdown <= 0) return;
+
     const interval = setInterval(() => {
       setCountdown(prev => {
-        if (prev === null || prev <= 1) {
-          clearInterval(interval);
-          router.push('/');
-          return null;
+        if (prev === null || prev <= 0) {
+          return 0;
         }
         return prev - 1;
       });
     }, 1000);
-  };
+
+    return () => clearInterval(interval);
+  }, [countdown]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-zinc-950 text-emerald-400 relative overflow-hidden">
+    <div className="min-h-screen text-primary relative overflow-hidden">
       {/* Matrix Background */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         {matrixChars.map(col => (
           <div
             key={col.id}
-            className="absolute text-emerald-500 font-mono text-xs whitespace-pre"
+            className="absolute text-primary font-mono text-xs whitespace-pre"
             style={{
               left: `${col.x}px`,
               animation: `fall ${20 + Math.random() * 10}s linear infinite`,
@@ -185,8 +198,8 @@ export default function NotFound() {
           className="max-w-4xl mx-auto"
         >
           {/* ASCII Art Header */}
-          <Card className="glass-dark border-emerald-500/30 p-6 mb-8 overflow-hidden">
-            <pre className="text-emerald-400 text-xs sm:text-sm font-mono text-center overflow-x-auto terminal-glow">
+          <Card className="glass-dark border-primary/30 p-6 mb-8 overflow-hidden">
+            <pre className="text-primary text-xs sm:text-sm font-mono text-center overflow-x-auto terminal-glow">
               {asciiArt}
             </pre>
 
@@ -205,7 +218,7 @@ export default function NotFound() {
               >
                 <span className="relative">
                   {glitchText}
-                  <span className="absolute inset-0 text-cyan-400 opacity-50" style={{ transform: 'translate(2px, -2px)' }}>
+                  <span className="absolute inset-0 text-secondary opacity-50" style={{ transform: 'translate(2px, -2px)' }}>
                     {glitchText}
                   </span>
                   <span className="absolute inset-0 text-red-500 opacity-30" style={{ transform: 'translate(-2px, 2px)' }}>
@@ -217,24 +230,24 @@ export default function NotFound() {
           </Card>
 
           {/* Error Message with Typewriter */}
-          <Card className="glass-dark border-emerald-500/30 p-6 mb-8">
+          <Card className="glass-dark border-primary/30 p-6 mb-8">
             <div className="font-mono text-sm space-y-2">
               <div className="text-red-400 flex items-center gap-2">
                 <AlertCircle className="w-4 h-4" />
                 <span>SYSTEM ERROR</span>
               </div>
-              <div className="text-emerald-400">
+              <div className="text-primary">
                 {typewriterText}
-                {showCursor && <span className="inline-block w-2 h-4 bg-emerald-400 ml-1 animate-pulse" />}
+                {showCursor && <span className="inline-block w-2 h-4 bg-primary ml-1 animate-pulse" />}
               </div>
-              <div className="text-cyan-400 text-xs mt-4">
+              <div className="text-secondary text-xs mt-4">
                 bash: /usr/bin/page: No such file or directory
               </div>
             </div>
           </Card>
 
           {/* Interactive Terminal */}
-          <Card className="glass-dark border-emerald-500/30 p-6 mb-8">
+          <Card className="glass-dark border-primary/30 p-6 mb-8">
             <div className="flex items-center gap-2 mb-4 text-sm">
               <Terminal className="w-4 h-4" />
               <span className="font-mono">RECOVERY TERMINAL</span>
@@ -244,45 +257,45 @@ export default function NotFound() {
               ref={terminalRef}
               className="bg-black/50 rounded p-4 h-48 overflow-y-auto font-mono text-sm mb-4"
             >
-              <div className="text-cyan-400">
+              <div className="text-secondary">
                 matt@portfolio:~$ Available commands:
               </div>
               {suggestedCommands.map(sc => (
-                <div key={sc.cmd} className="text-emerald-400/70 text-xs">
+                <div key={sc.cmd} className="text-primary/70 text-xs">
                   {sc.cmd} - {sc.description}
                 </div>
               ))}
               {commandHistory.map((cmd, i) => (
-                <div key={i} className={cmd.startsWith('>') ? 'text-yellow-400' : 'text-emerald-400'}>
+                <div key={i} className={cmd.startsWith('>') ? 'text-yellow-400' : 'text-primary'}>
                   {cmd}
                 </div>
               ))}
             </div>
 
             <form onSubmit={handleCommand} className="flex gap-2">
-              <span className="text-emerald-400 font-mono">$</span>
+              <span className="text-primary font-mono">$</span>
               <Input
                 type="text"
                 value={command}
                 onChange={(e) => setCommand(e.target.value)}
-                className="flex-1 bg-black/30 border-emerald-500/30 text-emerald-400 font-mono placeholder:text-emerald-400/30"
+                className="flex-1 bg-black/30 border-primary/30 text-primary font-mono placeholder:text-primary/30"
                 placeholder="Enter command..."
               />
             </form>
           </Card>
 
           {/* Search Bar */}
-          <Card className="glass-dark border-emerald-500/30 p-6 mb-8">
-            <h3 className="text-lg font-mono mb-4 text-emerald-400">SEARCH SYSTEM FILES</h3>
+          <Card className="glass-dark border-primary/30 p-6 mb-8">
+            <h3 className="text-lg font-mono mb-4 text-primary">SEARCH SYSTEM FILES</h3>
             <form onSubmit={handleSearch} className="flex gap-2">
               <Input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 bg-black/30 border-emerald-500/30 text-emerald-400 placeholder:text-emerald-400/30"
+                className="flex-1 bg-black/30 border-primary/30 text-primary placeholder:text-primary/30"
                 placeholder="grep -r 'search query' /"
               />
-              <Button type="submit" className="bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/50">
+              <Button type="submit" className="bg-primary/20 hover:bg-primary/30 border border-primary/50">
                 <Search className="w-4 h-4" />
               </Button>
             </form>
@@ -292,12 +305,12 @@ export default function NotFound() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link href="/">
-                <Card className="glass-dark border-emerald-500/30 p-4 hover:border-emerald-400/50 transition-all cursor-pointer">
+                <Card className="glass-dark border-primary/30 p-4 hover:border-primary/50 transition-all cursor-pointer">
                   <div className="flex items-center gap-3">
-                    <Home className="w-5 h-5 text-emerald-400" />
+                    <Home className="w-5 h-5 text-primary" />
                     <div>
                       <div className="font-mono text-sm">cd /home</div>
-                      <div className="text-xs text-emerald-400/60">Return to base</div>
+                      <div className="text-xs text-primary/60">Return to base</div>
                     </div>
                   </div>
                 </Card>
@@ -307,14 +320,14 @@ export default function NotFound() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 onClick={() => router.back()}
-                className="w-full h-full bg-transparent hover:bg-emerald-500/10 border-0 p-0"
+                className="w-full h-full bg-transparent hover:bg-primary/10 border-0 p-0"
               >
-                <Card className="glass-dark border-emerald-500/30 p-4 hover:border-emerald-400/50 transition-all">
+                <Card className="glass-dark border-primary/30 p-4 hover:border-primary/50 transition-all">
                   <div className="flex items-center gap-3">
-                    <ArrowLeft className="w-5 h-5 text-emerald-400" />
+                    <ArrowLeft className="w-5 h-5 text-primary" />
                     <div className="text-left">
                       <div className="font-mono text-sm">cd ..</div>
-                      <div className="text-xs text-emerald-400/60">Go back</div>
+                      <div className="text-xs text-primary/60">Go back</div>
                     </div>
                   </div>
                 </Card>
@@ -325,14 +338,14 @@ export default function NotFound() {
               <Button
                 onClick={startCountdown}
                 disabled={countdown !== null}
-                className="w-full h-full bg-transparent hover:bg-emerald-500/10 border-0 p-0"
+                className="w-full h-full bg-transparent hover:bg-primary/10 border-0 p-0"
               >
-                <Card className="glass-dark border-emerald-500/30 p-4 hover:border-emerald-400/50 transition-all">
+                <Card className="glass-dark border-primary/30 p-4 hover:border-primary/50 transition-all">
                   <div className="flex items-center gap-3">
-                    <Terminal className="w-5 h-5 text-emerald-400" />
+                    <Terminal className="w-5 h-5 text-primary" />
                     <div className="text-left">
                       <div className="font-mono text-sm">auto-recover</div>
-                      <div className="text-xs text-emerald-400/60">
+                      <div className="text-xs text-primary/60">
                         {countdown !== null ? `Redirecting in ${countdown}s...` : 'Auto redirect'}
                       </div>
                     </div>

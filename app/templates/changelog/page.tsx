@@ -226,9 +226,9 @@ const changeTypeConfig = {
   feature: {
     icon: Sparkles,
     label: 'New Feature',
-    color: 'text-emerald-400',
-    bgColor: 'bg-emerald-500/10',
-    borderColor: 'border-emerald-500/30'
+    color: 'text-primary',
+    bgColor: 'bg-primary/10',
+    borderColor: 'border-primary/30'
   },
   bugfix: {
     icon: Bug,
@@ -348,10 +348,10 @@ export default function ChangelogTemplate() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-zinc-950 text-emerald-50 p-8 relative overflow-hidden">
+    <div className="min-h-screen text-foreground p-8 relative overflow-hidden">
       {/* Animated background */}
       <div className="fixed inset-0 opacity-30">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-cyan-500/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-green-500/10 via-transparent to-transparent" />
       </div>
 
@@ -366,11 +366,11 @@ export default function ChangelogTemplate() {
           className="mb-12"
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-emerald-500/10 rounded-lg border border-emerald-500/30">
-              <Terminal className="w-6 h-6 text-emerald-400" />
+            <div className="p-3 bg-primary/10 rounded-lg border border-primary/30">
+              <Terminal className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Changelog
               </h1>
               <p className="text-slate-400 mt-1">Product updates and version history</p>
@@ -378,12 +378,12 @@ export default function ChangelogTemplate() {
           </div>
 
           {/* Current Version Banner */}
-          <div className="glass border-emerald-500/30 p-4 rounded-lg flex items-center justify-between">
+          <div className="glass border-primary/30 p-4 rounded-lg flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <Package className="w-5 h-5 text-emerald-400" />
+                <Package className="w-5 h-5 text-primary" />
                 <span className="text-slate-400">Current Version:</span>
-                <span className="font-mono text-emerald-400 text-lg font-semibold">v2.0.0</span>
+                <span className="font-mono text-primary text-lg font-semibold">v2.0.0</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-500">
                 <Clock className="w-4 h-4" />
@@ -391,7 +391,7 @@ export default function ChangelogTemplate() {
               </div>
             </div>
             <div className="flex gap-2">
-              <button className="px-3 py-1.5 bg-emerald-500/20 text-emerald-400 rounded-md border border-emerald-500/30 hover:bg-emerald-500/30 transition-colors text-sm flex items-center gap-1.5">
+              <button className="px-3 py-1.5 bg-primary/20 text-primary rounded-md border border-primary/30 hover:bg-primary/30 transition-colors text-sm flex items-center gap-1.5">
                 <Download className="w-4 h-4" />
                 Download
               </button>
@@ -419,21 +419,21 @@ export default function ChangelogTemplate() {
                 placeholder="Search changelog..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-slate-900/50 border border-slate-800 rounded-lg focus:outline-none focus:border-emerald-500/50 focus:bg-slate-900/70 transition-all"
+                className="w-full pl-10 pr-4 py-3 bg-slate-900/50 border border-slate-800 rounded-lg focus:outline-none focus:border-primary/50 focus:bg-slate-900/70 transition-all"
               />
             </div>
             <button
               onClick={() => setShowFilters(!showFilters)}
               className={`px-4 py-3 rounded-lg border transition-all flex items-center gap-2 ${
                 showFilters
-                  ? 'bg-emerald-500/20 border-emerald-500/30 text-emerald-400'
+                  ? 'bg-primary/20 border-primary/30 text-primary'
                   : 'bg-slate-900/50 border-slate-800 text-slate-400 hover:bg-slate-900/70'
               }`}
             >
               <Filter className="w-5 h-5" />
               Filters
               {selectedTypes.length > 0 && (
-                <span className="px-2 py-0.5 bg-emerald-500/30 rounded-full text-xs">
+                <span className="px-2 py-0.5 bg-primary/30 rounded-full text-xs">
                   {selectedTypes.length}
                 </span>
               )}
@@ -535,7 +535,7 @@ export default function ChangelogTemplate() {
           {/* Timeline and Releases */}
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-[21px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-500/50 via-emerald-500/30 to-transparent" />
+            <div className="absolute left-[21px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-primary/30 to-transparent" />
 
             {/* Releases */}
             <div className="space-y-8">
@@ -550,13 +550,13 @@ export default function ChangelogTemplate() {
                   {/* Timeline Node */}
                   <div className="absolute left-0 top-6">
                     <div className={`w-11 h-11 rounded-full flex items-center justify-center ${
-                      index === 0 ? 'bg-emerald-500/20 border-2 border-emerald-500' : 'bg-slate-900 border-2 border-slate-700'
+                      index === 0 ? 'bg-primary/20 border-2 border-primary' : 'bg-slate-900 border-2 border-slate-700'
                     }`}>
-                      <GitCommit className={`w-5 h-5 ${index === 0 ? 'text-emerald-400' : 'text-slate-500'}`} />
+                      <GitCommit className={`w-5 h-5 ${index === 0 ? 'text-primary' : 'text-slate-500'}`} />
                     </div>
                     {index === 0 && (
                       <div className="absolute -top-1 -right-1">
-                        <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse" />
+                        <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
                       </div>
                     )}
                   </div>
@@ -574,7 +574,7 @@ export default function ChangelogTemplate() {
                         <div className="flex items-center gap-4">
                           <div className="text-left">
                             <div className="flex items-center gap-3 mb-1">
-                              <span className="font-mono text-xl font-semibold text-emerald-400">
+                              <span className="font-mono text-xl font-semibold text-primary">
                                 {release.version}
                               </span>
                               <span className={`px-2 py-0.5 text-xs rounded-md border ${
@@ -637,11 +637,11 @@ export default function ChangelogTemplate() {
                                       </div>
                                       <div className="flex-1">
                                         <div className="flex items-center gap-2 mb-1">
-                                          <h4 className="font-medium text-emerald-50">{change.title}</h4>
+                                          <h4 className="font-medium text-foreground">{change.title}</h4>
                                           {change.prNumber && (
                                             <a
                                               href="#"
-                                              className="text-xs text-slate-500 hover:text-emerald-400 transition-colors"
+                                              className="text-xs text-slate-500 hover:text-primary transition-colors"
                                             >
                                               #{change.prNumber}
                                             </a>
@@ -649,7 +649,7 @@ export default function ChangelogTemplate() {
                                           {change.issueNumber && (
                                             <a
                                               href="#"
-                                              className="text-xs text-slate-500 hover:text-emerald-400 transition-colors"
+                                              className="text-xs text-slate-500 hover:text-primary transition-colors"
                                             >
                                               fixes #{change.issueNumber}
                                             </a>
@@ -674,7 +674,7 @@ export default function ChangelogTemplate() {
                                                     className="absolute top-8 right-2 p-1.5 bg-slate-800/50 rounded hover:bg-slate-800 transition-colors"
                                                   >
                                                     {copiedCode === `before-${change.id}` ? (
-                                                      <Check className="w-4 h-4 text-emerald-400" />
+                                                      <Check className="w-4 h-4 text-primary" />
                                                     ) : (
                                                       <Copy className="w-4 h-4 text-slate-500" />
                                                     )}
@@ -684,7 +684,7 @@ export default function ChangelogTemplate() {
                                             )}
                                             {change.codeExample.after && (
                                               <div className="relative">
-                                                <div className="text-xs text-emerald-400 mb-1">After:</div>
+                                                <div className="text-xs text-primary mb-1">After:</div>
                                                 <div className="bg-slate-950/50 border border-slate-800 rounded-md p-3 font-mono text-sm">
                                                   <pre className="text-slate-300 overflow-x-auto">
                                                     <code>{change.codeExample.after}</code>
@@ -694,7 +694,7 @@ export default function ChangelogTemplate() {
                                                     className="absolute top-8 right-2 p-1.5 bg-slate-800/50 rounded hover:bg-slate-800 transition-colors"
                                                   >
                                                     {copiedCode === `after-${change.id}` ? (
-                                                      <Check className="w-4 h-4 text-emerald-400" />
+                                                      <Check className="w-4 h-4 text-primary" />
                                                     ) : (
                                                       <Copy className="w-4 h-4 text-slate-500" />
                                                     )}
@@ -714,7 +714,7 @@ export default function ChangelogTemplate() {
                                                     className="absolute top-8 right-2 p-1.5 bg-slate-800/50 rounded hover:bg-slate-800 transition-colors"
                                                   >
                                                     {copiedCode === `migration-${change.id}` ? (
-                                                      <Check className="w-4 h-4 text-emerald-400" />
+                                                      <Check className="w-4 h-4 text-primary" />
                                                     ) : (
                                                       <Copy className="w-4 h-4 text-slate-500" />
                                                     )}
@@ -735,7 +735,7 @@ export default function ChangelogTemplate() {
                                 {release.githubUrl && (
                                   <a
                                     href={release.githubUrl}
-                                    className="text-sm text-slate-500 hover:text-emerald-400 transition-colors flex items-center gap-1"
+                                    className="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-1"
                                   >
                                     <GitBranch className="w-4 h-4" />
                                     GitHub Release
@@ -745,7 +745,7 @@ export default function ChangelogTemplate() {
                                 {release.downloadUrl && (
                                   <a
                                     href={release.downloadUrl}
-                                    className="text-sm text-slate-500 hover:text-emerald-400 transition-colors flex items-center gap-1"
+                                    className="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-1"
                                   >
                                     <Download className="w-4 h-4" />
                                     Download
@@ -794,13 +794,13 @@ export default function ChangelogTemplate() {
               transition={{ delay: 0.2 }}
               className="glass border-slate-800 p-6 rounded-lg"
             >
-              <h3 className="font-semibold mb-4 text-emerald-400">Stay Updated</h3>
+              <h3 className="font-semibold mb-4 text-primary">Stay Updated</h3>
               <div className="space-y-3">
                 <button
                   onClick={() => setEmailSubscribed(!emailSubscribed)}
                   className={`w-full px-4 py-2.5 rounded-md border transition-all flex items-center gap-2 text-sm ${
                     emailSubscribed
-                      ? 'bg-emerald-500/20 border-emerald-500/30 text-emerald-400'
+                      ? 'bg-primary/20 border-primary/30 text-primary'
                       : 'bg-slate-900/50 border-slate-800 text-slate-400 hover:bg-slate-900/70'
                   }`}
                 >
@@ -832,7 +832,7 @@ export default function ChangelogTemplate() {
               transition={{ delay: 0.3 }}
               className="glass border-slate-800 p-6 rounded-lg"
             >
-              <h3 className="font-semibold mb-4 text-emerald-400">Release Stats</h3>
+              <h3 className="font-semibold mb-4 text-primary">Release Stats</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-slate-500">Total Releases</span>
@@ -860,8 +860,8 @@ export default function ChangelogTemplate() {
               transition={{ delay: 0.4 }}
               className="glass border-slate-800 p-6 rounded-lg"
             >
-              <h3 className="font-semibold mb-4 text-emerald-400">Jump to Version</h3>
-              <select className="w-full px-3 py-2 bg-slate-900/50 border border-slate-800 rounded-md text-slate-300 text-sm focus:outline-none focus:border-emerald-500/50">
+              <h3 className="font-semibold mb-4 text-primary">Jump to Version</h3>
+              <select className="w-full px-3 py-2 bg-slate-900/50 border border-slate-800 rounded-md text-slate-300 text-sm focus:outline-none focus:border-primary/50">
                 {releases.map(release => (
                   <option key={release.id} value={release.version}>
                     {release.version} - {new Date(release.date).toLocaleDateString()}
@@ -877,9 +877,9 @@ export default function ChangelogTemplate() {
               transition={{ delay: 0.5 }}
               className="glass border-slate-800 p-6 rounded-lg"
             >
-              <h3 className="font-semibold mb-4 text-emerald-400">Downloads</h3>
+              <h3 className="font-semibold mb-4 text-primary">Downloads</h3>
               <div className="space-y-3">
-                <button className="w-full px-4 py-2.5 bg-emerald-500/20 border border-emerald-500/30 rounded-md hover:bg-emerald-500/30 transition-colors text-emerald-400 flex items-center justify-center gap-2 text-sm">
+                <button className="w-full px-4 py-2.5 bg-primary/20 border border-primary/30 rounded-md hover:bg-primary/30 transition-colors text-primary flex items-center justify-center gap-2 text-sm">
                   <Download className="w-4 h-4" />
                   Latest Release (v2.0.0)
                 </button>
@@ -897,11 +897,11 @@ export default function ChangelogTemplate() {
               transition={{ delay: 0.6 }}
               className="glass border-slate-800 p-6 rounded-lg"
             >
-              <h3 className="font-semibold mb-4 text-emerald-400">Resources</h3>
+              <h3 className="font-semibold mb-4 text-primary">Resources</h3>
               <div className="space-y-2">
                 <a
                   href="#"
-                  className="text-sm text-slate-500 hover:text-emerald-400 transition-colors flex items-center gap-1"
+                  className="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-1"
                 >
                   <Code className="w-4 h-4" />
                   API Documentation
@@ -909,7 +909,7 @@ export default function ChangelogTemplate() {
                 </a>
                 <a
                   href="#"
-                  className="text-sm text-slate-500 hover:text-emerald-400 transition-colors flex items-center gap-1"
+                  className="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-1"
                 >
                   <GitBranch className="w-4 h-4" />
                   Contributing Guide
@@ -917,7 +917,7 @@ export default function ChangelogTemplate() {
                 </a>
                 <a
                   href="#"
-                  className="text-sm text-slate-500 hover:text-emerald-400 transition-colors flex items-center gap-1"
+                  className="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-1"
                 >
                   <Shield className="w-4 h-4" />
                   Security Policy

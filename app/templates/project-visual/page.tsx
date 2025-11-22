@@ -38,7 +38,7 @@ const mockProject = {
       icon: Palette,
       title: "Themeable",
       description: "Full theme customization with CSS variables",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-secondary"
     },
     {
       icon: Layers,
@@ -273,10 +273,10 @@ function BeforeAfterSlider({ before, after, label }: { before: string; after: st
 
         {/* Slider line */}
         <div
-          className="absolute top-0 bottom-0 w-1 bg-emerald-400/80 shadow-[0_0_10px_rgba(16,185,129,0.5)]"
+          className="absolute top-0 bottom-0 w-1 bg-primary/80 shadow-[0_0_10px_rgba(16,185,129,0.5)]"
           style={{ left: `${sliderPosition}%` }}
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-emerald-400 rounded-full shadow-lg flex items-center justify-center">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-primary rounded-full shadow-lg flex items-center justify-center">
             <ChevronLeft className="w-4 h-4 text-black absolute -left-0.5" />
             <ChevronRight className="w-4 h-4 text-black absolute -right-0.5" />
           </div>
@@ -314,13 +314,13 @@ export default function ProjectVisualTemplate() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-zinc-950">
+    <div className="min-h-screen ">
       {/* Animated background particles */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-emerald-400/20 rounded-full"
+            className="absolute w-1 h-1 bg-primary/20 rounded-full"
             animate={{
               x: [Math.random() * window.innerWidth, Math.random() * window.innerWidth],
               y: [Math.random() * window.innerHeight, Math.random() * window.innerHeight],
@@ -350,11 +350,11 @@ export default function ProjectVisualTemplate() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <Badge variant="outline" className="mb-4 border-emerald-400/30 text-emerald-400">
+            <Badge variant="outline" className="mb-4 border-primary/30 text-primary">
               <Sparkles className="w-3 h-3 mr-1" />
               Visual Showcase
             </Badge>
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+            <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
               {mockProject.title}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
@@ -364,7 +364,7 @@ export default function ProjectVisualTemplate() {
 
           {/* Large Demo Video/Preview */}
           <FloatingCard className="relative">
-            <Card className="glass border-emerald-400/20 overflow-hidden">
+            <Card className="glass border-primary/20 overflow-hidden">
               <div className="relative aspect-video bg-black/50 group">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-6xl text-slate-700">Demo Video</div>
@@ -377,11 +377,11 @@ export default function ProjectVisualTemplate() {
                   onClick={() => setIsPlaying(!isPlaying)}
                   className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"
                 >
-                  <div className="w-24 h-24 rounded-full bg-emerald-400/20 backdrop-blur-sm flex items-center justify-center border border-emerald-400/30">
+                  <div className="w-24 h-24 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center border border-primary/30">
                     {isPlaying ? (
-                      <Pause className="w-10 h-10 text-emerald-400" />
+                      <Pause className="w-10 h-10 text-primary" />
                     ) : (
-                      <Play className="w-10 h-10 text-emerald-400 ml-1" />
+                      <Play className="w-10 h-10 text-primary ml-1" />
                     )}
                   </div>
                 </motion.button>
@@ -401,7 +401,7 @@ export default function ProjectVisualTemplate() {
                       className={cn(
                         "p-2 rounded-lg backdrop-blur-sm transition-colors",
                         selectedDevice === id
-                          ? "bg-emerald-400/20 text-emerald-400 border border-emerald-400/30"
+                          ? "bg-primary/20 text-primary border border-primary/30"
                           : "bg-black/20 text-white/60 border border-white/10 hover:text-white/80"
                       )}
                     >
@@ -413,15 +413,15 @@ export default function ProjectVisualTemplate() {
 
               {/* Action buttons */}
               <div className="p-6 flex flex-wrap gap-4">
-                <Button className="bg-emerald-400 text-black hover:bg-emerald-300">
+                <Button className="bg-primary text-black hover:bg-primary">
                   <Eye className="w-4 h-4 mr-2" />
                   Live Demo
                 </Button>
-                <Button variant="outline" className="border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10">
+                <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/10">
                   <Github className="w-4 h-4 mr-2" />
                   View Code
                 </Button>
-                <Button variant="outline" className="border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10">
+                <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/10">
                   <Download className="w-4 h-4 mr-2" />
                   Download
                 </Button>
@@ -438,7 +438,7 @@ export default function ProjectVisualTemplate() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-emerald-400"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary"
           >
             Impact & Metrics
           </motion.h2>
@@ -452,8 +452,8 @@ export default function ProjectVisualTemplate() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <FloatingCard>
-                  <Card className="glass border-emerald-400/20 p-6 text-center">
-                    <div className="text-4xl md:text-5xl font-bold text-emerald-400 mb-2">
+                  <Card className="glass border-primary/20 p-6 text-center">
+                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                       <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                     </div>
                     <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -472,7 +472,7 @@ export default function ProjectVisualTemplate() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-emerald-400"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary"
           >
             Key Features
           </motion.h2>
@@ -488,7 +488,7 @@ export default function ProjectVisualTemplate() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <FloatingCard>
-                    <Card className="glass border-emerald-400/20 p-8 group hover:border-emerald-400/40 transition-all">
+                    <Card className="glass border-primary/20 p-8 group hover:border-primary/40 transition-all">
                       <div className="flex items-start gap-6">
                         <div className={cn(
                           "w-16 h-16 rounded-xl flex items-center justify-center",
@@ -498,7 +498,7 @@ export default function ProjectVisualTemplate() {
                           <Icon className="w-8 h-8 text-white" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-xl font-bold mb-2 text-emerald-400">{feature.title}</h3>
+                          <h3 className="text-xl font-bold mb-2 text-primary">{feature.title}</h3>
                           <p className="text-muted-foreground">{feature.description}</p>
                         </div>
                       </div>
@@ -518,7 +518,7 @@ export default function ProjectVisualTemplate() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-emerald-400"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary"
           >
             Visual Gallery
           </motion.h2>
@@ -537,7 +537,7 @@ export default function ProjectVisualTemplate() {
                   className="relative group cursor-pointer"
                 >
                   <Card className={cn(
-                    "glass border-emerald-400/20 overflow-hidden",
+                    "glass border-primary/20 overflow-hidden",
                     screenshot.aspect === 'tall' && 'aspect-[3/4]',
                     screenshot.aspect === 'wide' && 'aspect-[16/9]',
                     screenshot.aspect === 'square' && 'aspect-square'
@@ -552,9 +552,9 @@ export default function ProjectVisualTemplate() {
                         <motion.div
                           initial={{ scale: 0 }}
                           whileHover={{ scale: 1 }}
-                          className="p-3 rounded-full bg-emerald-400/20 backdrop-blur-sm border border-emerald-400/30"
+                          className="p-3 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30"
                         >
-                          <Maximize2 className="w-6 h-6 text-emerald-400" />
+                          <Maximize2 className="w-6 h-6 text-primary" />
                         </motion.div>
                       </div>
                     </div>
@@ -578,7 +578,7 @@ export default function ProjectVisualTemplate() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-emerald-400"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary"
           >
             Before & After
           </motion.h2>
@@ -605,14 +605,14 @@ export default function ProjectVisualTemplate() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-emerald-400"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary"
           >
             Project Timeline
           </motion.h2>
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-emerald-400/0 via-emerald-400/50 to-emerald-400/0" />
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary/0 via-emerald-400/50 to-emerald-400/0" />
 
             <div className="space-y-12">
               {mockProject.timeline.map((item, index) => (
@@ -628,8 +628,8 @@ export default function ProjectVisualTemplate() {
                 >
                   <div className="flex-1">
                     {index % 2 === 0 && (
-                      <Card className="glass border-emerald-400/20 p-6">
-                        <div className="text-sm text-emerald-400 mb-2">{item.date}</div>
+                      <Card className="glass border-primary/20 p-6">
+                        <div className="text-sm text-primary mb-2">{item.date}</div>
                         <h3 className="text-lg font-bold mb-2">{item.event}</h3>
                         <p className="text-sm text-muted-foreground">{item.description}</p>
                       </Card>
@@ -638,13 +638,13 @@ export default function ProjectVisualTemplate() {
 
                   <motion.div
                     whileHover={{ scale: 1.2 }}
-                    className="w-4 h-4 rounded-full bg-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.5)] relative z-10"
+                    className="w-4 h-4 rounded-full bg-primary shadow-[0_0_20px_rgba(16,185,129,0.5)] relative z-10"
                   />
 
                   <div className="flex-1">
                     {index % 2 === 1 && (
-                      <Card className="glass border-emerald-400/20 p-6">
-                        <div className="text-sm text-emerald-400 mb-2">{item.date}</div>
+                      <Card className="glass border-primary/20 p-6">
+                        <div className="text-sm text-primary mb-2">{item.date}</div>
                         <h3 className="text-lg font-bold mb-2">{item.event}</h3>
                         <p className="text-sm text-muted-foreground">{item.description}</p>
                       </Card>
@@ -664,7 +664,7 @@ export default function ProjectVisualTemplate() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-emerald-400"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary"
           >
             What Users Say
           </motion.h2>
@@ -678,13 +678,13 @@ export default function ProjectVisualTemplate() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <Card className="glass border-emerald-400/20 p-8">
+                    <Card className="glass border-primary/20 p-8">
                       <div className="flex items-start gap-6">
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 flex-shrink-0" />
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex-shrink-0" />
                         <div className="flex-1">
                           <div className="flex gap-1 mb-4">
                             {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="w-5 h-5 fill-emerald-400 text-emerald-400" />
+                              <Star key={i} className="w-5 h-5 fill-emerald-400 text-primary" />
                             ))}
                           </div>
                           <p className="text-lg mb-4 italic">"{testimonial.content}"</p>
@@ -699,8 +699,8 @@ export default function ProjectVisualTemplate() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10" />
-            <CarouselNext className="border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10" />
+            <CarouselPrevious className="border-primary/30 text-primary hover:bg-primary/10" />
+            <CarouselNext className="border-primary/30 text-primary hover:bg-primary/10" />
           </Carousel>
         </div>
       </section>
@@ -712,20 +712,20 @@ export default function ProjectVisualTemplate() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-emerald-400"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary"
           >
             Design System
           </motion.h2>
 
           <Tabs defaultValue="colors" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8 bg-black/50 border border-emerald-400/20">
-              <TabsTrigger value="colors" className="data-[state=active]:bg-emerald-400/20 data-[state=active]:text-emerald-400">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8 bg-black/50 border border-primary/20">
+              <TabsTrigger value="colors" className="data-[state=active]:bg-primary/20 data-[state=active]:text-primary">
                 Colors
               </TabsTrigger>
-              <TabsTrigger value="typography" className="data-[state=active]:bg-emerald-400/20 data-[state=active]:text-emerald-400">
+              <TabsTrigger value="typography" className="data-[state=active]:bg-primary/20 data-[state=active]:text-primary">
                 Typography
               </TabsTrigger>
-              <TabsTrigger value="tokens" className="data-[state=active]:bg-emerald-400/20 data-[state=active]:text-emerald-400">
+              <TabsTrigger value="tokens" className="data-[state=active]:bg-primary/20 data-[state=active]:text-primary">
                 Tokens
               </TabsTrigger>
             </TabsList>
@@ -751,7 +751,7 @@ export default function ProjectVisualTemplate() {
                             className="w-20 h-20 rounded-lg shadow-lg border border-white/10"
                             style={{ backgroundColor: color }}
                           />
-                          <p className="text-xs text-center mt-2 text-muted-foreground group-hover:text-emerald-400 transition-colors">
+                          <p className="text-xs text-center mt-2 text-muted-foreground group-hover:text-primary transition-colors">
                             {color}
                           </p>
                         </motion.div>
@@ -763,10 +763,10 @@ export default function ProjectVisualTemplate() {
             </TabsContent>
 
             <TabsContent value="typography">
-              <Card className="glass border-emerald-400/20 p-8">
+              <Card className="glass border-primary/20 p-8">
                 <div className="space-y-6">
                   <div>
-                    <h1 className="text-6xl font-bold mb-2 text-emerald-400">Display Heading</h1>
+                    <h1 className="text-6xl font-bold mb-2 text-primary">Display Heading</h1>
                     <p className="text-sm text-muted-foreground">6xl / Bold / Line Height 1</p>
                   </div>
                   <div>
@@ -808,21 +808,21 @@ export default function ProjectVisualTemplate() {
                         >
                           {token.name === 'Border Radius' && (
                             <div
-                              className="w-16 h-16 bg-emerald-400/20 border border-emerald-400/30"
+                              className="w-16 h-16 bg-primary/20 border border-primary/30"
                               style={{ borderRadius: value }}
                             />
                           )}
                           {token.name === 'Spacing' && (
                             <div className="flex items-end gap-1">
                               <div
-                                className="bg-emerald-400/30 border-l-2 border-emerald-400"
+                                className="bg-primary/30 border-l-2 border-primary"
                                 style={{ width: value, height: '40px' }}
                               />
                             </div>
                           )}
                           {token.name === 'Shadow' && (
                             <Card className={cn(
-                              "w-16 h-16 bg-black/50 border-emerald-400/20",
+                              "w-16 h-16 bg-black/50 border-primary/20",
                               value === 'sm' && 'shadow-sm',
                               value === 'md' && 'shadow-md',
                               value === 'lg' && 'shadow-lg',
@@ -850,19 +850,19 @@ export default function ProjectVisualTemplate() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-emerald-400"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary"
           >
             Try It Live
           </motion.h2>
 
           <FloatingCard>
-            <Card className="glass border-emerald-400/20 overflow-hidden">
-              <div className="bg-black/30 border-b border-emerald-400/20 p-4">
+            <Card className="glass border-primary/20 overflow-hidden">
+              <div className="bg-black/30 border-b border-primary/20 p-4">
                 <div className="flex items-center gap-4">
                   <div className="flex gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-400" />
                     <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <div className="w-3 h-3 rounded-full bg-emerald-400" />
+                    <div className="w-3 h-3 rounded-full bg-primary" />
                   </div>
                   <div className="flex-1 flex items-center gap-2 px-4 py-1 bg-black/30 rounded-lg">
                     <ExternalLink className="w-4 h-4 text-muted-foreground" />
@@ -875,7 +875,7 @@ export default function ProjectVisualTemplate() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-4xl text-slate-700 mb-4">Live Demo Embed</div>
-                    <Button className="bg-emerald-400 text-black hover:bg-emerald-300">
+                    <Button className="bg-primary text-black hover:bg-primary">
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Open in New Tab
                     </Button>
@@ -896,18 +896,18 @@ export default function ProjectVisualTemplate() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
               Ready to Build Something Beautiful?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Join thousands of developers using {mockProject.title} to create stunning user interfaces.
             </p>
             <div className="flex flex-wrap gap-4 justify-center pt-4">
-              <Button size="lg" className="bg-emerald-400 text-black hover:bg-emerald-300 group">
+              <Button size="lg" className="bg-primary text-black hover:bg-primary group">
                 Get Started
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10">
+              <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/10">
                 <Github className="w-5 h-5 mr-2" />
                 View on GitHub
               </Button>

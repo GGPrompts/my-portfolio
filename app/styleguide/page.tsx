@@ -43,7 +43,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 
 export default function StyleGuide() {
   return (
-    <main className="min-h-screen bg-black py-20 px-4 relative">
+    <main className="min-h-screen py-20 px-4 relative">
       <SpaceBackground speed={0.5} opacity={1} />
       <ScrollProgress className="top-0 z-10" />
 

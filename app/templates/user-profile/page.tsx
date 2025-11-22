@@ -199,16 +199,16 @@ export default function UserProfileTemplate() {
 
   const getContributionColor = (count: number) => {
     if (count === 0) return 'bg-zinc-800/50';
-    if (count === 1) return 'bg-emerald-900/50';
-    if (count === 2) return 'bg-emerald-700/50';
-    if (count === 3) return 'bg-emerald-500/50';
-    return 'bg-emerald-400/50';
+    if (count === 1) return 'bg-primary/50';
+    if (count === 2) return 'bg-primary/50';
+    if (count === 3) return 'bg-primary/50';
+    return 'bg-primary/50';
   };
 
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-gradient-to-br from-black via-slate-950 to-zinc-950 text-foreground relative overflow-hidden"
+      className="min-h-screen text-foreground relative overflow-hidden"
     >
       {/* Animated background */}
       <div className="fixed inset-0 pointer-events-none">
@@ -227,7 +227,7 @@ export default function UserProfileTemplate() {
         {/* Profile Header */}
         <Card className="glass border-white/10 overflow-hidden mb-8">
           {/* Cover Image */}
-          <div className="relative h-48 sm:h-64 bg-gradient-to-br from-emerald-500/20 via-cyan-500/20 to-blue-500/20">
+          <div className="relative h-48 sm:h-64 bg-gradient-to-br from-primary/20 via-secondary/20 to-blue-500/20">
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <Button
               size="sm"
@@ -264,7 +264,7 @@ export default function UserProfileTemplate() {
                       <h1 className="text-2xl sm:text-3xl font-bold terminal-glow">
                         {userData.name}
                       </h1>
-                      <Badge variant="outline" className="border-emerald-500/30 text-emerald-400">
+                      <Badge variant="outline" className="border-primary/30 text-primary">
                         Level {userData.level}
                       </Badge>
                     </div>
@@ -276,7 +276,7 @@ export default function UserProfileTemplate() {
                         <Button variant="outline" onClick={() => setIsEditing(false)}>
                           Cancel
                         </Button>
-                        <Button className="bg-emerald-600 hover:bg-emerald-700">
+                        <Button className="bg-primary hover:bg-primary">
                           Save Profile
                         </Button>
                       </>
@@ -284,14 +284,14 @@ export default function UserProfileTemplate() {
                       <>
                         <Button
                           variant="outline"
-                          className="border-emerald-500/30 hover:bg-emerald-500/10"
+                          className="border-primary/30 hover:bg-primary/10"
                           onClick={() => setIsEditing(true)}
                         >
                           <Edit className="h-4 w-4 mr-2" />
                           Edit Profile
                         </Button>
                         <Button
-                          className={isFollowing ? 'bg-emerald-600 hover:bg-emerald-700' : ''}
+                          className={isFollowing ? 'bg-primary hover:bg-primary' : ''}
                           variant={isFollowing ? 'default' : 'outline'}
                           onClick={() => setIsFollowing(!isFollowing)}
                         >
@@ -349,7 +349,7 @@ export default function UserProfileTemplate() {
               </div>
               <div className="flex items-center gap-1">
                 <Link className="h-4 w-4" />
-                <a href={userData.website} className="hover:text-emerald-400 transition-colors">
+                <a href={userData.website} className="hover:text-primary transition-colors">
                   {userData.website.replace('https://', '')}
                 </a>
               </div>
@@ -364,11 +364,11 @@ export default function UserProfileTemplate() {
             {/* Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mt-6">
               <div className="glass rounded-lg p-3 text-center">
-                <div className="text-2xl font-bold text-emerald-400">{userData.followers.toLocaleString()}</div>
+                <div className="text-2xl font-bold text-primary">{userData.followers.toLocaleString()}</div>
                 <div className="text-xs text-muted-foreground">Followers</div>
               </div>
               <div className="glass rounded-lg p-3 text-center">
-                <div className="text-2xl font-bold text-cyan-400">{userData.following}</div>
+                <div className="text-2xl font-bold text-secondary">{userData.following}</div>
                 <div className="text-xs text-muted-foreground">Following</div>
               </div>
               <div className="glass rounded-lg p-3 text-center">
@@ -407,16 +407,16 @@ export default function UserProfileTemplate() {
         {/* Main Content Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           <TabsList className="glass border-white/10 p-1 h-auto flex-wrap">
-            <TabsTrigger value="overview" className="data-[state=active]:bg-emerald-500/20">
+            <TabsTrigger value="overview" className="data-[state=active]:bg-primary/20">
               Overview
             </TabsTrigger>
-            <TabsTrigger value="projects" className="data-[state=active]:bg-emerald-500/20">
+            <TabsTrigger value="projects" className="data-[state=active]:bg-primary/20">
               Projects
             </TabsTrigger>
-            <TabsTrigger value="activity" className="data-[state=active]:bg-emerald-500/20">
+            <TabsTrigger value="activity" className="data-[state=active]:bg-primary/20">
               Activity
             </TabsTrigger>
-            <TabsTrigger value="about" className="data-[state=active]:bg-emerald-500/20">
+            <TabsTrigger value="about" className="data-[state=active]:bg-primary/20">
               About
             </TabsTrigger>
           </TabsList>
@@ -427,7 +427,7 @@ export default function UserProfileTemplate() {
             <Card className="glass border-white/10">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Target className="h-5 w-5 text-emerald-400" />
+                  <Target className="h-5 w-5 text-primary" />
                   Pinned Projects
                 </CardTitle>
                 <CardDescription>Drag to reorder • Click to view</CardDescription>
@@ -438,7 +438,7 @@ export default function UserProfileTemplate() {
                     <motion.div
                       key={project.id}
                       whileHover={{ scale: 1.02 }}
-                      className="glass rounded-lg p-4 cursor-pointer border border-white/5 hover:border-emerald-500/30 transition-all"
+                      className="glass rounded-lg p-4 cursor-pointer border border-white/5 hover:border-primary/30 transition-all"
                     >
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex items-center gap-2">
@@ -484,11 +484,11 @@ export default function UserProfileTemplate() {
                   {activities.slice(0, 3).map((activity) => (
                     <div key={activity.id} className="flex items-start gap-3">
                       <div className="glass rounded-full p-2">
-                        <activity.icon className="h-4 w-4 text-emerald-400" />
+                        <activity.icon className="h-4 w-4 text-primary" />
                       </div>
                       <div className="flex-1">
                         <p className="text-sm">
-                          {activity.message} in <span className="font-semibold text-emerald-400">{activity.repo}</span>
+                          {activity.message} in <span className="font-semibold text-primary">{activity.repo}</span>
                         </p>
                         <p className="text-xs text-muted-foreground">{activity.time}</p>
                       </div>
@@ -514,7 +514,7 @@ export default function UserProfileTemplate() {
                         <TooltipTrigger asChild>
                           <motion.div
                             whileHover={{ scale: 1.1, rotate: 5 }}
-                            className="glass rounded-lg p-4 text-center cursor-pointer border border-white/5 hover:border-emerald-500/30"
+                            className="glass rounded-lg p-4 text-center cursor-pointer border border-white/5 hover:border-primary/30"
                           >
                             <div className="text-3xl mb-2">{badge.icon}</div>
                             <p className="text-xs font-medium">{badge.name}</p>
@@ -547,9 +547,9 @@ export default function UserProfileTemplate() {
                       <motion.div
                         key={project.id}
                         whileHover={{ y: -4 }}
-                        className="glass rounded-lg overflow-hidden border border-white/5 hover:border-emerald-500/30 transition-all"
+                        className="glass rounded-lg overflow-hidden border border-white/5 hover:border-primary/30 transition-all"
                       >
-                        <div className="aspect-video bg-gradient-to-br from-emerald-500/10 to-cyan-500/10" />
+                        <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10" />
                         <div className="p-4">
                           <div className="flex items-start justify-between mb-2">
                             <h3 className="font-semibold flex items-center gap-2">
@@ -634,10 +634,10 @@ export default function UserProfileTemplate() {
                       <span>Less</span>
                       <div className="flex gap-1">
                         <div className="w-3 h-3 rounded-sm bg-zinc-800/50" />
-                        <div className="w-3 h-3 rounded-sm bg-emerald-900/50" />
-                        <div className="w-3 h-3 rounded-sm bg-emerald-700/50" />
-                        <div className="w-3 h-3 rounded-sm bg-emerald-500/50" />
-                        <div className="w-3 h-3 rounded-sm bg-emerald-400/50" />
+                        <div className="w-3 h-3 rounded-sm bg-primary/50" />
+                        <div className="w-3 h-3 rounded-sm bg-primary/50" />
+                        <div className="w-3 h-3 rounded-sm bg-primary/50" />
+                        <div className="w-3 h-3 rounded-sm bg-primary/50" />
                       </div>
                       <span>More</span>
                     </div>
@@ -668,16 +668,16 @@ export default function UserProfileTemplate() {
                     >
                       <div className="relative">
                         <div className="glass rounded-full p-2">
-                          <activity.icon className="h-4 w-4 text-emerald-400" />
+                          <activity.icon className="h-4 w-4 text-primary" />
                         </div>
                         {index < activities.length - 1 && (
-                          <div className="absolute top-10 left-1/2 w-px h-12 bg-gradient-to-b from-emerald-500/20 to-transparent -translate-x-1/2" />
+                          <div className="absolute top-10 left-1/2 w-px h-12 bg-gradient-to-b from-primary/20 to-transparent -translate-x-1/2" />
                         )}
                       </div>
                       <div className="flex-1">
                         <p className="text-sm">
                           {activity.message} in{' '}
-                          <span className="font-semibold text-emerald-400 hover:underline cursor-pointer">
+                          <span className="font-semibold text-primary hover:underline cursor-pointer">
                             {activity.repo}
                           </span>
                         </p>
@@ -734,7 +734,7 @@ export default function UserProfileTemplate() {
                   {userData.certifications.map((cert, index) => (
                     <div key={index} className="flex items-center justify-between p-3 glass rounded-lg">
                       <div className="flex items-center gap-3">
-                        <Shield className="h-5 w-5 text-emerald-400" />
+                        <Shield className="h-5 w-5 text-primary" />
                         <div>
                           <p className="font-medium">{cert.name}</p>
                           <p className="text-xs text-muted-foreground">
@@ -859,7 +859,7 @@ export default function UserProfileTemplate() {
         <Card className="glass border-white/10 mt-6">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Users className="h-5 w-5 text-cyan-400" />
+              <Users className="h-5 w-5 text-secondary" />
               Similar Developers
             </CardTitle>
             <CardDescription>People you might want to follow</CardDescription>
@@ -880,7 +880,7 @@ export default function UserProfileTemplate() {
                       </p>
                     </div>
                   </div>
-                  <Button size="sm" variant="outline" className="border-emerald-500/30">
+                  <Button size="sm" variant="outline" className="border-primary/30">
                     Follow
                   </Button>
                 </div>

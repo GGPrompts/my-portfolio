@@ -65,7 +65,7 @@ const techStack = [
   { name: "Node.js", level: 85, color: "from-green-500 to-emerald-500" },
   { name: "Python", level: 80, color: "from-yellow-500 to-orange-500" },
   { name: "Claude AI", level: 100, color: "from-purple-500 to-pink-500" },
-  { name: "TailwindCSS", level: 88, color: "from-teal-500 to-cyan-500" },
+  { name: "TailwindCSS", level: 88, color: "from-teal-500 to-secondary" },
 ];
 
 // Favorite tools
@@ -135,7 +135,7 @@ export default function ResumeBentoPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8 text-center"
         >
-          <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Matt&apos;s Developer Dashboard
           </h1>
           <p className="text-zinc-400">Building the future with AI, one project at a time</p>
@@ -151,22 +151,22 @@ export default function ResumeBentoPage() {
             transition={{ delay: 0.1 }}
             className="md:col-span-2 md:row-span-2"
           >
-            <Card className="glass h-full p-6 border-emerald-500/20 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <Card className="glass h-full p-6 border-primary/20 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-emerald-500 blur-xl opacity-50 animate-pulse" />
-                    <div className="relative w-3 h-3 bg-emerald-500 rounded-full" />
+                    <div className="absolute inset-0 bg-primary blur-xl opacity-50 animate-pulse" />
+                    <div className="relative w-3 h-3 bg-primary rounded-full" />
                   </div>
-                  <h2 className="text-xl font-bold text-emerald-400">Available for Hire</h2>
+                  <h2 className="text-xl font-bold text-primary">Available for Hire</h2>
                 </div>
                 <p className="text-zinc-300 mb-4">
                   Full-stack developer specializing in AI-powered applications and modern web technologies.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">Remote</Badge>
-                  <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30">Contract</Badge>
+                  <Badge className="bg-primary/20 text-primary border-primary/30">Remote</Badge>
+                  <Badge className="bg-secondary/20 text-secondary border-secondary/30">Contract</Badge>
                   <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30">Full-time</Badge>
                 </div>
                 <div className="text-sm text-zinc-400">
@@ -191,7 +191,7 @@ export default function ResumeBentoPage() {
             className="md:row-span-2"
           >
             <Card className="glass h-full p-4 border-cyan-500/20">
-              <h3 className="text-lg font-semibold mb-4 text-cyan-400">Quick Stats</h3>
+              <h3 className="text-lg font-semibold mb-4 text-secondary">Quick Stats</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -202,10 +202,10 @@ export default function ResumeBentoPage() {
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Code2 className="w-4 h-4 text-emerald-400" />
+                    <Code2 className="w-4 h-4 text-primary" />
                     <span className="text-sm text-zinc-300">Lines of Code</span>
                   </div>
-                  <span className="text-xl font-bold text-emerald-400">{linesOfCode.toLocaleString()}</span>
+                  <span className="text-xl font-bold text-primary">{linesOfCode.toLocaleString()}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -255,7 +255,7 @@ export default function ResumeBentoPage() {
                 <Badge className="bg-gradient-to-r from-pink-500/20 to-purple-500/20 border-pink-500/30">
                   Claude AI API
                 </Badge>
-                <Badge className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-blue-500/30">
+                <Badge className="bg-gradient-to-r from-blue-500/20 to-secondary/20 border-blue-500/30">
                   Rust
                 </Badge>
                 <Badge className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border-green-500/30">
@@ -272,8 +272,8 @@ export default function ResumeBentoPage() {
             transition={{ delay: 0.5 }}
             className="md:col-span-2 md:row-span-3"
           >
-            <Card className="glass h-full p-4 border-emerald-500/20">
-              <h3 className="text-lg font-semibold mb-4 text-emerald-400 flex items-center gap-2">
+            <Card className="glass h-full p-4 border-primary/20">
+              <h3 className="text-lg font-semibold mb-4 text-primary flex items-center gap-2">
                 <GitCommitHorizontal className="w-5 h-5" />
                 Recent Activity
               </h3>
@@ -284,14 +284,14 @@ export default function ResumeBentoPage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 * index }}
-                    className="p-3 rounded-lg bg-black/30 border border-emerald-500/10 hover:border-emerald-500/30 transition-all group"
+                    className="p-3 rounded-lg bg-black/30 border border-primary/10 hover:border-primary/30 transition-all group"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-1.5 group-hover:animate-pulse" />
+                      <div className="w-2 h-2 bg-primary rounded-full mt-1.5 group-hover:animate-pulse" />
                       <div className="flex-1">
                         <div className="text-sm text-zinc-300 mb-1">{commit.message}</div>
                         <div className="text-xs text-zinc-500 flex items-center gap-2">
-                          <span className="text-cyan-400">{commit.repo}</span>
+                          <span className="text-secondary">{commit.repo}</span>
                           <span>•</span>
                           <span>{commit.time}</span>
                         </div>
@@ -311,7 +311,7 @@ export default function ResumeBentoPage() {
             className="md:col-span-2 md:row-span-2"
           >
             <Card className="glass h-full p-4 border-cyan-500/20">
-              <h3 className="text-lg font-semibold mb-4 text-cyan-400 flex items-center gap-2">
+              <h3 className="text-lg font-semibold mb-4 text-secondary flex items-center gap-2">
                 <GitBranch className="w-5 h-5" />
                 Contribution Graph
               </h3>
@@ -322,10 +322,10 @@ export default function ResumeBentoPage() {
                     className={cn(
                       "w-3 h-3 rounded-sm transition-all hover:scale-110",
                       contrib.count === 0 && "bg-zinc-800",
-                      contrib.count === 1 && "bg-emerald-900",
-                      contrib.count === 2 && "bg-emerald-700",
-                      contrib.count === 3 && "bg-emerald-500",
-                      contrib.count >= 4 && "bg-emerald-400"
+                      contrib.count === 1 && "bg-primary",
+                      contrib.count === 2 && "bg-primary",
+                      contrib.count === 3 && "bg-primary",
+                      contrib.count >= 4 && "bg-primary"
                     )}
                     title={`${contrib.count} contributions`}
                   />
@@ -335,10 +335,10 @@ export default function ResumeBentoPage() {
                 <span>Less</span>
                 <div className="flex gap-1">
                   <div className="w-3 h-3 rounded-sm bg-zinc-800" />
-                  <div className="w-3 h-3 rounded-sm bg-emerald-900" />
-                  <div className="w-3 h-3 rounded-sm bg-emerald-700" />
-                  <div className="w-3 h-3 rounded-sm bg-emerald-500" />
-                  <div className="w-3 h-3 rounded-sm bg-emerald-400" />
+                  <div className="w-3 h-3 rounded-sm bg-primary" />
+                  <div className="w-3 h-3 rounded-sm bg-primary" />
+                  <div className="w-3 h-3 rounded-sm bg-primary" />
+                  <div className="w-3 h-3 rounded-sm bg-primary" />
                 </div>
                 <span>More</span>
               </div>
@@ -413,7 +413,7 @@ export default function ResumeBentoPage() {
             className="md:col-span-4 md:row-span-2"
           >
             <Card className="glass h-full p-4 border-cyan-500/20">
-              <h3 className="text-lg font-semibold mb-4 text-cyan-400 flex items-center gap-2">
+              <h3 className="text-lg font-semibold mb-4 text-secondary flex items-center gap-2">
                 <Sparkles className="w-5 h-5" />
                 50 Claude AI Projects
               </h3>
@@ -426,8 +426,8 @@ export default function ResumeBentoPage() {
                     className={cn(
                       "p-2 rounded-lg bg-black/30 border cursor-pointer transition-all text-xs",
                       selectedProject === index
-                        ? "border-cyan-400 bg-cyan-500/10 text-cyan-300"
-                        : "border-zinc-800 hover:border-cyan-500/50 text-zinc-400 hover:text-zinc-300"
+                        ? "border-cyan-400 bg-secondary/10 text-secondary"
+                        : "border-zinc-800 hover:border-secondary/50 text-zinc-400 hover:text-zinc-300"
                     )}
                   >
                     <div className="flex items-center gap-1 mb-1">
@@ -468,15 +468,15 @@ export default function ResumeBentoPage() {
             transition={{ delay: 1.1 }}
             className="md:col-span-2"
           >
-            <Card className="glass h-full p-4 border-emerald-500/20">
+            <Card className="glass h-full p-4 border-primary/20">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-emerald-400" />
+                  <TrendingUp className="w-5 h-5 text-primary" />
                   <span className="text-sm text-zinc-300">Productivity Today</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Progress value={87} className="w-20 h-2" />
-                  <span className="text-sm font-bold text-emerald-400">87%</span>
+                  <span className="text-sm font-bold text-primary">87%</span>
                 </div>
               </div>
             </Card>

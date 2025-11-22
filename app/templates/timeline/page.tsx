@@ -453,7 +453,7 @@ export default function TimelinePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-zinc-950 relative">
+    <div className="min-h-screen relative">
       <AnimatedBackground />
 
       {/* Scroll Progress Indicator */}

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface SpaceBackgroundProps {
   speed?: number;
@@ -41,6 +41,26 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
   opacity = 1,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [theme, setTheme] = useState<string>('terminal');
+
+  // Track theme changes
+  useEffect(() => {
+    const updateTheme = () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'terminal';
+      setTheme(currentTheme);
+    };
+
+    updateTheme();
+
+    // Watch for theme changes
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -324,12 +344,20 @@ export const SpaceBackground: React.FC<SpaceBackgroundProps> = ({
     };
   }, [speed]);
 
+  // Calculate final opacity based on theme
+  const finalOpacity = theme === 'light' ? 0 : opacity;
+
+  // Don't render at all in light mode for better performance
+  if (theme === 'light') {
+    return null;
+  }
+
   return (
     <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }}>
       <canvas
         ref={canvasRef}
         className="w-full h-full"
-        style={{ opacity, display: 'block' }}
+        style={{ opacity: finalOpacity, display: 'block' }}
       />
     </div>
   );

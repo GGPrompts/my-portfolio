@@ -94,7 +94,7 @@ const docCategories = [
     title: 'Getting Started',
     description: 'Quick setup guides and installation instructions',
     href: '#getting-started',
-    color: 'from-emerald-500/20 to-cyan-500/20',
+    color: 'from-primary/20 to-secondary/20',
     articles: 12
   },
   {
@@ -342,8 +342,8 @@ export default function DocsHubTemplate() {
     <div className="min-h-screen bg-gradient-to-br from-black via-zinc-950 to-black relative overflow-hidden">
       {/* Background effects */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       </div>
 
       {/* Header */}
@@ -360,8 +360,8 @@ export default function DocsHubTemplate() {
                 <Menu className="w-5 h-5" />
               </Button>
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-500/20">
-                  <BookOpen className="w-5 h-5 text-emerald-400" />
+                <div className="p-2 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/20">
+                  <BookOpen className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <h1 className="text-xl font-bold text-white">Documentation Hub</h1>
@@ -453,7 +453,7 @@ export default function DocsHubTemplate() {
                     className={cn(
                       "w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors",
                       "hover:bg-white/5 text-zinc-300 hover:text-white",
-                      activeSection === section.id && "bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400"
+                      activeSection === section.id && "bg-primary/10 text-primary border-l-2 border-primary"
                     )}
                   >
                     <section.icon className="w-4 h-4" />
@@ -482,7 +482,7 @@ export default function DocsHubTemplate() {
                               className={cn(
                                 "flex items-center justify-between px-3 py-1.5 rounded-lg text-sm transition-colors",
                                 "hover:bg-white/5 text-zinc-400 hover:text-zinc-200",
-                                activeSection === child.id && "bg-emerald-500/10 text-emerald-400"
+                                activeSection === child.id && "bg-primary/10 text-primary"
                               )}
                             >
                               <span>{child.title}</span>
@@ -548,7 +548,7 @@ export default function DocsHubTemplate() {
                     <kbd className="hidden sm:inline-flex h-7 items-center gap-1 rounded border border-white/10 bg-black/50 px-2 font-mono text-xs text-zinc-400">
                       <span className="text-sm">⌘</span>K
                     </kbd>
-                    <Button size="sm" className="bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30">
+                    <Button size="sm" className="bg-primary/20 text-primary hover:bg-primary/30 border border-primary/30">
                       Search
                     </Button>
                   </div>
@@ -575,7 +575,7 @@ export default function DocsHubTemplate() {
             {/* Quick Start Section */}
             <section id="quickstart" className="mb-12">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <Zap className="w-6 h-6 text-emerald-400" />
+                <Zap className="w-6 h-6 text-primary" />
                 Quick Start
               </h3>
 
@@ -583,14 +583,14 @@ export default function DocsHubTemplate() {
                 {/* Installation */}
                 <Card className="glass border-white/10 p-6">
                   <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                    <Terminal className="w-5 h-5 text-cyan-400" />
+                    <Terminal className="w-5 h-5 text-secondary" />
                     Installation
                   </h4>
 
                   <div className="space-y-3">
                     {['npm install @framework/core', 'yarn add @framework/core', 'pnpm add @framework/core'].map((cmd, i) => (
                       <div key={i} className="relative group">
-                        <pre className="bg-black/50 border border-white/10 rounded-lg p-3 pr-12 text-sm text-emerald-400 font-mono overflow-x-auto">
+                        <pre className="bg-black/50 border border-white/10 rounded-lg p-3 pr-12 text-sm text-primary font-mono overflow-x-auto">
                           {cmd}
                         </pre>
                         <Button
@@ -600,7 +600,7 @@ export default function DocsHubTemplate() {
                           onClick={() => copyCode(cmd, `install-${i}`)}
                         >
                           {copiedCode === `install-${i}` ? (
-                            <Check className="w-4 h-4 text-emerald-400" />
+                            <Check className="w-4 h-4 text-primary" />
                           ) : (
                             <Copy className="w-4 h-4" />
                           )}
@@ -613,7 +613,7 @@ export default function DocsHubTemplate() {
                 {/* Prerequisites */}
                 <Card className="glass border-white/10 p-6">
                   <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                    <Package className="w-5 h-5 text-cyan-400" />
+                    <Package className="w-5 h-5 text-secondary" />
                     Prerequisites
                   </h4>
 
@@ -628,7 +628,7 @@ export default function DocsHubTemplate() {
                         <div className={cn(
                           "w-5 h-5 rounded border-2 flex items-center justify-center transition-colors",
                           item.checked
-                            ? "bg-emerald-500/20 border-emerald-500 text-emerald-400"
+                            ? "bg-primary/20 border-primary text-primary"
                             : "border-white/20 group-hover:border-white/40"
                         )}>
                           {item.checked && <Check className="w-3 h-3" />}
@@ -644,7 +644,7 @@ export default function DocsHubTemplate() {
                   </div>
 
                   <div className="mt-4 pt-4 border-t border-white/10">
-                    <Button className="w-full bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30">
+                    <Button className="w-full bg-primary/20 text-primary hover:bg-primary/30 border border-primary/30">
                       <PlayCircle className="w-4 h-4 mr-2" />
                       Watch Setup Video
                     </Button>
@@ -656,7 +656,7 @@ export default function DocsHubTemplate() {
             {/* Documentation Categories Grid */}
             <section id="categories" className="mb-12">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <Layers className="w-6 h-6 text-emerald-400" />
+                <Layers className="w-6 h-6 text-primary" />
                 Documentation Categories
               </h3>
 
@@ -676,7 +676,7 @@ export default function DocsHubTemplate() {
                         <category.icon className="w-6 h-6 text-white" />
                       </div>
 
-                      <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                      <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">
                         {category.title}
                       </h4>
                       <p className="text-sm text-zinc-400 mb-3">
@@ -687,7 +687,7 @@ export default function DocsHubTemplate() {
                         <span className="text-xs text-zinc-500">
                           {category.articles} articles
                         </span>
-                        <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" />
+                        <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-primary group-hover:translate-x-1 transition-all" />
                       </div>
                     </Card>
                   </motion.div>
@@ -701,7 +701,7 @@ export default function DocsHubTemplate() {
                 {/* Popular Docs */}
                 <Card className="glass border-white/10 p-6">
                   <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-emerald-400" />
+                    <TrendingUp className="w-5 h-5 text-primary" />
                     Popular Documentation
                   </h3>
 
@@ -717,11 +717,11 @@ export default function DocsHubTemplate() {
                           </span>
                           <div>
                             <div className="flex items-center gap-2">
-                              <span className="text-sm text-white group-hover:text-emerald-400 transition-colors">
+                              <span className="text-sm text-white group-hover:text-primary transition-colors">
                                 {doc.title}
                               </span>
                               {doc.trending && (
-                                <Badge className="text-[10px] bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
+                                <Badge className="text-[10px] bg-primary/20 text-primary border-primary/30">
                                   Trending
                                 </Badge>
                               )}
@@ -737,7 +737,7 @@ export default function DocsHubTemplate() {
                             </div>
                           </div>
                         </div>
-                        <ChevronRight className="w-4 h-4 text-zinc-500 group-hover:text-emerald-400" />
+                        <ChevronRight className="w-4 h-4 text-zinc-500 group-hover:text-primary" />
                       </div>
                     ))}
                   </div>
@@ -746,7 +746,7 @@ export default function DocsHubTemplate() {
                 {/* Recent Updates */}
                 <Card className="glass border-white/10 p-6">
                   <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                    <Activity className="w-5 h-5 text-cyan-400" />
+                    <Activity className="w-5 h-5 text-secondary" />
                     Recent Updates
                   </h3>
 
@@ -759,12 +759,12 @@ export default function DocsHubTemplate() {
                         <div className="flex items-center gap-3">
                           <div className={cn(
                             "w-2 h-2 rounded-full",
-                            update.type === 'new' ? "bg-emerald-400" :
-                            update.type === 'update' ? "bg-cyan-400" :
+                            update.type === 'new' ? "bg-primary" :
+                            update.type === 'update' ? "bg-secondary" :
                             "bg-purple-400"
                           )} />
                           <div>
-                            <span className="text-sm text-white group-hover:text-emerald-400 transition-colors">
+                            <span className="text-sm text-white group-hover:text-primary transition-colors">
                               {update.title}
                             </span>
                             <div className="flex items-center gap-3 mt-1">
@@ -777,7 +777,7 @@ export default function DocsHubTemplate() {
                             </div>
                           </div>
                         </div>
-                        <ChevronRight className="w-4 h-4 text-zinc-500 group-hover:text-emerald-400" />
+                        <ChevronRight className="w-4 h-4 text-zinc-500 group-hover:text-primary" />
                       </div>
                     ))}
                   </div>
@@ -788,7 +788,7 @@ export default function DocsHubTemplate() {
             {/* Code Examples Showcase */}
             <section id="examples" className="mb-12">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <Code className="w-6 h-6 text-emerald-400" />
+                <Code className="w-6 h-6 text-primary" />
                 Code Examples
               </h3>
 
@@ -804,7 +804,7 @@ export default function DocsHubTemplate() {
                   {Object.entries(codeExamples).map(([lang, code]) => (
                     <TabsContent key={lang} value={lang} className="mt-4">
                       <div className="relative">
-                        <pre className="bg-black/50 border border-white/10 rounded-lg p-4 text-sm text-emerald-400 font-mono overflow-x-auto">
+                        <pre className="bg-black/50 border border-white/10 rounded-lg p-4 text-sm text-primary font-mono overflow-x-auto">
                           {code}
                         </pre>
                         <Button
@@ -814,7 +814,7 @@ export default function DocsHubTemplate() {
                           onClick={() => copyCode(code, lang)}
                         >
                           {copiedCode === lang ? (
-                            <Check className="w-4 h-4 text-emerald-400" />
+                            <Check className="w-4 h-4 text-primary" />
                           ) : (
                             <Copy className="w-4 h-4" />
                           )}
@@ -840,14 +840,14 @@ export default function DocsHubTemplate() {
             {/* Interactive Examples */}
             <section id="playground" className="mb-12">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <Box className="w-6 h-6 text-emerald-400" />
+                <Box className="w-6 h-6 text-primary" />
                 Interactive Playground
               </h3>
 
               <div className="grid md:grid-cols-3 gap-4">
                 {[
                   { title: 'Basic Setup', difficulty: 'Beginner', time: '5 min', color: 'from-green-500/20 to-emerald-500/20' },
-                  { title: 'API Integration', difficulty: 'Intermediate', time: '10 min', color: 'from-blue-500/20 to-cyan-500/20' },
+                  { title: 'API Integration', difficulty: 'Intermediate', time: '10 min', color: 'from-blue-500/20 to-secondary/20' },
                   { title: 'Advanced Patterns', difficulty: 'Advanced', time: '15 min', color: 'from-purple-500/20 to-pink-500/20' }
                 ].map((example) => (
                   <Card key={example.title} className="glass border-white/10 p-6 hover:bg-white/5 transition-all cursor-pointer group">
@@ -879,7 +879,7 @@ export default function DocsHubTemplate() {
             {/* Resources Section */}
             <section id="resources" className="mb-12">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <Download className="w-6 h-6 text-emerald-400" />
+                <Download className="w-6 h-6 text-primary" />
                 Resources & Downloads
               </h3>
 
@@ -888,17 +888,17 @@ export default function DocsHubTemplate() {
                   <Card key={resource.title} className="glass border-white/10 p-4 hover:bg-white/5 transition-all cursor-pointer group">
                     <div className="flex items-start gap-3">
                       <div className="p-2 rounded-lg bg-white/5 border border-white/10">
-                        <resource.icon className="w-5 h-5 text-emerald-400" />
+                        <resource.icon className="w-5 h-5 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                        <h4 className="text-sm font-semibold text-white group-hover:text-primary transition-colors">
                           {resource.title}
                         </h4>
                         <p className="text-xs text-zinc-500 mt-1">
                           {resource.size || resource.count || resource.stars || resource.members}
                         </p>
                       </div>
-                      <ExternalLink className="w-4 h-4 text-zinc-500 group-hover:text-emerald-400 transition-colors" />
+                      <ExternalLink className="w-4 h-4 text-zinc-500 group-hover:text-primary transition-colors" />
                     </div>
                   </Card>
                 ))}
@@ -907,9 +907,9 @@ export default function DocsHubTemplate() {
 
             {/* Contribution Section */}
             <section id="contribute" className="mb-12">
-              <Card className="glass border-white/10 p-8 bg-gradient-to-br from-emerald-500/5 to-cyan-500/5">
+              <Card className="glass border-white/10 p-8 bg-gradient-to-br from-primary/5 to-secondary/5">
                 <div className="text-center">
-                  <Users className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
+                  <Users className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-white mb-2">
                     Contribute to Documentation
                   </h3>
@@ -918,7 +918,7 @@ export default function DocsHubTemplate() {
                   </p>
 
                   <div className="flex flex-wrap gap-3 justify-center">
-                    <Button className="bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30">
+                    <Button className="bg-primary/20 text-primary hover:bg-primary/30 border border-primary/30">
                       <Edit3 className="w-4 h-4 mr-2" />
                       Edit on GitHub
                     </Button>
@@ -942,7 +942,7 @@ export default function DocsHubTemplate() {
             {/* FAQ Section */}
             <section id="faq" className="mb-12">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <HelpCircle className="w-6 h-6 text-emerald-400" />
+                <HelpCircle className="w-6 h-6 text-primary" />
                 Frequently Asked Questions
               </h3>
 
@@ -966,7 +966,7 @@ export default function DocsHubTemplate() {
                   }
                 ].map((item, i) => (
                   <AccordionItem key={i} value={`item-${i}`} className="glass border-white/10 rounded-lg px-6">
-                    <AccordionTrigger className="text-white hover:text-emerald-400 transition-colors">
+                    <AccordionTrigger className="text-white hover:text-primary transition-colors">
                       {item.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-zinc-400">
@@ -1015,14 +1015,14 @@ export default function DocsHubTemplate() {
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-white group-hover:text-emerald-400 transition-colors">
+                      <p className="text-sm text-white group-hover:text-primary transition-colors">
                         {result.title}
                       </p>
                       <p className="text-xs text-zinc-500 mt-1">
                         {result.category} · {result.matches} matches
                       </p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-zinc-500 group-hover:text-emerald-400 transition-colors" />
+                    <ChevronRight className="w-4 h-4 text-zinc-500 group-hover:text-primary transition-colors" />
                   </div>
                 </button>
               ))}
@@ -1078,7 +1078,7 @@ export default function DocsHubTemplate() {
             </div>
 
             <Button
-              className="w-full bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30"
+              className="w-full bg-primary/20 text-primary hover:bg-primary/30 border border-primary/30"
               onClick={() => setShowFeedback(false)}
             >
               <ThumbsUp className="w-4 h-4 mr-2" />

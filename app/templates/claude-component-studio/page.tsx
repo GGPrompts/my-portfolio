@@ -268,7 +268,7 @@ Please create this component with attention to detail and modern best practices.
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-black relative">
+    <main className="min-h-screen relative">
       <SpaceBackground speed={0.3} opacity={0.5} />
 
       {/* Header */}
@@ -276,11 +276,11 @@ Please create this component with attention to detail and modern best practices.
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="p-2 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500">
+              <div className="p-2 rounded-lg bg-gradient-to-r from-primary to-secondary">
                 <Wand2 className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-mono font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+                <h1 className="text-2xl font-mono font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                   Claude Component Studio
                 </h1>
                 <p className="text-sm text-muted-foreground">Visual builder → Perfect Claude prompts</p>
@@ -291,7 +291,7 @@ Please create this component with attention to detail and modern best practices.
                 <Sparkles className="h-3 w-3 mr-1" />
                 Beta
               </Badge>
-              <Badge className="font-mono bg-gradient-to-r from-emerald-500 to-cyan-500 text-white border-0">
+              <Badge className="font-mono bg-gradient-to-r from-primary to-secondary text-white border-0">
                 50+ Components
               </Badge>
             </div>
@@ -836,7 +836,7 @@ Please create this component with attention to detail and modern best practices.
           <Card className="glass-dark border-glow max-w-3xl mx-auto">
             <CardContent className="p-8">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500">
+                <div className="p-2 rounded-lg bg-gradient-to-r from-primary to-secondary">
                   <Zap className="h-6 w-6 text-white" />
                 </div>
                 <h2 className="text-2xl font-mono font-bold">How It Works</h2>

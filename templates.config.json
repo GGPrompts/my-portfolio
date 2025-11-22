@@ -1,0 +1,166 @@
+{
+  "templates": {
+    "project": {
+      "case-study": {
+        "tag": "@case-study",
+        "path": "/app/templates/project-case-study/page.tsx",
+        "name": "Case Study Template",
+        "description": "Comprehensive project documentation with timeline and testimonials",
+        "sections": ["Overview", "Technical", "Features", "Gallery", "Timeline"],
+        "mockData": "projectData",
+        "lineCount": 630,
+        "bestFor": ["client-projects", "portfolio", "success-stories"],
+        "features": {
+          "animations": "medium",
+          "interactivity": "high",
+          "dataVisualization": "medium"
+        }
+      },
+      "technical": {
+        "tag": "@tech-deep",
+        "path": "/app/templates/project-technical/page.tsx",
+        "name": "Technical Deep Dive",
+        "description": "Developer-focused with code examples and performance metrics",
+        "sections": ["Architecture", "Performance", "Code", "API", "Dependencies", "Quick Start"],
+        "mockData": "projectData",
+        "lineCount": 850,
+        "bestFor": ["open-source", "libraries", "developer-tools"],
+        "features": {
+          "animations": "low",
+          "interactivity": "medium",
+          "dataVisualization": "high"
+        }
+      },
+      "visual": {
+        "tag": "@visual-show",
+        "path": "/app/templates/project-visual/page.tsx",
+        "name": "Visual Showcase",
+        "description": "Stunning visual presentation with galleries and animations",
+        "sections": ["Hero", "Stats", "Gallery", "Features", "Timeline", "Design System"],
+        "mockData": "projectData",
+        "lineCount": 950,
+        "bestFor": ["ui-ux", "games", "creative-tools"],
+        "features": {
+          "animations": "high",
+          "interactivity": "very-high",
+          "dataVisualization": "medium"
+        }
+      }
+    },
+    "resume": {
+      "timeline": {
+        "tag": "@resume-time",
+        "path": "/app/templates/resume-timeline/page.tsx",
+        "name": "Timeline Resume",
+        "description": "Professional resume with career timeline",
+        "sections": ["Hero", "Timeline", "Skills", "Projects", "Education", "Contact"],
+        "mockData": "profileData",
+        "lineCount": 580,
+        "bestFor": ["traditional-roles", "career-progression"],
+        "features": {
+          "animations": "medium",
+          "interactivity": "low",
+          "dataVisualization": "medium"
+        }
+      },
+      "bento": {
+        "tag": "@resume-bento",
+        "path": "/app/templates/resume-bento/page.tsx",
+        "name": "Bento Grid Resume",
+        "description": "Modern grid layout with live activity feed",
+        "sections": ["Activity", "GitHub Graph", "Skills", "Projects", "Stats", "Tools"],
+        "mockData": "profileData",
+        "lineCount": 750,
+        "bestFor": ["modern-tech", "startups", "creative-roles"],
+        "features": {
+          "animations": "high",
+          "interactivity": "medium",
+          "dataVisualization": "very-high"
+        }
+      },
+      "terminal": {
+        "tag": "@resume-term",
+        "path": "/app/templates/resume-terminal/page.tsx",
+        "name": "Interactive Terminal",
+        "description": "Fully interactive terminal interface",
+        "sections": ["Terminal"],
+        "mockData": "commands",
+        "lineCount": 680,
+        "bestFor": ["developer-roles", "cli-expertise"],
+        "features": {
+          "animations": "very-high",
+          "interactivity": "interactive",
+          "dataVisualization": "low"
+        },
+        "commands": [
+          "help", "about", "skills", "projects", "experience",
+          "education", "contact", "resume", "ls", "cd", "cat",
+          "tree", "whoami", "date", "echo", "history", "clear",
+          "matrix", "hack", "coffee", "exit"
+        ]
+      },
+      "timeline-advanced": {
+        "tag": "@timeline-adv",
+        "path": "/app/templates/timeline/page.tsx",
+        "name": "Advanced Timeline",
+        "description": "Enhanced timeline with filters and testimonials",
+        "sections": ["Timeline", "Skills Matrix", "Projects", "Testimonials", "Categories"],
+        "mockData": "profileData",
+        "lineCount": 900,
+        "bestFor": ["comprehensive-display", "tech-roles"],
+        "features": {
+          "animations": "very-high",
+          "interactivity": "high",
+          "dataVisualization": "very-high"
+        }
+      }
+    },
+    "landing": {
+      "saas": {
+        "tag": "@saas-land",
+        "path": "/app/templates/saas-landing/page.tsx",
+        "name": "SaaS Landing Page",
+        "description": "High-converting landing page with pricing",
+        "sections": ["Hero", "Features", "Pricing", "Testimonials", "FAQ", "CTA"],
+        "mockData": "productData",
+        "lineCount": 1200,
+        "bestFor": ["saas-products", "startups", "b2b"],
+        "features": {
+          "animations": "very-high",
+          "interactivity": "high",
+          "dataVisualization": "high"
+        }
+      }
+    }
+  },
+  "themes": {
+    "terminal": {
+      "primary": "emerald",
+      "secondary": "cyan",
+      "accent": "teal"
+    },
+    "amber": {
+      "primary": "amber",
+      "secondary": "orange",
+      "accent": "yellow"
+    },
+    "carbon": {
+      "primary": "slate",
+      "secondary": "gray",
+      "accent": "zinc"
+    },
+    "light": {
+      "primary": "sky",
+      "secondary": "blue",
+      "accent": "indigo"
+    }
+  },
+  "quickCommands": {
+    "updateAll": "Update all templates matching pattern",
+    "addSection": "Add a new section to specified template",
+    "changeTheme": "Switch color theme for template",
+    "fixResponsive": "Fix mobile responsiveness issues",
+    "addComponent": "Add a new component to template",
+    "updateMockData": "Update the mock data in template"
+  }
+}

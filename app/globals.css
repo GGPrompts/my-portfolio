@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  /* ===== TERMINAL THEME (Default) ===== */
   :root {
+    /* Core colors */
     --background: 220 13% 5%;           /* Very dark slate/black */
     --foreground: 160 84% 95%;          /* Light cyan-white */
 
@@ -16,23 +18,171 @@
     --primary: 160 84% 39%;             /* Terminal green/cyan */
     --primary-foreground: 220 13% 5%;
 
-    --secondary: 217 91% 60%;           /* Vivid blue - more distinct from cyan */
-    --secondary-foreground: 0 0% 100%;  /* Pure white for better contrast */
+    --secondary: 217 91% 60%;           /* Vivid blue */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 13% 25%;               /* Increased for better readability */
-    --muted-foreground: 160 20% 85%;    /* Increased for better text contrast */
+    --muted: 220 13% 25%;
+    --muted-foreground: 160 20% 85%;
 
-    --accent: 160 60% 20%;              /* Darkened from 45% for better contrast as background */
-    --accent-foreground: 160 84% 95%;   /* Changed to light for better contrast */
+    --accent: 160 60% 20%;
+    --accent-foreground: 160 84% 95%;
 
-    --destructive: 0 84% 60%;           /* Vibrant red - more saturated */
-    --destructive-foreground: 0 0% 100%; /* Pure white for better contrast */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 160 60% 25%;              /* Cyan border */
     --input: 160 60% 25%;
     --ring: 160 84% 39%;
 
     --radius: 0.5rem;
+
+    /* RGB values for glow effects (emerald/cyan) */
+    --primary-rgb: 16 185 129;          /* Emerald-500 */
+    --secondary-rgb: 6 182 212;         /* Cyan-500 */
+
+    /* Glass background colors */
+    --glass-bg: 16 185 129;             /* Emerald tint */
+    --glass-dark-bg: 220 13% 12%;       /* Dark slate */
+    --glass-overlay-bg: 220 13% 8%;     /* Very dark slate */
+
+    /* Body gradient colors */
+    --gradient-1: 16 185 129;           /* Emerald */
+    --gradient-2: 6 182 212;            /* Cyan */
+  }
+
+  /* ===== AMBER THEME ===== */
+  :root[data-theme="amber"] {
+    /* Core colors */
+    --background: 250 30% 10%;          /* Dark purple-blue */
+    --foreground: 40 100% 95%;          /* Warm light */
+
+    --card: 250 25% 15%;                /* Purple-blue card */
+    --card-foreground: 40 100% 95%;
+
+    --popover: 250 25% 15%;             /* Purple-blue popover */
+    --popover-foreground: 40 100% 95%;
+
+    --primary: 40 100% 67%;             /* Golden amber #ffc857 */
+    --primary-foreground: 250 30% 10%;
+
+    --secondary: 217 91% 60%;           /* Bright blue */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 250 20% 20%;               /* Muted purple */
+    --muted-foreground: 40 20% 70%;     /* Muted amber */
+
+    --accent: 40 95% 50%;               /* Orange accent */
+    --accent-foreground: 250 30% 10%;
+
+    --destructive: 0 72% 51%;           /* Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 80% 60%;               /* Amber border */
+    --input: 40 80% 60%;
+    --ring: 40 100% 67%;
+
+    /* RGB values for glow effects (amber/gold) */
+    --primary-rgb: 255 200 87;          /* Amber #ffc857 */
+    --secondary-rgb: 255 152 0;         /* Orange */
+
+    /* Glass background colors */
+    --glass-bg: 40 30 50;               /* Purple tint */
+    --glass-dark-bg: 20 20 30;          /* Dark purple */
+    --glass-overlay-bg: 25 20 35;       /* Very dark purple */
+
+    /* Body gradient colors */
+    --gradient-1: 12 12 20;             /* Dark blue */
+    --gradient-2: 18 12 25;             /* Dark purple */
+  }
+
+  /* ===== CARBON THEME ===== */
+  :root[data-theme="carbon"] {
+    /* Core colors */
+    --background: 0 0% 3%;              /* Pure black/carbon */
+    --foreground: 0 0% 95%;             /* Pure white */
+
+    --card: 0 0% 8%;                    /* Very dark gray */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;                 /* Very dark gray */
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 90%;                /* Light gray accent */
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 20%;              /* Medium dark gray */
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;                  /* Dark gray */
+    --muted-foreground: 0 0% 65%;       /* Medium gray */
+
+    --accent: 0 0% 18%;                 /* Dark gray */
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 72% 51%;           /* Pure red */
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 20%;                 /* Subtle gray border */
+    --input: 0 0% 20%;
+    --ring: 0 0% 90%;
+
+    /* RGB values for glow effects (white) */
+    --primary-rgb: 255 255 255;         /* White */
+    --secondary-rgb: 200 200 200;       /* Light gray */
+
+    /* Glass background colors */
+    --glass-bg: 30 30 30;               /* Dark gray tint */
+    --glass-dark-bg: 20 20 20;          /* Darker gray */
+    --glass-overlay-bg: 15 15 15;       /* Very dark gray */
+
+    /* Body gradient colors */
+    --gradient-1: 0 0 0;                /* Black */
+    --gradient-2: 17 17 17;             /* Dark gray */
+  }
+
+  /* ===== LIGHT THEME ===== */
+  :root[data-theme="light"] {
+    /* Core colors */
+    --background: 210 20% 98%;          /* Soft off-white #fafbfc */
+    --foreground: 0 0% 10%;             /* Dark charcoal #1a1a1a */
+
+    --card: 0 0% 100%;                  /* Pure white cards */
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;               /* Pure white popovers */
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 211 100% 40%;            /* Professional blue #0066cc */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 32% 95%;           /* Light blue-gray #f0f4f8 */
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 210 24% 93%;               /* Light gray #e8edf2 */
+    --muted-foreground: 215 16% 47%;    /* Slate #64748b */
+
+    --accent: 187 85% 36%;              /* Teal accent #0891b2 */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;           /* Red #dc2626 */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;              /* Subtle light border #e2e8f0 */
+    --input: 214 32% 91%;
+    --ring: 211 100% 40%;
+
+    /* RGB values for glow effects (blue) */
+    --primary-rgb: 0 102 204;           /* Blue #0066cc */
+    --secondary-rgb: 8 145 178;         /* Teal */
+
+    /* Glass background colors */
+    --glass-bg: 255 255 255;            /* White tint */
+    --glass-dark-bg: 248 250 252;       /* Very light gray */
+    --glass-overlay-bg: 255 255 255;    /* Pure white */
+
+    /* Body gradient colors */
+    --gradient-1: 250 251 252;          /* Off-white */
+    --gradient-2: 243 244 246;          /* Light gray */
   }
 }
 
@@ -46,56 +196,194 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+  }
+
+  /* Terminal theme background */
+  :root body {
     background-image:
-      radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 20% 50%, rgba(var(--gradient-1), 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(var(--gradient-2), 0.05) 0%, transparent 50%);
+  }
+
+  /* Amber theme background */
+  :root[data-theme="amber"] body {
+    background: linear-gradient(135deg, rgba(12, 12, 20, 1) 0%, rgba(18, 12, 25, 1) 50%, rgba(15, 12, 22, 1) 100%);
+    background-attachment: fixed;
+  }
+
+  /* Carbon theme background */
+  :root[data-theme="carbon"] body {
+    background: linear-gradient(135deg, #000000 0%, #111111 50%, #1a1a1a 100%);
+    background-attachment: fixed;
+  }
+
+  /* Light theme background */
+  :root[data-theme="light"] body {
+    background: linear-gradient(135deg, #fafbfc 0%, #f3f4f6 100%);
+    background-attachment: fixed;
   }
 }
 
 @layer utilities {
-  /* Terminal-inspired glassmorphism */
+  /* Theme-aware glassmorphism */
   .glass {
-    background: rgba(16, 185, 129, 0.12);
+    background: rgba(var(--glass-bg), 0.12);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 1px solid hsl(var(--border) / 0.6);
     box-shadow:
-      0 0 20px rgba(16, 185, 129, 0.2),
-      inset 0 0 20px rgba(16, 185, 129, 0.08);
+      0 0 20px rgba(var(--primary-rgb), 0.2),
+      inset 0 0 20px rgba(var(--primary-rgb), 0.08);
+  }
+
+  /* Light theme glass override */
+  :root[data-theme="light"] .glass {
+    background: rgba(var(--glass-bg), 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Carbon theme glass override */
+  :root[data-theme="carbon"] .glass {
+    background: rgba(var(--glass-bg), 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+  }
+
+  /* Amber theme glass override */
+  :root[data-theme="amber"] .glass {
+    background: rgba(40, 30, 50, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 200, 87, 0.3);
+    box-shadow:
+      0 0 20px rgba(255, 200, 87, 0.15),
+      inset 0 0 20px rgba(255, 200, 87, 0.05);
   }
 
   .glass-dark {
-    background: hsl(220 13% 12% / 0.8);
+    background: hsl(var(--glass-dark-bg) / 0.8);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 1px solid hsl(var(--border) / 0.5);
     box-shadow:
-      0 0 15px rgba(6, 182, 212, 0.2),
-      inset 0 0 15px rgba(6, 182, 212, 0.08);
+      0 0 15px rgba(var(--secondary-rgb), 0.2),
+      inset 0 0 15px rgba(var(--secondary-rgb), 0.08);
+  }
+
+  /* Light theme glass-dark override */
+  :root[data-theme="light"] .glass-dark {
+    background: rgba(var(--glass-dark-bg), 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.06),
+      0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Carbon theme glass-dark override */
+  :root[data-theme="carbon"] .glass-dark {
+    background: rgba(var(--glass-dark-bg), 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+  }
+
+  /* Amber theme glass-dark override */
+  :root[data-theme="amber"] .glass-dark {
+    background: rgba(20, 20, 30, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 200, 87, 0.25);
+    box-shadow:
+      0 0 15px rgba(255, 200, 87, 0.2),
+      inset 0 0 15px rgba(255, 200, 87, 0.08);
   }
 
   /* High-opacity glass for readable overlays */
   .glass-overlay {
-    background: hsl(220 13% 8% / 0.97);
+    background: hsl(var(--glass-overlay-bg) / 0.97);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid hsl(var(--border) / 0.6);
     box-shadow:
-      0 0 20px rgba(6, 182, 212, 0.25),
-      inset 0 0 20px rgba(6, 182, 212, 0.1);
+      0 0 20px rgba(var(--primary-rgb), 0.25),
+      inset 0 0 20px rgba(var(--primary-rgb), 0.1);
   }
 
-  /* Terminal glow effect */
+  /* Light theme glass-overlay override */
+  :root[data-theme="light"] .glass-overlay {
+    background: rgba(var(--glass-overlay-bg), 0.98);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow:
+      0 8px 16px rgba(0, 0, 0, 0.08),
+      0 2px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Carbon theme glass-overlay override */
+  :root[data-theme="carbon"] .glass-overlay {
+    background: rgba(var(--glass-overlay-bg), 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: none;
+  }
+
+  /* Amber theme glass-overlay override */
+  :root[data-theme="amber"] .glass-overlay {
+    background: rgba(25, 20, 35, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 200, 87, 0.4);
+    box-shadow:
+      0 0 20px rgba(255, 200, 87, 0.25),
+      inset 0 0 20px rgba(255, 200, 87, 0.1);
+  }
+
+  /* Theme-aware glow effect */
   .terminal-glow {
     text-shadow:
-      0 0 10px rgba(16, 185, 129, 0.5),
-      0 0 20px rgba(16, 185, 129, 0.3),
-      0 0 30px rgba(16, 185, 129, 0.2);
+      0 0 10px rgba(var(--primary-rgb), 0.5),
+      0 0 20px rgba(var(--primary-rgb), 0.3),
+      0 0 30px rgba(var(--primary-rgb), 0.2);
+  }
+
+  /* Light theme glow override (subtle) */
+  :root[data-theme="light"] .terminal-glow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Carbon theme glow override */
+  :root[data-theme="carbon"] .terminal-glow {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.3),
+      0 0 20px rgba(255, 255, 255, 0.15);
   }
 
   .border-glow {
     box-shadow:
-      0 0 10px rgba(16, 185, 129, 0.3),
-      0 0 20px rgba(16, 185, 129, 0.1);
+      0 0 10px rgba(var(--primary-rgb), 0.3),
+      0 0 20px rgba(var(--primary-rgb), 0.1);
+  }
+
+  /* Light theme border-glow override */
+  :root[data-theme="light"] .border-glow {
+    box-shadow: 0 0 0 1px rgba(var(--primary-rgb), 0.2);
+  }
+
+  /* Carbon theme border-glow override */
+  :root[data-theme="carbon"] .border-glow {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  }
+
+  /* Amber theme gradient text overrides */
+  :root[data-theme="amber"] .bg-gradient-to-r.from-emerald-400.text-transparent {
+    background-image: linear-gradient(to right, #fbbf24, #fb923c, #f59e0b) !important;
   }
 }

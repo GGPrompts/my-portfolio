@@ -147,7 +147,7 @@ const apiCategories = [
 
 // Method colors
 const methodColors: Record<string, string> = {
-  GET: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+  GET: 'bg-primary/20 text-primary border-primary/30',
   POST: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
   PUT: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
   PATCH: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
@@ -251,11 +251,11 @@ export default function ApiDocsTemplate() {
     .find(ep => ep.id === selectedEndpoint)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-zinc-950">
+    <div className="min-h-screen ">
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-12">
@@ -268,7 +268,7 @@ export default function ApiDocsTemplate() {
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
               <div className="p-3 glass rounded-lg border-glow">
-                <Terminal className="w-8 h-8 text-emerald-400" />
+                <Terminal className="w-8 h-8 text-primary" />
               </div>
               <div>
                 <h1 className="text-4xl font-bold terminal-glow">API Documentation</h1>
@@ -278,10 +278,10 @@ export default function ApiDocsTemplate() {
 
             {/* Version Selector */}
             <Select value={selectedVersion} onValueChange={setSelectedVersion}>
-              <SelectTrigger className="w-32 glass border-emerald-500/30">
+              <SelectTrigger className="w-32 glass border-primary/30">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent className="glass-dark border-emerald-500/30">
+              <SelectContent className="glass-dark border-primary/30">
                 <SelectItem value="v2.1.0">v2.1.0</SelectItem>
                 <SelectItem value="v2.0.0">v2.0.0</SelectItem>
                 <SelectItem value="v1.9.0">v1.9.0</SelectItem>
@@ -296,7 +296,7 @@ export default function ApiDocsTemplate() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search endpoints, methods, or descriptions..."
-              className="pl-10 glass border-emerald-500/30 text-emerald-50 placeholder:text-slate-500"
+              className="pl-10 glass border-primary/30 text-foreground placeholder:text-slate-500"
             />
           </div>
         </motion.div>
@@ -308,24 +308,24 @@ export default function ApiDocsTemplate() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <Card className="glass border-emerald-500/30 sticky top-6">
+            <Card className="glass border-primary/30 sticky top-6">
               <ScrollArea className="h-[calc(100vh-200px)]">
                 <div className="p-4 space-y-2">
                   {apiCategories.map((category) => (
                     <div key={category.id} className="space-y-1">
                       <button
                         onClick={() => toggleCategory(category.id)}
-                        className="w-full flex items-center justify-between p-2 rounded-lg hover:bg-emerald-500/10 transition-colors"
+                        className="w-full flex items-center justify-between p-2 rounded-lg hover:bg-primary/10 transition-colors"
                       >
                         <div className="flex items-center gap-2">
-                          <category.icon className="w-4 h-4 text-emerald-400" />
-                          <span className="text-sm font-medium text-emerald-50">
+                          <category.icon className="w-4 h-4 text-primary" />
+                          <span className="text-sm font-medium text-foreground">
                             {category.name}
                           </span>
                         </div>
                         <ChevronRight
                           className={cn(
-                            "w-4 h-4 text-emerald-400 transition-transform",
+                            "w-4 h-4 text-primary transition-transform",
                             expandedCategories.includes(category.id) && "rotate-90"
                           )}
                         />
@@ -346,8 +346,8 @@ export default function ApiDocsTemplate() {
                                 className={cn(
                                   "w-full text-left p-2 rounded-lg text-sm transition-all",
                                   selectedEndpoint === endpoint.id
-                                    ? "bg-emerald-500/20 text-emerald-300 border-l-2 border-emerald-400"
-                                    : "text-slate-400 hover:bg-emerald-500/10 hover:text-emerald-200"
+                                    ? "bg-primary/20 text-primary border-l-2 border-primary"
+                                    : "text-slate-400 hover:bg-primary/10 hover:text-primary"
                                 )}
                               >
                                 <div className="flex items-center gap-2">
@@ -381,7 +381,7 @@ export default function ApiDocsTemplate() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <Card className="glass border-emerald-500/30 p-6">
+              <Card className="glass border-primary/30 p-6">
                 {currentEndpoint && (
                   <>
                     <div className="flex items-start justify-between mb-6">
@@ -393,7 +393,7 @@ export default function ApiDocsTemplate() {
                           >
                             {currentEndpoint.method}
                           </Badge>
-                          <code className="text-lg font-mono text-emerald-300">
+                          <code className="text-lg font-mono text-primary">
                             {currentEndpoint.path}
                           </code>
                         </div>
@@ -402,7 +402,7 @@ export default function ApiDocsTemplate() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+                        className="border-primary/30 text-primary hover:bg-primary/10"
                         onClick={() => {
                           setPlaygroundMethod(currentEndpoint.method)
                           setPlaygroundUrl(currentEndpoint.path)
@@ -413,14 +413,14 @@ export default function ApiDocsTemplate() {
                       </Button>
                     </div>
 
-                    <Separator className="bg-emerald-500/20 my-6" />
+                    <Separator className="bg-primary/20 my-6" />
 
                     {/* Request Examples */}
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-emerald-50">Request Examples</h3>
+                      <h3 className="text-lg font-semibold text-foreground">Request Examples</h3>
 
                       <Tabs defaultValue="curl" className="w-full">
-                        <TabsList className="glass border-emerald-500/30">
+                        <TabsList className="glass border-primary/30">
                           <TabsTrigger value="curl">cURL</TabsTrigger>
                           <TabsTrigger value="javascript">JavaScript</TabsTrigger>
                           <TabsTrigger value="python">Python</TabsTrigger>
@@ -430,14 +430,14 @@ export default function ApiDocsTemplate() {
                           <TabsContent key={lang} value={lang} className="mt-4">
                             <div className="relative">
                               <pre className="glass-dark rounded-lg p-4 overflow-x-auto">
-                                <code className="text-sm font-mono text-emerald-300">
+                                <code className="text-sm font-mono text-primary">
                                   {code}
                                 </code>
                               </pre>
                               <Button
                                 size="sm"
                                 variant="ghost"
-                                className="absolute top-2 right-2 text-emerald-400 hover:text-emerald-300"
+                                className="absolute top-2 right-2 text-primary hover:text-primary"
                                 onClick={() => handleCopy(code, lang)}
                               >
                                 {copiedCode === lang ? (
@@ -452,14 +452,14 @@ export default function ApiDocsTemplate() {
                       </Tabs>
                     </div>
 
-                    <Separator className="bg-emerald-500/20 my-6" />
+                    <Separator className="bg-primary/20 my-6" />
 
                     {/* Response Example */}
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-emerald-50">Response Example</h3>
+                      <h3 className="text-lg font-semibold text-foreground">Response Example</h3>
                       <div className="relative">
                         <pre className="glass-dark rounded-lg p-4 overflow-x-auto">
-                          <code className="text-sm font-mono text-emerald-300">
+                          <code className="text-sm font-mono text-primary">
 {`{
   "success": true,
   "data": {
@@ -477,7 +477,7 @@ export default function ApiDocsTemplate() {
                         <Button
                           size="sm"
                           variant="ghost"
-                          className="absolute top-2 right-2 text-emerald-400 hover:text-emerald-300"
+                          className="absolute top-2 right-2 text-primary hover:text-primary"
                           onClick={() => handleCopy('response', 'response')}
                         >
                           {copiedCode === 'response' ? (
@@ -499,10 +499,10 @@ export default function ApiDocsTemplate() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <Card className="glass border-emerald-500/30 p-6">
+              <Card className="glass border-primary/30 p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Shield className="w-5 h-5 text-emerald-400" />
-                  <h2 className="text-xl font-semibold text-emerald-50">Authentication</h2>
+                  <Shield className="w-5 h-5 text-primary" />
+                  <h2 className="text-xl font-semibold text-foreground">Authentication</h2>
                 </div>
 
                 <p className="text-slate-400 mb-4">
@@ -512,7 +512,7 @@ export default function ApiDocsTemplate() {
                 <div className="space-y-4">
                   <div className="glass-dark rounded-lg p-4">
                     <p className="text-sm text-slate-400 mb-2">Header Format:</p>
-                    <code className="text-emerald-300 font-mono">
+                    <code className="text-primary font-mono">
                       Authorization: Bearer YOUR_ACCESS_TOKEN
                     </code>
                   </div>
@@ -521,7 +521,7 @@ export default function ApiDocsTemplate() {
                     <div className="glass-dark rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <Key className="w-4 h-4 text-amber-400" />
-                        <p className="text-sm font-medium text-emerald-50">API Key</p>
+                        <p className="text-sm font-medium text-foreground">API Key</p>
                       </div>
                       <p className="text-xs text-slate-400">
                         Long-lived tokens for server-to-server communication
@@ -529,8 +529,8 @@ export default function ApiDocsTemplate() {
                     </div>
                     <div className="glass-dark rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <Hash className="w-4 h-4 text-cyan-400" />
-                        <p className="text-sm font-medium text-emerald-50">JWT Token</p>
+                        <Hash className="w-4 h-4 text-secondary" />
+                        <p className="text-sm font-medium text-foreground">JWT Token</p>
                       </div>
                       <p className="text-xs text-slate-400">
                         Short-lived tokens for user authentication (expires in 1 hour)
@@ -547,10 +547,10 @@ export default function ApiDocsTemplate() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <Card className="glass border-emerald-500/30 p-6">
+              <Card className="glass border-primary/30 p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Clock className="w-5 h-5 text-emerald-400" />
-                  <h2 className="text-xl font-semibold text-emerald-50">Rate Limiting</h2>
+                  <Clock className="w-5 h-5 text-primary" />
+                  <h2 className="text-xl font-semibold text-foreground">Rate Limiting</h2>
                 </div>
 
                 <div className="space-y-4">
@@ -560,14 +560,14 @@ export default function ApiDocsTemplate() {
 
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="glass-dark rounded-lg p-4 text-center">
-                      <p className="text-2xl font-bold text-emerald-400 mb-1">100</p>
+                      <p className="text-2xl font-bold text-primary mb-1">100</p>
                       <p className="text-xs text-slate-400">Requests/min</p>
                       <Badge variant="outline" className="mt-2 text-xs border-slate-500">
                         Free Tier
                       </Badge>
                     </div>
                     <div className="glass-dark rounded-lg p-4 text-center">
-                      <p className="text-2xl font-bold text-cyan-400 mb-1">1,000</p>
+                      <p className="text-2xl font-bold text-secondary mb-1">1,000</p>
                       <p className="text-xs text-slate-400">Requests/min</p>
                       <Badge variant="outline" className="mt-2 text-xs border-cyan-500">
                         Pro Tier
@@ -583,11 +583,11 @@ export default function ApiDocsTemplate() {
                   </div>
 
                   <div className="glass-dark rounded-lg p-4">
-                    <p className="text-sm font-medium text-emerald-50 mb-2">Response Headers:</p>
+                    <p className="text-sm font-medium text-foreground mb-2">Response Headers:</p>
                     <div className="space-y-1 font-mono text-xs">
-                      <div className="text-emerald-300">X-RateLimit-Limit: 100</div>
+                      <div className="text-primary">X-RateLimit-Limit: 100</div>
                       <div className="text-amber-300">X-RateLimit-Remaining: 95</div>
-                      <div className="text-cyan-300">X-RateLimit-Reset: 1642435200</div>
+                      <div className="text-secondary">X-RateLimit-Reset: 1642435200</div>
                     </div>
                   </div>
                 </div>
@@ -600,10 +600,10 @@ export default function ApiDocsTemplate() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Card className="glass border-emerald-500/30 p-6">
+              <Card className="glass border-primary/30 p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <AlertCircle className="w-5 h-5 text-emerald-400" />
-                  <h2 className="text-xl font-semibold text-emerald-50">Status Codes</h2>
+                  <AlertCircle className="w-5 h-5 text-primary" />
+                  <h2 className="text-xl font-semibold text-foreground">Status Codes</h2>
                 </div>
 
                 <div className="space-y-2">
@@ -614,7 +614,7 @@ export default function ApiDocsTemplate() {
                     >
                       <div className="flex items-center gap-3">
                         {status.type === 'success' && (
-                          <CheckCircle className="w-4 h-4 text-emerald-400" />
+                          <CheckCircle className="w-4 h-4 text-primary" />
                         )}
                         {status.type === 'warning' && (
                           <AlertCircle className="w-4 h-4 text-amber-400" />
@@ -627,14 +627,14 @@ export default function ApiDocsTemplate() {
                             variant="outline"
                             className={cn(
                               "font-mono text-xs",
-                              status.type === 'success' && "border-emerald-500 text-emerald-400",
+                              status.type === 'success' && "border-primary text-primary",
                               status.type === 'warning' && "border-amber-500 text-amber-400",
                               status.type === 'error' && "border-red-500 text-red-400"
                             )}
                           >
                             {status.code}
                           </Badge>
-                          <span className="text-sm font-medium text-emerald-50">
+                          <span className="text-sm font-medium text-foreground">
                             {status.label}
                           </span>
                         </div>
@@ -654,19 +654,19 @@ export default function ApiDocsTemplate() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <Card className="glass border-emerald-500/30 p-6">
+              <Card className="glass border-primary/30 p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Code2 className="w-5 h-5 text-emerald-400" />
-                  <h2 className="text-xl font-semibold text-emerald-50">API Playground</h2>
+                  <Code2 className="w-5 h-5 text-primary" />
+                  <h2 className="text-xl font-semibold text-foreground">API Playground</h2>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex gap-4">
                     <Select value={playgroundMethod} onValueChange={setPlaygroundMethod}>
-                      <SelectTrigger className="w-32 glass border-emerald-500/30">
+                      <SelectTrigger className="w-32 glass border-primary/30">
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent className="glass-dark border-emerald-500/30">
+                      <SelectContent className="glass-dark border-primary/30">
                         <SelectItem value="GET">GET</SelectItem>
                         <SelectItem value="POST">POST</SelectItem>
                         <SelectItem value="PUT">PUT</SelectItem>
@@ -679,12 +679,12 @@ export default function ApiDocsTemplate() {
                       value={playgroundUrl}
                       onChange={(e) => setPlaygroundUrl(e.target.value)}
                       placeholder="/api/endpoint"
-                      className="flex-1 glass border-emerald-500/30 font-mono text-emerald-300"
+                      className="flex-1 glass border-primary/30 font-mono text-primary"
                     />
 
                     <Button
                       onClick={runPlayground}
-                      className="bg-emerald-500/20 border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30"
+                      className="bg-primary/20 border-primary/30 text-primary hover:bg-primary/30"
                     >
                       <Send className="w-4 h-4 mr-2" />
                       Send Request
@@ -695,7 +695,7 @@ export default function ApiDocsTemplate() {
                     <div>
                       <p className="text-sm text-slate-400 mb-2">Request Body:</p>
                       <textarea
-                        className="w-full h-32 glass-dark rounded-lg p-4 font-mono text-sm text-emerald-300 border border-emerald-500/30 bg-black/50"
+                        className="w-full h-32 glass-dark rounded-lg p-4 font-mono text-sm text-primary border border-primary/30 bg-black/50"
                         placeholder='{"key": "value"}'
                       />
                     </div>
@@ -705,7 +705,7 @@ export default function ApiDocsTemplate() {
                     <div>
                       <p className="text-sm text-slate-400 mb-2">Response:</p>
                       <pre className="glass-dark rounded-lg p-4 overflow-x-auto">
-                        <code className="text-sm font-mono text-emerald-300">
+                        <code className="text-sm font-mono text-primary">
                           {playgroundResponse}
                         </code>
                       </pre>
@@ -721,18 +721,18 @@ export default function ApiDocsTemplate() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
-              <Card className="glass border-emerald-500/30 p-6">
-                <h2 className="text-xl font-semibold text-emerald-50 mb-4">Quick Links</h2>
+              <Card className="glass border-primary/30 p-6">
+                <h2 className="text-xl font-semibold text-foreground mb-4">Quick Links</h2>
 
                 <div className="grid md:grid-cols-3 gap-4">
                   <a
                     href="#"
-                    className="glass-dark rounded-lg p-4 hover:bg-emerald-500/10 transition-colors group"
+                    className="glass-dark rounded-lg p-4 hover:bg-primary/10 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
-                      <Server className="w-5 h-5 text-emerald-400 group-hover:text-emerald-300" />
+                      <Server className="w-5 h-5 text-primary group-hover:text-primary" />
                       <div>
-                        <p className="text-sm font-medium text-emerald-50">API Status</p>
+                        <p className="text-sm font-medium text-foreground">API Status</p>
                         <p className="text-xs text-slate-400">Check service health</p>
                       </div>
                     </div>
@@ -740,12 +740,12 @@ export default function ApiDocsTemplate() {
 
                   <a
                     href="#"
-                    className="glass-dark rounded-lg p-4 hover:bg-emerald-500/10 transition-colors group"
+                    className="glass-dark rounded-lg p-4 hover:bg-primary/10 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
-                      <Info className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300" />
+                      <Info className="w-5 h-5 text-secondary group-hover:text-secondary" />
                       <div>
-                        <p className="text-sm font-medium text-emerald-50">Changelog</p>
+                        <p className="text-sm font-medium text-foreground">Changelog</p>
                         <p className="text-xs text-slate-400">Latest updates</p>
                       </div>
                     </div>
@@ -753,12 +753,12 @@ export default function ApiDocsTemplate() {
 
                   <a
                     href="#"
-                    className="glass-dark rounded-lg p-4 hover:bg-emerald-500/10 transition-colors group"
+                    className="glass-dark rounded-lg p-4 hover:bg-primary/10 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
                       <Code2 className="w-5 h-5 text-purple-400 group-hover:text-purple-300" />
                       <div>
-                        <p className="text-sm font-medium text-emerald-50">SDKs</p>
+                        <p className="text-sm font-medium text-foreground">SDKs</p>
                         <p className="text-xs text-slate-400">Client libraries</p>
                       </div>
                     </div>

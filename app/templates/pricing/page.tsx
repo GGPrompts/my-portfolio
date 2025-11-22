@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, X, Info, Sparkles, Building2, ChevronDown, Shield, ArrowRight, HelpCircle } from 'lucide-react'
 import { Card } from '@/components/ui/card'
@@ -243,7 +243,7 @@ export default function PricingPage() {
 
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-zinc-950 text-foreground">
+      <div className="min-h-screen text-foreground">
         {/* Header */}
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
@@ -484,8 +484,8 @@ export default function PricingPage() {
                   </TableHeader>
                   <TableBody>
                     {featureComparison.map((category) => (
-                      <>
-                        <TableRow key={category.category} className="border-border/30 bg-muted/5">
+                      <Fragment key={category.category}>
+                        <TableRow className="border-border/30 bg-muted/5">
                           <TableCell colSpan={4} className="font-semibold text-primary">
                             {category.category}
                           </TableCell>
@@ -542,7 +542,7 @@ export default function PricingPage() {
                             </TableCell>
                           </TableRow>
                         ))}
-                      </>
+                      </Fragment>
                     ))}
                   </TableBody>
                 </Table>
