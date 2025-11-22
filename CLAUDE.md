@@ -1,5 +1,20 @@
 # Matt's Portfolio - Project Context
 
+## 🚨 IMPORTANT: Read This First!
+
+**FOR CLAUDE.AI SESSIONS:** Before building anything, read **`QUICK_START.md`** for:
+- Ready-to-use prompts for building project pages
+- Session tracking instructions
+- What to build and where to build it
+
+**KEY RULE:** Templates are in `/app/templates/` - **DO NOT EDIT THEM**. Build new pages in `/app/projects/`, `/app/about/`, etc.
+
+**See Also:**
+- `CLAUDE_AI_SESSIONS.md` - Track your session branch for merging later
+- `QUICK_START.md` - Copy/paste prompts for high-value features
+
+---
+
 ## Project Overview
 
 A modern, professional portfolio website showcasing web applications and Terminal User Interface (TUI) projects with a unique glassmorphism/3D design aesthetic.
@@ -356,12 +371,19 @@ All components are pre-styled with the terminal theme and ready to use.
 ## Notes for Claude
 
 ### When Working on This Project
-1. **Check skills first** - Use `.claude/skills/` for guidance on Next.js, design, or images
-2. **Maintain glassmorphism aesthetic** - Always use the `.glass` utilities or Tailwind's `backdrop-blur-*`
-3. **Keep it professional** - Sophisticated, not cartoony
-4. **Performance matters** - This is a portfolio to showcase technical ability
-5. **Use Server Components** - Default to server, only go client when needed
-6. **Follow established patterns** - Check `COMPONENT_EXAMPLES.md` for code snippets
+
+**🚨 FIRST:** Read `QUICK_START.md` for ready-to-use session prompts!
+
+1. **Check QUICK_START.md** - Contains copy/paste prompts for building features
+2. **Track your session** - Update `CLAUDE_AI_SESSIONS.md` with your branch name
+3. **Don't edit templates** - Templates are in `/app/templates/` (reference only, don't modify)
+4. **Build new pages** - Create files in `/app/projects/`, `/app/about/`, etc.
+5. **Check skills first** - Use `.claude/skills/` for guidance on Next.js, design, or images
+6. **Maintain glassmorphism aesthetic** - Always use the `.glass` utilities or Tailwind's `backdrop-blur-*`
+7. **Keep it professional** - Sophisticated, not cartoony
+8. **Performance matters** - This is a portfolio to showcase technical ability
+9. **Use Server Components** - Default to server, only go client when needed
+10. **Follow established patterns** - Check `COMPONENT_EXAMPLES.md` for code snippets
 
 ### Common Tasks
 - **"Create a project card component"** → Use GlassCard + Framer Motion patterns
