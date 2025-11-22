@@ -71,7 +71,7 @@ export default function DocsHub() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-mono font-bold mb-6">
-              <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">
+              <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 text-transparent bg-clip-text terminal-glow">
                 Documentation Hub
               </span>
             </h1>
@@ -145,8 +145,8 @@ export default function DocsHub() {
                     <div className="p-6">
                       {doc.trending && (
                         <div className="flex items-center gap-1 mb-3">
-                          <TrendingUp className="w-4 h-4 text-emerald-400" />
-                          <Badge variant="outline" className="text-xs border-emerald-400/30 text-emerald-400">
+                          <TrendingUp className="w-4 h-4 text-primary" />
+                          <Badge variant="outline" className="text-xs border-primary/30 text-primary">
                             Trending
                           </Badge>
                         </div>
@@ -232,7 +232,7 @@ export default function DocsHub() {
                                     {article.title}
                                   </span>
                                   {article.featured && (
-                                    <Star className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                                    <Star className="w-3 h-3 text-primary flex-shrink-0" />
                                   )}
                                 </div>
                                 <p className="text-xs text-foreground/50 line-clamp-1">
@@ -313,7 +313,7 @@ export default function DocsHub() {
         {/* Footer Note */}
         <section className="container mx-auto px-4 py-16 text-center">
           <Card className="glass border-primary/20 max-w-3xl mx-auto p-8">
-            <Terminal className="w-12 h-12 text-emerald-400 mx-auto mb-4 terminal-glow" />
+            <Terminal className="w-12 h-12 text-primary mx-auto mb-4 terminal-glow" />
             <h3 className="text-2xl font-mono font-bold mb-3">
               Documentation From Experience
             </h3>
