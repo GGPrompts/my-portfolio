@@ -14,7 +14,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const themes: Theme[] = ['terminal', 'amber', 'carbon', 'light']
-  const [theme, setThemeState] = useState<Theme>('terminal')
+  const [theme, setThemeState] = useState<Theme>('amber')
   const [mounted, setMounted] = useState(false)
 
   // Load theme from localStorage on mount
