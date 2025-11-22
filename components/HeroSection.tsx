@@ -70,14 +70,20 @@ export function HeroSection() {
             transition={{ delay: 0.7, duration: 0.5 }}
             className="flex flex-wrap gap-4 justify-center mb-12"
           >
-            <Link href="#projects">
-              <button className="px-8 py-4 glass rounded-lg hover:scale-105 transition-all border-glow font-mono text-lg">
-                View Projects
+            <Link href="/playground">
+              <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:scale-105 transition-all shadow-lg shadow-primary/20 font-mono text-lg flex items-center gap-2">
+                <Terminal className="w-5 h-5" />
+                Try TUI Playground
               </button>
             </Link>
-            <Link href="#contact">
-              <button className="px-8 py-4 glass-dark rounded-lg hover:scale-105 transition-all border-glow font-mono text-lg">
-                Get in Touch
+            <Link href="/resume">
+              <button className="px-8 py-4 glass rounded-lg hover:scale-105 transition-all border-glow font-mono text-lg">
+                Terminal Resume
+              </button>
+            </Link>
+            <Link href="#projects">
+              <button className="px-8 py-4 glass-dark rounded-lg hover:scale-105 transition-all font-mono text-lg">
+                View Projects
               </button>
             </Link>
             <Link href="https://github.com/GGPrompts" target="_blank" rel="noopener noreferrer">

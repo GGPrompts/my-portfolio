@@ -1,3 +1,6 @@
+/* Asciinema player styles */
+@import 'asciinema-player/dist/bundle/asciinema-player.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
