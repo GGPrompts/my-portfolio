@@ -73,9 +73,46 @@
 
 ---
 
+### ✅ Session 2: TUI Playground + Enhanced Terminal Resume
+**Branch**: `claude/review-docs-brainstorm-01YbxUX7DVMtAPdZTqNNe6mZ` (MERGED to master)
+**Credits Used**: ~$150
+**Date**: Nov 22, 2025
+
+**What Was Built:**
+
+**TUI Playground** (`/playground`):
+- Interactive showcase for all TUI apps (TFE, bit, tkan, tmuxplexer, TUIClassics, etc.)
+- Tabbed interface to explore each project
+- Ready for asciinema recording playback
+- Shows tech stack, GitHub stats, and key features
+- 100% data-driven from `/lib/projects-data.ts`
+
+**Enhanced Terminal Resume** (`/resume`):
+- Interactive terminal with **32 commands**
+- Uses REAL data from GitHub projects
+- Commands: `projects --featured`, `projects --tui`, `projects --web`, `stats`, `achievements`, `timeline`, `claude`, `prompt-engineer`, `zero-to-hero`
+- "Zero to 17+ projects in 6 months" narrative
+
+**Reusable Media Components**:
+- `TUIPlayer.tsx` - Asciinema terminal recording player
+- `YouTubeEmbed.tsx` - YouTube video with modal viewer
+- `ImageViewer.tsx` - Screenshot gallery with zoom
+- `lib/media-data.ts` - Centralized media management (518 lines)
+
+**Homepage Integration**:
+- "Try TUI Playground" primary CTA button
+- "Terminal Resume" button in hero section
+- New "Interactive Experiences" section
+
+**Files Created**: 25 files, 5,471+ lines
+**Status**: ✅ Merged to master, pushed to origin
+**Live at**: http://localhost:3000/playground and http://localhost:3000/resume
+
+---
+
 ## 🚧 **Planned Sessions**
 
-### Session 2: Individual Project Pages
+### Session 3: Individual Project Pages
 **Target Branch**: `claude/build-project-pages-xxxxx`
 **Estimated Credits**: $300-400
 **Priority**: HIGH
