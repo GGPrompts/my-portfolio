@@ -16,7 +16,7 @@ import {
   Github,
   ArrowLeft,
   Award,
-  Tabs as TabsIcon,
+  LayoutGrid as TabsIcon,
   Keyboard,
   Server,
 } from 'lucide-react';
