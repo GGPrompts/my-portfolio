@@ -141,30 +141,30 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          {/* Projects Grid */}
-          <TabsContent value={selectedCategory} className="mt-0">
-            <motion.div
-              variants={container}
-              initial="hidden"
-              animate="show"
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
-              {filteredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} itemVariants={item} />
-              ))}
-            </motion.div>
-
-            {filteredProjects.length === 0 && (
-              <div className="text-center py-16">
-                <Search className="w-16 h-16 text-muted-foreground/30 mx-auto mb-4" />
-                <p className="text-xl text-muted-foreground mb-2">No projects found</p>
-                <p className="text-sm text-muted-foreground/60">
-                  Try adjusting your search or filter
-                </p>
-              </div>
-            )}
-          </TabsContent>
         </Tabs>
+
+        {/* Projects Grid - Outside Tabs to avoid re-render issues */}
+        <motion.div
+          key={selectedCategory}
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {filteredProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} itemVariants={item} />
+          ))}
+        </motion.div>
+
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-16">
+            <Search className="w-16 h-16 text-muted-foreground/30 mx-auto mb-4" />
+            <p className="text-xl text-muted-foreground mb-2">No projects found</p>
+            <p className="text-sm text-muted-foreground/60">
+              Try adjusting your search or filter
+            </p>
+          </div>
+        )}
       </section>
     </div>
   );
