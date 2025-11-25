@@ -34,7 +34,7 @@ export function FeaturedProjects() {
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-6xl font-mono font-bold mb-4">
-          <span className="bg-gradient-to-r from-emerald-400 to-teal-400 text-transparent bg-clip-text terminal-glow">
+          <span className="gradient-text-theme terminal-glow">
             Featured Projects
           </span>
         </h2>
@@ -65,13 +65,13 @@ export function FeaturedProjects() {
                         {project.name}
                       </h3>
                     {project.category === 'TUI Application' && (
-                      <Terminal className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                      <Terminal className="w-5 h-5 text-primary flex-shrink-0" />
                     )}
                     {project.category === 'Web Application' && (
-                      <Globe className="w-5 h-5 text-teal-400 flex-shrink-0" />
+                      <Globe className="w-5 h-5 text-secondary flex-shrink-0" />
                     )}
                   </div>
-                  <p className="text-sm font-mono text-emerald-400 mb-3">
+                  <p className="text-sm font-mono text-primary mb-3">
                     {project.tagline}
                   </p>
                 </div>

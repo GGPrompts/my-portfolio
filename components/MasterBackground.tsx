@@ -9,7 +9,6 @@ export function MasterBackground() {
   // Map background type to CSS class
   const bgClass = {
     gradient: 'bg-style-gradient',
-    mesh: 'bg-style-mesh',
     textured: 'bg-style-textured',
     minimal: 'bg-style-minimal',
     none: null

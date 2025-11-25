@@ -48,7 +48,7 @@ export function HeroSection() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-5xl md:text-7xl lg:text-8xl font-mono font-bold mb-6"
           >
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">
+            <span className="gradient-text-theme terminal-glow">
               {hero.tagline}
             </span>
           </motion.h1>

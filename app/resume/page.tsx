@@ -28,12 +28,11 @@ interface FileSystem {
 }
 
 const ASCII_HEADER = `
-███╗   ███╗ █████╗ ████████╗████████╗    ███╗   ███╗
-████╗ ████║██╔══██╗╚══██╔══╝╚══██╔══╝    ████╗ ████║
-██╔████╔██║███████║   ██║      ██║       ██╔████╔██║
-██║╚██╔╝██║██╔══██║   ██║      ██║       ██║╚██╔╝██║
-██║ ╚═╝ ██║██║  ██║   ██║      ██║   ██╗ ██║ ╚═╝ ██║
-╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚═╝ ╚═╝     ╚═╝
+ __  __    _  _____ _____     __  __
+|  \\/  |  / \\|_   _|_   _|   |  \\/  |
+| |\\/| | / _ \\ | |   | |     | |\\/| |
+| |  | |/ ___ \\| |   | |  _  | |  | |
+|_|  |_/_/   \\_\\_|   |_| (_) |_|  |_|
 `
 
 const HELP_TEXT = `
@@ -336,6 +335,7 @@ export default function TerminalResume() {
   const [showMatrix, setShowMatrix] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const terminalRef = useRef<HTMLDivElement>(null)
+  const hasInitialized = useRef(false)
 
   const commands = [
     'help',
@@ -979,6 +979,9 @@ Fuel for building ${allProjects.length} projects...
   }, [])
 
   useEffect(() => {
+    if (hasInitialized.current) return
+    hasInitialized.current = true
+
     const initialCommands = async () => {
       await new Promise((resolve) => setTimeout(resolve, 500))
       processCommand("echo Welcome to Matt M.'s Interactive Terminal Resume!")

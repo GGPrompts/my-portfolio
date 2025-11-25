@@ -203,7 +203,7 @@ export default function StyleGuide() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="mb-16 text-center">
-          <h1 className="text-6xl font-mono font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">
+          <h1 className="text-6xl font-mono font-bold mb-4 gradient-text-theme terminal-glow">
             Style Guide
           </h1>
           <p className="text-xl text-foreground/80">
@@ -1107,7 +1107,7 @@ function Section({
 }) {
   return (
     <section id={id} className="mb-20">
-      <h2 className="text-4xl font-mono font-bold mb-8 bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
+      <h2 className="text-4xl font-mono font-bold mb-8 gradient-text-theme">
         {title}
       </h2>
       {children}

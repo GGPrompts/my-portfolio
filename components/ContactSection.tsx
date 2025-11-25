@@ -41,7 +41,7 @@ export function ContactSection() {
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-6xl font-mono font-bold mb-4">
-          <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text terminal-glow">
+          <span className="gradient-text-theme terminal-glow">
             Let's Connect
           </span>
         </h2>
@@ -100,7 +100,7 @@ export function ContactSection() {
         <Card className="glass border-primary/20 overflow-hidden">
           <div className="p-8 text-center">
             <div className="mb-4 flex justify-center">
-              <Terminal className="w-12 h-12 text-emerald-400 terminal-glow" />
+              <Terminal className="w-12 h-12 text-primary terminal-glow" />
             </div>
             <h3 className="text-2xl font-mono font-bold text-foreground mb-3">
               Want a Unique Experience?

@@ -29,7 +29,7 @@ export default function PortfolioHome() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-mono font-bold mb-4">
-                <span className="bg-gradient-to-r from-cyan-400 to-teal-400 text-transparent bg-clip-text terminal-glow">
+                <span className="gradient-text-theme terminal-glow">
                   Interactive Experiences
                 </span>
               </h2>
@@ -52,8 +52,8 @@ export default function PortfolioHome() {
                       <h3 className="text-2xl font-mono font-bold text-primary mb-2 group-hover:terminal-glow transition-all">
                         TUI Playground
                       </h3>
-                      <div className="inline-flex items-center gap-2 px-3 py-1 glass-dark rounded-full text-xs font-mono text-emerald-400 mb-4">
-                        <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 glass-dark rounded-full text-xs font-mono text-primary mb-4">
+                        <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
                         LIVE DEMOS
                       </div>
                     </div>
@@ -65,11 +65,11 @@ export default function PortfolioHome() {
                   </p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-cyan-400">TFE</span>
-                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-cyan-400">bit</span>
-                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-cyan-400">tkan</span>
-                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-cyan-400">tmuxplexer</span>
-                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-cyan-400">TUIClassics</span>
+                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-primary">TFE</span>
+                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-primary">bit</span>
+                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-primary">tkan</span>
+                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-primary">tmuxplexer</span>
+                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-primary">TUIClassics</span>
                   </div>
 
                   <div className="flex items-center gap-2 text-primary font-mono group-hover:gap-4 transition-all">
@@ -92,8 +92,8 @@ export default function PortfolioHome() {
                       <h3 className="text-2xl font-mono font-bold text-primary mb-2 group-hover:terminal-glow transition-all">
                         Terminal Resume
                       </h3>
-                      <div className="inline-flex items-center gap-2 px-3 py-1 glass-dark rounded-full text-xs font-mono text-emerald-400 mb-4">
-                        <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 glass-dark rounded-full text-xs font-mono text-primary mb-4">
+                        <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
                         INTERACTIVE
                       </div>
                     </div>
@@ -106,10 +106,10 @@ export default function PortfolioHome() {
                   </p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-cyan-400">projects --tui</span>
-                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-cyan-400">stats</span>
-                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-cyan-400">achievements</span>
-                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-cyan-400">zero-to-hero</span>
+                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-primary">projects --tui</span>
+                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-primary">stats</span>
+                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-primary">achievements</span>
+                    <span className="px-3 py-1 glass-dark rounded-md text-xs font-mono text-primary">zero-to-hero</span>
                   </div>
 
                   <div className="flex items-center gap-2 text-primary font-mono group-hover:gap-4 transition-all">

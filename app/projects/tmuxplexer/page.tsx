@@ -46,7 +46,7 @@ export default function TmuxplexerPage() {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-mono font-bold mb-4 bg-gradient-to-r from-primary via-primary to-secondary text-transparent bg-clip-text terminal-glow">
+          <h1 className="text-5xl md:text-6xl font-mono font-bold mb-4 gradient-text-theme terminal-glow">
             tmuxplexer
           </h1>
 
@@ -74,7 +74,7 @@ export default function TmuxplexerPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 gradient-text-theme">
             Key Features
           </h2>
 
@@ -111,7 +111,7 @@ export default function TmuxplexerPage() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 gradient-text-theme">
             Tech Stack
           </h2>
 
@@ -140,7 +140,7 @@ export default function TmuxplexerPage() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text flex items-center gap-3">
+          <h2 className="text-3xl font-mono font-bold mb-8 gradient-text-theme flex items-center gap-3">
             <Award className="h-8 w-8 text-primary" />
             Project Highlights
           </h2>
@@ -196,7 +196,7 @@ export default function TmuxplexerPage() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 gradient-text-theme">
             Screenshots
           </h2>
 
@@ -215,7 +215,7 @@ export default function TmuxplexerPage() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-mono font-bold mb-8 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+          <h2 className="text-3xl font-mono font-bold mb-8 gradient-text-theme">
             Demo
           </h2>
 

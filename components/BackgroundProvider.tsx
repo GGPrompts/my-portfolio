@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 
 // Static background options - no JavaScript animation, pure CSS
-export type Background = 'gradient' | 'mesh' | 'textured' | 'minimal' | 'none'
+export type Background = 'gradient' | 'textured' | 'minimal' | 'none'
 
 interface BackgroundContextType {
   background: Background
@@ -18,7 +18,6 @@ export function BackgroundProvider({ children }: { children: React.ReactNode }) 
 
   const backgrounds: Background[] = [
     'gradient',
-    'mesh',
     'textured',
     'minimal',
     'none'

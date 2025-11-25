@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { BackgroundProvider } from "@/components/BackgroundProvider";
 import { MasterBackground } from "@/components/MasterBackground";
+import { ThemeCustomizer } from "@/components/ThemeCustomizer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
         <BackgroundProvider>
           <ThemeProvider>
             <MasterBackground />
+            <ThemeCustomizer />
             {children}
           </ThemeProvider>
         </BackgroundProvider>

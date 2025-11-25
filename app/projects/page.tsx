@@ -89,7 +89,7 @@ export default function ProjectsPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 terminal-glow">
-              <span className="bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
+              <span className="gradient-text-theme">
                 All Projects
               </span>
             </h1>
@@ -186,7 +186,7 @@ function ProjectCard({ project, itemVariants }: { project: Project; itemVariants
               </CardTitle>
               <CategoryIcon className="w-5 h-5 text-primary/60 flex-shrink-0" />
             </div>
-            <CardDescription className="text-sm font-mono text-emerald-400">
+            <CardDescription className="text-sm font-mono text-primary">
               {project.tagline}
             </CardDescription>
           </CardHeader>
