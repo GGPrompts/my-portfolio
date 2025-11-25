@@ -338,7 +338,7 @@ export function getAllSkills() {
  * Helper function to get timeline milestones only
  */
 export function getMilestones() {
-  return timeline.filter((event) => event.milestone || event.current);
+  return timeline.filter((event) => 'milestone' in event || 'current' in event);
 }
 
 /**
@@ -346,7 +346,7 @@ export function getMilestones() {
  */
 export function getTotalProjects() {
   return timeline.reduce(
-    (sum, event) => sum + (event.projectCount || 0),
+    (sum, event) => sum + ('projectCount' in event ? (event.projectCount as number) : 0),
     0
   );
 }

@@ -317,7 +317,7 @@ export default function ProjectVisualTemplate() {
     <div className="min-h-screen ">
       {/* Animated background particles */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {typeof window !== 'undefined' && [...Array(20)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-primary/20 rounded-full"

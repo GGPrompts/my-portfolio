@@ -128,20 +128,24 @@ export default function PortfolioHome() {
         {/* Contact Section */}
         <ContactSection />
 
-        {/* Link to Template Gallery */}
+        {/* Link to Full Portfolio Style Guide */}
         <section className="container mx-auto px-4 py-16 text-center">
           <div className="glass rounded-xl p-8 max-w-2xl mx-auto">
             <h2 className="text-2xl font-mono font-bold text-primary mb-4">
-              Explore the Template Library
+              Full Portfolio & Style Guide
             </h2>
             <p className="text-foreground/80 mb-6">
-              Want to see the 16 production-ready templates used to build this portfolio?
+              Explore the complete template library with 20+ production-ready pages, 10 themes, and interactive component demos.
             </p>
-            <Link href="/templates">
+            <a
+              href="https://portfolio-style-guides.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="px-6 py-3 glass-dark rounded-lg hover:scale-105 transition-transform border-glow">
-                View Template Gallery
+                View Full Style Guide →
               </button>
-            </Link>
+            </a>
           </div>
         </section>
       </div>

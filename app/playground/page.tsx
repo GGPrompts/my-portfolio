@@ -2,11 +2,12 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Star, Play, Code2, Terminal } from 'lucide-react';
+import { ExternalLink, Github, Star, Play, Code2, Terminal, ArrowRight } from 'lucide-react';
 import { getTUIProjects, type Project } from '@/lib/projects-data';
 
 export default function PlaygroundPage() {
@@ -141,10 +142,17 @@ function ProjectDemo({ project }: { project: Project }) {
               </div>
             </div>
 
-            {/* GitHub Link */}
-            {githubLink && (
-              <div className="pt-2">
-                <Button asChild className="w-full gap-2" variant="default">
+            {/* Project Links */}
+            <div className="pt-2 space-y-2">
+              <Button asChild className="w-full gap-2" variant="default">
+                <Link href={`/projects/${project.id}`}>
+                  <ArrowRight className="w-4 h-4" />
+                  View Full Project Details
+                </Link>
+              </Button>
+
+              {githubLink && (
+                <Button asChild className="w-full gap-2" variant="outline">
                   <a
                     href={githubLink.url}
                     target="_blank"
@@ -160,8 +168,8 @@ function ProjectDemo({ project }: { project: Project }) {
                     )}
                   </a>
                 </Button>
-              </div>
-            )}
+              )}
+            </div>
           </CardContent>
         </Card>
 

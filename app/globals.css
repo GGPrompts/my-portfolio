@@ -1,6 +1,3 @@
-/* Asciinema player styles */
-@import 'asciinema-player/dist/bundle/asciinema-player.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -187,6 +184,276 @@
     --gradient-1: 250 251 252;          /* Off-white */
     --gradient-2: 243 244 246;          /* Light gray */
   }
+
+  /* ===== OCEAN THEME ===== */
+  :root[data-theme="ocean"] {
+    /* Core colors */
+    --background: 210 50% 8%;           /* Deep ocean blue */
+    --foreground: 190 80% 95%;          /* Light cyan-white */
+
+    --card: 210 45% 12%;                /* Dark ocean card */
+    --card-foreground: 190 80% 95%;
+
+    --popover: 210 45% 12%;             /* Dark ocean popover */
+    --popover-foreground: 190 80% 95%;
+
+    --primary: 188 100% 50%;            /* Bright aqua/turquoise #00d4ff */
+    --primary-foreground: 210 50% 8%;
+
+    --secondary: 196 85% 25%;           /* Deep teal #0a5968 */
+    --secondary-foreground: 190 80% 95%;
+
+    --muted: 210 35% 20%;               /* Muted ocean */
+    --muted-foreground: 190 30% 75%;
+
+    --accent: 173 100% 45%;             /* Bright cyan accent #00e5cc */
+    --accent-foreground: 210 50% 8%;
+
+    --destructive: 0 84% 60%;           /* Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 188 75% 30%;              /* Ocean border */
+    --input: 188 75% 30%;
+    --ring: 188 100% 50%;
+
+    /* RGB values for glow effects (aqua/teal) */
+    --primary-rgb: 0 212 255;           /* Bright aqua */
+    --secondary-rgb: 0 229 204;         /* Cyan-teal */
+
+    /* Glass background colors */
+    --glass-bg: 0 150 180;              /* Ocean blue tint */
+    --glass-dark-bg: 210 45% 10%;       /* Dark ocean */
+    --glass-overlay-bg: 210 50% 6%;     /* Very dark ocean */
+
+    /* Body gradient colors */
+    --gradient-1: 0 212 255;            /* Aqua */
+    --gradient-2: 10 89 104;            /* Deep teal */
+  }
+
+  /* ===== SUNSET THEME ===== */
+  :root[data-theme="sunset"] {
+    /* Core colors */
+    --background: 280 40% 10%;          /* Deep purple-orange */
+    --foreground: 30 90% 95%;           /* Warm light */
+
+    --card: 280 35% 14%;                /* Purple-orange card */
+    --card-foreground: 30 90% 95%;
+
+    --popover: 280 35% 14%;             /* Purple-orange popover */
+    --popover-foreground: 30 90% 95%;
+
+    --primary: 15 100% 60%;             /* Bright orange/coral #ff6633 */
+    --primary-foreground: 280 40% 10%;
+
+    --secondary: 295 80% 35%;           /* Deep magenta/purple #8b1fa3 */
+    --secondary-foreground: 30 90% 95%;
+
+    --muted: 280 25% 20%;               /* Muted purple */
+    --muted-foreground: 30 40% 75%;
+
+    --accent: 340 90% 60%;              /* Pink highlight #ff4d8f */
+    --accent-foreground: 280 40% 10%;
+
+    --destructive: 0 84% 60%;           /* Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 15 85% 45%;               /* Orange border */
+    --input: 15 85% 45%;
+    --ring: 15 100% 60%;
+
+    /* RGB values for glow effects (orange/pink) */
+    --primary-rgb: 255 102 51;          /* Orange-coral */
+    --secondary-rgb: 255 77 143;        /* Pink */
+
+    /* Glass background colors */
+    --glass-bg: 139 31 163;             /* Purple tint */
+    --glass-dark-bg: 280 35% 12%;       /* Dark purple */
+    --glass-overlay-bg: 280 40% 8%;     /* Very dark purple */
+
+    /* Body gradient colors */
+    --gradient-1: 255 102 51;           /* Orange */
+    --gradient-2: 139 31 163;           /* Purple */
+  }
+
+  /* ===== FOREST THEME ===== */
+  :root[data-theme="forest"] {
+    /* Core colors */
+    --background: 150 35% 8%;           /* Dark forest green */
+    --foreground: 85 75% 95%;           /* Light lime-white */
+
+    --card: 150 30% 12%;                /* Forest card */
+    --card-foreground: 85 75% 95%;
+
+    --popover: 150 30% 12%;             /* Forest popover */
+    --popover-foreground: 85 75% 95%;
+
+    --primary: 82 100% 55%;             /* Bright lime/chartreuse #8aff00 */
+    --primary-foreground: 150 35% 8%;
+
+    --secondary: 150 80% 25%;           /* Deep emerald #0d7a3d */
+    --secondary-foreground: 85 75% 95%;
+
+    --muted: 150 25% 18%;               /* Muted forest */
+    --muted-foreground: 85 30% 70%;
+
+    --accent: 100 85% 50%;              /* Bright green accent #73e600 */
+    --accent-foreground: 150 35% 8%;
+
+    --destructive: 0 84% 60%;           /* Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 82 70% 35%;               /* Lime border */
+    --input: 82 70% 35%;
+    --ring: 82 100% 55%;
+
+    /* RGB values for glow effects (lime/green) */
+    --primary-rgb: 138 255 0;           /* Lime-chartreuse */
+    --secondary-rgb: 115 230 0;         /* Bright green */
+
+    /* Glass background colors */
+    --glass-bg: 13 122 61;              /* Forest green tint */
+    --glass-dark-bg: 150 30% 10%;       /* Dark forest */
+    --glass-overlay-bg: 150 35% 6%;     /* Very dark forest */
+
+    /* Body gradient colors */
+    --gradient-1: 138 255 0;            /* Lime */
+    --gradient-2: 13 122 61;            /* Deep emerald */
+  }
+
+  /* ===== MIDNIGHT THEME ===== */
+  :root[data-theme="midnight"] {
+    /* Core colors */
+    --background: 250 50% 6%;           /* Very dark indigo/navy */
+    --foreground: 290 85% 95%;          /* Light magenta-white */
+
+    --card: 250 45% 10%;                /* Dark indigo card */
+    --card-foreground: 290 85% 95%;
+
+    --popover: 250 45% 10%;             /* Dark indigo popover */
+    --popover-foreground: 290 85% 95%;
+
+    --primary: 290 100% 65%;            /* Bright magenta/fuchsia #ff66ff */
+    --primary-foreground: 250 50% 6%;
+
+    --secondary: 260 80% 35%;           /* Deep purple #5c1fb3 */
+    --secondary-foreground: 290 85% 95%;
+
+    --muted: 250 35% 15%;               /* Muted indigo */
+    --muted-foreground: 290 35% 75%;
+
+    --accent: 310 90% 60%;              /* Magenta highlight #ff4da6 */
+    --accent-foreground: 250 50% 6%;
+
+    --destructive: 0 84% 60%;           /* Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 290 75% 40%;              /* Magenta border */
+    --input: 290 75% 40%;
+    --ring: 290 100% 65%;
+
+    /* RGB values for glow effects (magenta/purple) */
+    --primary-rgb: 255 102 255;         /* Bright magenta */
+    --secondary-rgb: 153 77 255;        /* Purple-blue */
+
+    /* Glass background colors */
+    --glass-bg: 92 31 179;              /* Purple tint */
+    --glass-dark-bg: 250 45% 8%;        /* Dark indigo */
+    --glass-overlay-bg: 250 50% 5%;     /* Very dark indigo */
+
+    /* Body gradient colors */
+    --gradient-1: 255 102 255;          /* Magenta */
+    --gradient-2: 92 31 179;            /* Deep purple */
+  }
+
+  /* ===== NEON THEME ===== */
+  :root[data-theme="neon"] {
+    /* Core colors */
+    --background: 0 0% 4%;              /* Almost pure black */
+    --foreground: 320 100% 95%;         /* Light hot pink-white */
+
+    --card: 0 0% 8%;                    /* Near black card */
+    --card-foreground: 320 100% 95%;
+
+    --popover: 0 0% 8%;                 /* Near black popover */
+    --popover-foreground: 320 100% 95%;
+
+    --primary: 320 100% 60%;            /* Hot pink/magenta #ff0099 */
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 185 100% 50%;          /* Electric blue/cyan #00bfff */
+    --secondary-foreground: 0 0% 4%;
+
+    --muted: 0 0% 12%;                  /* Very dark gray */
+    --muted-foreground: 320 50% 80%;
+
+    --accent: 270 100% 60%;             /* Electric purple #9933ff */
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84% 60%;           /* Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 320 90% 50%;              /* Hot pink border */
+    --input: 320 90% 50%;
+    --ring: 320 100% 60%;
+
+    /* RGB values for glow effects (neon pink/cyan) */
+    --primary-rgb: 255 0 153;           /* Hot pink */
+    --secondary-rgb: 0 191 255;         /* Electric cyan */
+
+    /* Glass background colors */
+    --glass-bg: 255 0 153;              /* Neon pink tint */
+    --glass-dark-bg: 0 0% 6%;           /* Near black */
+    --glass-overlay-bg: 0 0% 3%;        /* Very near black */
+
+    /* Body gradient colors */
+    --gradient-1: 255 0 153;            /* Hot pink */
+    --gradient-2: 0 191 255;            /* Electric cyan */
+  }
+
+  /* ===== SLATE THEME ===== */
+  :root[data-theme="slate"] {
+    /* Core colors */
+    --background: 220 20% 10%;          /* Dark slate gray */
+    --foreground: 210 100% 95%;         /* Light sky-white */
+
+    --card: 220 18% 14%;                /* Slate card */
+    --card-foreground: 210 100% 95%;
+
+    --popover: 220 18% 14%;             /* Slate popover */
+    --popover-foreground: 210 100% 95%;
+
+    --primary: 200 100% 60%;            /* Sky blue #33b3ff */
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 210 60% 35%;           /* Steel blue #3366a3 */
+    --secondary-foreground: 210 100% 95%;
+
+    --muted: 220 15% 20%;               /* Muted slate */
+    --muted-foreground: 210 40% 75%;
+
+    --accent: 195 90% 50%;              /* Bright cyan-blue #0d9ddb */
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 84% 60%;           /* Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 50% 35%;              /* Blue-gray border */
+    --input: 200 50% 35%;
+    --ring: 200 100% 60%;
+
+    /* RGB values for glow effects (sky blue) */
+    --primary-rgb: 51 179 255;          /* Sky blue */
+    --secondary-rgb: 13 157 219;        /* Cyan-blue */
+
+    /* Glass background colors */
+    --glass-bg: 51 102 163;             /* Steel blue tint */
+    --glass-dark-bg: 220 18% 12%;       /* Dark slate */
+    --glass-overlay-bg: 220 20% 8%;     /* Very dark slate */
+
+    /* Body gradient colors */
+    --gradient-1: 51 179 255;           /* Sky blue */
+    --gradient-2: 51 102 163;           /* Steel blue */
+  }
 }
 
 @layer base {
@@ -195,10 +462,76 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-y: scroll !important; /* Always show scrollbar to prevent layout shift */
+    width: 100%;
   }
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+    /* Prevent body from getting overflow: hidden when dropdowns open */
+    overflow-x: hidden !important;
+    width: 100%;
+    position: relative;
+  }
+
+  /* ===== THEME-AWARE SCROLLBARS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) hsl(var(--background));
+  }
+
+  /* WebKit (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 5px;
+    border: 2px solid hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.7);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: hsl(var(--primary));
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: hsl(var(--background));
+  }
+
+  /* Light theme scrollbar adjustments */
+  :root[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border: 2px solid hsl(var(--background));
+  }
+
+  :root[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  :root[data-theme="light"] ::-webkit-scrollbar-thumb:active {
+    background: hsl(var(--primary));
+  }
+
+  :root[data-theme="light"] * {
+    scrollbar-color: hsl(var(--muted-foreground) / 0.3) hsl(var(--background));
+  }
+
+  /* Prevent Radix UI from hiding overflow and causing layout shift */
+  body[data-scroll-locked] {
+    overflow-y: scroll !important;
+    padding-right: 0 !important;
   }
 
   /* Terminal theme background */
@@ -225,6 +558,152 @@
     background: linear-gradient(135deg, #fafbfc 0%, #f3f4f6 100%);
     background-attachment: fixed;
   }
+
+  /* Ocean theme background */
+  :root[data-theme="ocean"] body {
+    background: linear-gradient(135deg, #001a33 0%, #002b4d 50%, #003d66 100%);
+    background-attachment: fixed;
+  }
+
+  /* Sunset theme background */
+  :root[data-theme="sunset"] body {
+    background: linear-gradient(135deg, #331a33 0%, #4d1a4d 50%, #661a66 100%);
+    background-attachment: fixed;
+  }
+
+  /* Forest theme background */
+  :root[data-theme="forest"] body {
+    background: linear-gradient(135deg, #0d1a0d 0%, #1a331a 50%, #264d26 100%);
+    background-attachment: fixed;
+  }
+
+  /* Midnight theme background */
+  :root[data-theme="midnight"] body {
+    background: linear-gradient(135deg, #0a0a1a 0%, #14142b 50%, #1f1f3d 100%);
+    background-attachment: fixed;
+  }
+
+  /* Neon theme background */
+  :root[data-theme="neon"] body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #0d0d0d 50%, #141414 100%);
+    background-attachment: fixed;
+  }
+
+  /* Slate theme background */
+  :root[data-theme="slate"] body {
+    background: linear-gradient(135deg, #1a1f29 0%, #263241 50%, #334459 100%);
+    background-attachment: fixed;
+  }
+}
+
+/* ===== STATIC BACKGROUND STYLES ===== */
+/* These are theme-aware and use CSS variables for colors */
+
+/* Gradient Background - True linear/radial gradients */
+.bg-style-gradient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(var(--primary-rgb), 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(var(--secondary-rgb), 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 30% at 50% 90%, rgba(var(--primary-rgb), 0.08) 0%, transparent 40%);
+}
+
+:root[data-theme="light"] .bg-style-gradient {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(var(--primary-rgb), 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(var(--secondary-rgb), 0.06) 0%, transparent 50%);
+}
+
+:root[data-theme="carbon"] .bg-style-gradient {
+  background:
+    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 40% at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
+}
+
+/* Mesh Background - Multi-point mesh gradient (modern look) */
+.bg-style-mesh {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(at 0% 0%, rgba(var(--primary-rgb), 0.2) 0%, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(var(--secondary-rgb), 0.15) 0%, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(var(--primary-rgb), 0.18) 0%, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(var(--secondary-rgb), 0.12) 0%, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(var(--primary-rgb), 0.05) 0%, transparent 70%);
+}
+
+:root[data-theme="light"] .bg-style-mesh {
+  background:
+    radial-gradient(at 0% 0%, rgba(var(--primary-rgb), 0.1) 0%, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(var(--secondary-rgb), 0.08) 0%, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(var(--primary-rgb), 0.1) 0%, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(var(--secondary-rgb), 0.06) 0%, transparent 50%);
+}
+
+:root[data-theme="carbon"] .bg-style-mesh {
+  background:
+    radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(200, 200, 200, 0.03) 0%, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(200, 200, 200, 0.03) 0%, transparent 50%);
+}
+
+/* Textured Background - Noise/grain texture overlay */
+.bg-style-textured {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-style-textured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 30%, rgba(var(--primary-rgb), 0.08) 0%, transparent 60%);
+}
+
+.bg-style-textured::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  mix-blend-mode: overlay;
+}
+
+:root[data-theme="light"] .bg-style-textured::after {
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+}
+
+:root[data-theme="carbon"] .bg-style-textured::after {
+  opacity: 0.3;
+}
+
+/* Minimal Background - Subtle vignette only */
+.bg-style-minimal {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+:root[data-theme="light"] .bg-style-minimal {
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
+}
+
+:root[data-theme="carbon"] .bg-style-minimal {
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 @layer utilities {
@@ -241,7 +720,7 @@
 
   /* Light theme glass override */
   :root[data-theme="light"] .glass {
-    background: rgba(var(--glass-bg), 0.7);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -252,7 +731,7 @@
 
   /* Carbon theme glass override */
   :root[data-theme="carbon"] .glass {
-    background: rgba(var(--glass-bg), 0.3);
+    background: rgba(30, 30, 30, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -270,6 +749,73 @@
       inset 0 0 20px rgba(255, 200, 87, 0.05);
   }
 
+  /* Ocean theme glass override */
+  :root[data-theme="ocean"] .glass {
+    background: rgba(0, 150, 180, 0.15);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    box-shadow:
+      0 0 20px rgba(0, 212, 255, 0.25),
+      inset 0 0 20px rgba(0, 212, 255, 0.08);
+  }
+
+  /* Sunset theme glass override */
+  :root[data-theme="sunset"] .glass {
+    background: rgba(139, 31, 163, 0.2);
+    backdrop-filter: blur(14px) saturate(170%);
+    -webkit-backdrop-filter: blur(14px) saturate(170%);
+    border: 1px solid rgba(255, 102, 51, 0.35);
+    box-shadow:
+      0 0 20px rgba(255, 102, 51, 0.2),
+      inset 0 0 20px rgba(255, 77, 143, 0.06);
+  }
+
+  /* Forest theme glass override */
+  :root[data-theme="forest"] .glass {
+    background: rgba(13, 122, 61, 0.18);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    border: 1px solid rgba(138, 255, 0, 0.35);
+    box-shadow:
+      0 0 20px rgba(138, 255, 0, 0.2),
+      inset 0 0 20px rgba(138, 255, 0, 0.07);
+  }
+
+  /* Midnight theme glass override */
+  :root[data-theme="midnight"] .glass {
+    background: rgba(92, 31, 179, 0.25);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 102, 255, 0.4);
+    box-shadow:
+      0 0 25px rgba(255, 102, 255, 0.25),
+      inset 0 0 25px rgba(255, 102, 255, 0.1);
+  }
+
+  /* Neon theme glass override */
+  :root[data-theme="neon"] .glass {
+    background: rgba(255, 0, 153, 0.08);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    border: 1px solid rgba(255, 0, 153, 0.5);
+    box-shadow:
+      0 0 30px rgba(255, 0, 153, 0.3),
+      0 0 15px rgba(0, 191, 255, 0.2),
+      inset 0 0 20px rgba(255, 0, 153, 0.05);
+  }
+
+  /* Slate theme glass override */
+  :root[data-theme="slate"] .glass {
+    background: rgba(51, 102, 163, 0.15);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    border: 1px solid rgba(51, 179, 255, 0.3);
+    box-shadow:
+      0 0 20px rgba(51, 179, 255, 0.15),
+      inset 0 0 20px rgba(51, 179, 255, 0.05);
+  }
+
   .glass-dark {
     background: hsl(var(--glass-dark-bg) / 0.8);
     backdrop-filter: blur(16px) saturate(180%);
@@ -282,7 +828,9 @@
 
   /* Light theme glass-dark override */
   :root[data-theme="light"] .glass-dark {
-    background: rgba(var(--glass-dark-bg), 0.9);
+    background: rgba(248, 250, 252, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow:
       0 4px 12px rgba(0, 0, 0, 0.06),
@@ -291,7 +839,7 @@
 
   /* Carbon theme glass-dark override */
   :root[data-theme="carbon"] .glass-dark {
-    background: rgba(var(--glass-dark-bg), 0.8);
+    background: rgba(20, 20, 20, 0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -322,16 +870,18 @@
 
   /* Light theme glass-overlay override */
   :root[data-theme="light"] .glass-overlay {
-    background: rgba(var(--glass-overlay-bg), 0.98);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow:
-      0 8px 16px rgba(0, 0, 0, 0.08),
-      0 2px 4px rgba(0, 0, 0, 0.06);
+      0 8px 16px rgba(0, 0, 0, 0.1),
+      0 2px 4px rgba(0, 0, 0, 0.08);
   }
 
   /* Carbon theme glass-overlay override */
   :root[data-theme="carbon"] .glass-overlay {
-    background: rgba(var(--glass-overlay-bg), 0.97);
+    background: rgb(15, 15, 15);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -385,8 +935,146 @@
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
   }
 
-  /* Amber theme gradient text overrides */
+  /* Theme-aware gradient text - uses theme-specific gradients */
+  .gradient-text-theme {
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    /* Default/Terminal theme - emerald to cyan */
+    background-image: linear-gradient(to right, #34d399, #2dd4bf, #22d3ee);
+  }
+
+  /* Amber theme - gold to orange */
+  :root[data-theme="amber"] .gradient-text-theme {
+    background-image: linear-gradient(to right, #fbbf24, #fb923c, #f59e0b);
+  }
+
+  /* Carbon theme - white to gray */
+  :root[data-theme="carbon"] .gradient-text-theme {
+    background-image: linear-gradient(to right, #ffffff, #d4d4d4, #a3a3a3);
+  }
+
+  /* Light theme - blue to teal */
+  :root[data-theme="light"] .gradient-text-theme {
+    background-image: linear-gradient(to right, #0066cc, #0891b2, #06b6d4);
+  }
+
+  /* Ocean theme - aqua to cyan */
+  :root[data-theme="ocean"] .gradient-text-theme {
+    background-image: linear-gradient(to right, #00d4ff, #00e5cc, #22d3ee);
+  }
+
+  /* Sunset theme - orange to pink */
+  :root[data-theme="sunset"] .gradient-text-theme {
+    background-image: linear-gradient(to right, #ff6633, #ff4d8f, #f472b6);
+  }
+
+  /* Forest theme - lime to green */
+  :root[data-theme="forest"] .gradient-text-theme {
+    background-image: linear-gradient(to right, #8aff00, #73e600, #22c55e);
+  }
+
+  /* Midnight theme - magenta to purple */
+  :root[data-theme="midnight"] .gradient-text-theme {
+    background-image: linear-gradient(to right, #ff66ff, #ff4da6, #a855f7);
+  }
+
+  /* Neon theme - hot pink to cyan */
+  :root[data-theme="neon"] .gradient-text-theme {
+    background-image: linear-gradient(to right, #ff0099, #9933ff, #00bfff);
+  }
+
+  /* Slate theme - sky blue to steel */
+  :root[data-theme="slate"] .gradient-text-theme {
+    background-image: linear-gradient(to right, #33b3ff, #0d9ddb, #3b82f6);
+  }
+
+  /* Legacy: Amber theme gradient text overrides for hardcoded classes */
   :root[data-theme="amber"] .bg-gradient-to-r.from-emerald-400.text-transparent {
     background-image: linear-gradient(to right, #fbbf24, #fb923c, #f59e0b) !important;
+  }
+
+  /* Animated gradient effect */
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes gradient-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% auto;
+    animation: gradient 3s ease infinite;
+  }
+
+  .animate-gradient-fast {
+    background-size: 200% auto;
+    animation: gradient 2s ease infinite;
+  }
+
+  .animate-gradient-slow {
+    background-size: 200% auto;
+    animation: gradient 5s ease infinite;
+  }
+
+  .animate-gradient-pulse {
+    animation: gradient 3s ease infinite, gradient-pulse 2s ease-in-out infinite;
+    background-size: 200% auto;
+  }
+
+  /* Background animations for MasterBackground */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes gradient-rotate {
+    0% {
+      transform: rotate(0deg) scale(1.5);
+    }
+    100% {
+      transform: rotate(360deg) scale(1.5);
+    }
+  }
+
+  @keyframes gradient-rotate-reverse {
+    0% {
+      transform: rotate(360deg) scale(1.5);
+    }
+    100% {
+      transform: rotate(0deg) scale(1.5);
+    }
+  }
+
+  .animate-gradient-shift {
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  .animate-gradient-rotate {
+    animation: gradient-rotate 20s linear infinite;
+  }
+
+  .animate-gradient-rotate-reverse {
+    animation: gradient-rotate-reverse 25s linear infinite;
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--tw-gradient-from), var(--tw-gradient-to));
   }
 }

@@ -55,14 +55,15 @@ export function FeaturedProjects() {
       >
         {featuredProjects.map((project) => (
           <motion.div key={project.id} variants={item}>
-            <Card className="glass border-white/10 h-full flex flex-col group hover:border-primary/30 transition-all duration-300">
-              <div className="p-6 flex flex-col h-full">
-                {/* Header */}
-                <div className="mb-4">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-2xl font-mono font-bold text-primary group-hover:terminal-glow transition-all">
-                      {project.name}
-                    </h3>
+            <Link href={`/projects/${project.id}`} className="block h-full">
+              <Card className="glass border-white/10 h-full flex flex-col group hover:border-primary/30 transition-all duration-300 cursor-pointer">
+                <div className="p-6 flex flex-col h-full">
+                  {/* Header */}
+                  <div className="mb-4">
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="text-2xl font-mono font-bold text-primary group-hover:terminal-glow transition-all">
+                        {project.name}
+                      </h3>
                     {project.category === 'TUI Application' && (
                       <Terminal className="w-5 h-5 text-cyan-400 flex-shrink-0" />
                     )}
@@ -134,27 +135,31 @@ export function FeaturedProjects() {
                     {/* Links */}
                     <div className="flex items-center gap-2">
                       {project.links.map((link, i) => (
-                        <Link
+                        <button
                           key={i}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          type="button"
                           className="p-2 glass-dark rounded hover:scale-110 transition-transform"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            window.open(link.url, '_blank', 'noopener,noreferrer');
+                          }}
                         >
                           {link.type === 'github' && <Github className="w-4 h-4" />}
                           {link.type === 'demo' && <ExternalLink className="w-4 h-4" />}
-                        </Link>
+                        </button>
                       ))}
                     </div>
                   </div>
                 </div>
               </div>
             </Card>
+            </Link>
           </motion.div>
         ))}
       </motion.div>
 
-      {/* View All Projects Link */}
+      {/* View All Projects Links */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -162,11 +167,18 @@ export function FeaturedProjects() {
         transition={{ delay: 0.6 }}
         className="text-center mt-12"
       >
-        <Link href="https://github.com/GGPrompts" target="_blank" rel="noopener noreferrer">
-          <button className="px-8 py-4 glass rounded-lg hover:scale-105 transition-all border-glow font-mono">
-            View All 45+ Projects on GitHub →
-          </button>
-        </Link>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link href="/projects">
+            <button className="px-8 py-4 glass rounded-lg hover:scale-105 transition-all border-glow font-mono bg-primary/10">
+              Browse All Projects →
+            </button>
+          </Link>
+          <Link href="https://github.com/GGPrompts" target="_blank" rel="noopener noreferrer">
+            <button className="px-8 py-4 glass rounded-lg hover:scale-105 transition-all border-primary/20 font-mono">
+              View on GitHub →
+            </button>
+          </Link>
+        </div>
       </motion.div>
     </section>
   );

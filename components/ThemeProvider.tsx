@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react'
 
-type Theme = 'terminal' | 'amber' | 'carbon' | 'light'
+type Theme = 'terminal' | 'amber' | 'carbon' | 'light' | 'ocean' | 'sunset' | 'forest' | 'midnight' | 'neon' | 'slate'
 
 interface ThemeContextType {
   theme: Theme
@@ -13,8 +13,8 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const themes: Theme[] = ['terminal', 'amber', 'carbon', 'light']
-  const [theme, setThemeState] = useState<Theme>('amber')
+  const themes: Theme[] = ['terminal', 'amber', 'carbon', 'light', 'ocean', 'sunset', 'forest', 'midnight', 'neon', 'slate']
+  const [theme, setThemeState] = useState<Theme>('terminal')
   const [mounted, setMounted] = useState(false)
 
   // Load theme from localStorage on mount
@@ -24,9 +24,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (savedTheme && themes.includes(savedTheme)) {
       setThemeState(savedTheme)
       document.documentElement.setAttribute('data-theme', savedTheme)
-    } else {
-      // Set default theme if no saved theme
-      document.documentElement.setAttribute('data-theme', 'amber')
     }
   }, [])
 

@@ -181,35 +181,6 @@ export const featuredProjects: Project[] = [
     year: 2024,
   },
   {
-    id: 'bit',
-    name: 'bit',
-    category: 'TUI Application',
-    description: 'CLI/TUI logo designer with ANSI font library, gradients, shadows, and export options',
-    tagline: '100+ Terminal Fonts with Multi-Language Export',
-    techStack: ['Go', 'Bubbletea', 'Lipgloss'],
-    keyFeatures: [
-      '100+ embedded bitmap fonts (classic terminal, retro gaming, pixel, decorative)',
-      'Color gradients (horizontal and vertical directions)',
-      'Shadow effects with adjustable position and style',
-      'Text scaling from 0.5x to 4x',
-      '14 vibrant ANSI colors plus unlimited hex color support',
-      'Multi-format export: TXT, Go, JavaScript, Python, Rust, Bash',
-      'Character, word, and line spacing adjustments',
-      'Multi-line text input with per-row cursor tracking',
-    ],
-    highlights: [
-      '100+ Font Styles spanning classic, retro gaming, modern pixel, decorative designs',
-      'All fonts under permissive open-source licenses for commercial use',
-      'Embedded .bit files (JSON format) with go:embed for self-contained binaries',
-      'Lazy loading for memory efficiency',
-    ],
-    links: [
-      { type: 'github', url: 'https://github.com/GGPrompts/bit' },
-    ],
-    featured: true,
-    year: 2024,
-  },
-  {
     id: 'claude-code-cheatsheet',
     name: 'Claude Code WSL Quick Reference',
     category: 'Developer Tools',
@@ -345,6 +316,41 @@ export const tuiProjects: Project[] = [
 ];
 
 export const webProjects: Project[] = [
+  {
+    id: 'portfolio-styleguide',
+    name: 'Portfolio Component Library',
+    category: 'Web Application',
+    description: 'Comprehensive design system and component library showcasing 29 shadcn/ui components with 4 theme variants',
+    tagline: 'Production-Ready Design System with Theme Switching',
+    techStack: [
+      'Next.js 15',
+      'React 19',
+      'TypeScript',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Framer Motion',
+      'Radix UI',
+    ],
+    keyFeatures: [
+      '29 production-ready UI components (Card, Badge, Button, Dialog, Tabs, etc.)',
+      '4 theme variants: Terminal (green), Amber (gold), Carbon (monochrome), Professional Light',
+      'Glassmorphism design system with CSS variables',
+      'Motion primitives for advanced animations',
+      'Complete form components with validation support',
+      'Accessible components built on Radix UI',
+      'Responsive design patterns',
+      'Copy-paste ready component examples',
+    ],
+    highlights: [
+      'Theme system using CSS variables - 100% theme-compatible',
+      'All 29 shadcn/ui components pre-styled and ready to use',
+      'Glassmorphic .glass utilities with terminal aesthetic',
+    ],
+    links: [
+      { type: 'demo', url: '/styleguide', label: 'View Styleguide' },
+    ],
+    year: 2024,
+  },
   {
     id: 'thumb-command',
     name: 'ThumbCommand',

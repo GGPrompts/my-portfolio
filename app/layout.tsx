@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { BackgroundProvider } from "@/components/BackgroundProvider";
+import { MasterBackground } from "@/components/MasterBackground";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,11 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <BackgroundProvider>
+          <ThemeProvider>
+            <MasterBackground />
+            {children}
+          </ThemeProvider>
+        </BackgroundProvider>
       </body>
     </html>
   );
