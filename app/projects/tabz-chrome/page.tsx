@@ -18,19 +18,19 @@ import { cn } from '@/lib/utils'
 const projectData = {
   title: "Tabz Chrome",
   tagline: "Give Claude Eyes, Hands, and Terminals — Right in Your Browser",
-  description: "A Chrome extension with Windows Terminal simplicity — bash terminals with customizable profiles, always visible in your browser sidebar. Plus 11 MCP tools that give Claude eyes and hands: screenshots, clicks, form fills, and JavaScript execution. Type /ttmcp in Claude Code for an interactive menu.",
+  description: "A Chrome extension with Windows Terminal simplicity — bash terminals with customizable profiles, always visible in your browser sidebar. Plus 12 MCP tools that give Claude eyes and hands: screenshots, clicks, form fills, and JavaScript execution. Type /ttmcp in Claude Code for an interactive menu.",
   demoVideo: "/demos/tabz-chrome-sora.mp4",
   githubUrl: "https://github.com/GGPrompts/TabzChrome",
 
   highlights: [
-    "Tmux sessions persist across all browser tabs",
-    "Claude can screenshot, click, and type in your browser",
-    "Type /ttmcp for interactive MCP tool menu",
-    "Windows Terminal-style profiles (directory + theme)",
+    "Terminals persist across all browser tabs via tmux",
+    "Claude can screenshot, click, and fill forms in your browser",
+    "Profiles with startup commands (lazygit, htop, npm run dev)",
+    "Global working directory — profiles inherit automatically",
   ],
 
   stats: [
-    { label: "Browser MCP Tools", value: 11, suffix: "" },
+    { label: "Browser MCP Tools", value: 12, suffix: "" },
     { label: "Font Options", value: 6, suffix: "" },
     { label: "Less Code vs Traditional", value: 40, suffix: "%" },
     { label: "Sync Bugs", value: 0, suffix: "" },
@@ -51,8 +51,8 @@ const projectData = {
     },
     {
       icon: Settings,
-      title: "Windows Terminal Profiles",
-      description: "Create profiles with working directory, font size, font family, and theme — just like Windows Terminal",
+      title: "Smart Directory Inheritance",
+      description: "Set a global working directory in the header. Profiles without explicit directories inherit it — one lazygit profile works for all projects.",
       color: "from-purple-500 to-pink-500"
     },
     {
@@ -69,8 +69,8 @@ const projectData = {
     },
     {
       icon: Command,
-      title: "Settings Modal",
-      description: "Two-tab settings: General (global theme/font) and Profiles (add/edit/delete). Changes apply instantly.",
+      title: "Profiles Management",
+      description: "Add, edit, and delete profiles with working directory, startup command, font, and theme. Set a default profile.",
       color: "from-yellow-500 to-orange-500"
     },
   ],
@@ -125,6 +125,7 @@ const projectData = {
     { name: "browser_get_console_logs", desc: "Retrieve console output (log, warn, error)" },
     { name: "browser_get_element", desc: "Inspect DOM element with styles and bounds" },
     { name: "browser_open_url", desc: "Open URLs (GitHub, Vercel, localhost)" },
+    { name: "browser_rename_tab", desc: "Label tabs for Claude to track during multi-tab workflows" },
     { name: "browser_download_image", desc: "Download images from pages" },
   ],
 
@@ -146,9 +147,9 @@ const projectData = {
 
   timeline: [
     { date: "Nov 2025", event: "Terminal Sidebar", description: "Chrome extension with tmux session management" },
-    { date: "Nov 2025", event: "Browser MCP Tools", description: "Screenshot, click, fill, inspect via Claude" },
-    { date: "Nov 2025", event: "CDP Integration", description: "Full Chrome DevTools Protocol support" },
-    { date: "Dec 2025", event: "Public Release", description: "Open source with comprehensive docs" },
+    { date: "Nov 2025", event: "Browser MCP Tools", description: "12 tools: screenshot, click, fill, inspect via Claude" },
+    { date: "Dec 2025", event: "Profiles & Inheritance", description: "Startup commands, global working directory inheritance" },
+    { date: "Dec 2025", event: "Public Release", description: "Open source with MIT license and polished docs" },
   ],
 }
 
