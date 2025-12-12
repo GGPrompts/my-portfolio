@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, lazy, Suspense } from 'react'
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion'
 import { SpaceBackground } from '@/components/SpaceBackground'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -16,6 +16,7 @@ import {
   Zap, Copy, CheckCircle
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import ClaudeLauncher from '@/components/demo/ClaudeLauncher'
 
 // Project data for Tabz Chrome
 const projectData = {
@@ -441,6 +442,13 @@ export default function TabzChromePage() {
               </p>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Interactive Claude Launcher */}
+      <section className="py-20 px-4 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <ClaudeLauncher />
         </div>
       </section>
 
